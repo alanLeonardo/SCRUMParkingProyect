@@ -36,7 +36,7 @@ Prioridad: alta
 
 Estimado: 
 
-Estado: 
+Estado: finalizado
 
 
 #4
