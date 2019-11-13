@@ -1,0 +1,19 @@
+.grid {
+    display: grid;
+    padding: 1rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(8, 210px);
+    grid-template-rows: repeat(8, 100px);;
+    font-size: 3rem;
+}
+
+.item-grid {
+    background-color: rgba(54, 9, 9, 0.932);
+    color: white;
+    padding: 1rem;
+}
+
+.clearArray {
+    font-size: 2rem;
+    padding: 1rem;
+}
