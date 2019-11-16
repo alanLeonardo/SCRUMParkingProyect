@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ffd7a83-1f30-4074-89e1-927ff45d77e6" name="Default Changelist" comment="" />
+    <list default="true" id="8ffd7a83-1f30-4074-89e1-927ff45d77e6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +72,14 @@
       <workItem from="1572478742184" duration="207000" />
       <workItem from="1572549266319" duration="8000" />
     </task>
+    <task id="LOCAL-00001" summary="Agregada la planificación a entregar en el proximo sprint.">
+      <created>1573939458564</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573939458564</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +114,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Agregada la planificación a entregar en el proximo sprint." />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregada la planificación a entregar en el proximo sprint." />
   </component>
   <component name="masterDetails">
     <states>
