@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ffd7a83-1f30-4074-89e1-927ff45d77e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8ffd7a83-1f30-4074-89e1-927ff45d77e6" name="Default Changelist" comment="Agregada la estimación c" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +62,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d9d0e1b3-9584-47f0-949e-a1e99bf81d76" name="Default Changelist" comment="" />
+      <changelist id="8ffd7a83-1f30-4074-89e1-927ff45d77e6" name="Default Changelist" comment="" />
       <created>1572451998855</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -72,6 +70,21 @@
       <workItem from="1572478742184" duration="207000" />
       <workItem from="1572549266319" duration="8000" />
     </task>
+    <task id="LOCAL-00001" summary="Agregada la planificación a entregar en el proximo sprint.">
+      <created>1573939458564</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573939458564</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Agregada la estimación.">
+      <created>1573940687220</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573940687220</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +119,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Agregada la planificación a entregar en el proximo sprint." />
+    <MESSAGE value="Agregada la estimación." />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregada la estimación." />
   </component>
   <component name="masterDetails">
     <states>
