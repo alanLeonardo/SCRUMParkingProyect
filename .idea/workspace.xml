@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ffd7a83-1f30-4074-89e1-927ff45d77e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8ffd7a83-1f30-4074-89e1-927ff45d77e6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +62,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d9d0e1b3-9584-47f0-949e-a1e99bf81d76" name="Default Changelist" comment="" />
+      <changelist id="8ffd7a83-1f30-4074-89e1-927ff45d77e6" name="Default Changelist" comment="" />
       <created>1572451998855</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
