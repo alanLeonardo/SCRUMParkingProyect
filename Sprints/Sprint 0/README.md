@@ -9,7 +9,7 @@ Queremos  agregar la carpeta doc, para depositar ahi la documentacion referida a
 
 Prioridad: normal
 
-Estimado: 
+Estimado: 1
 
 Estado: finalizado
 
@@ -22,7 +22,7 @@ Queremos  preparar el entorno de trabajo, para iniciar la implementacion.
 Prioridad: alta
 
 
-Estimado: 
+Estimado: 5
 
 Estado: finalizado
 
@@ -34,7 +34,7 @@ Queremos investigar interfaces, para otorgar un entorno visual sencillo al usuar
 
 Prioridad: alta
 
-Estimado: 
+Estimado: 3
 
 Estado: finalizado
 
@@ -47,9 +47,9 @@ Queremos generar una interfaz de usuario basica, para unir modelo, persistencia 
 
 Prioridad: alta
 
-Estimado: 
+Estimado: 5
 
-Estado: en proceso
+Estado: terminado
 
 
 
@@ -60,8 +60,9 @@ Queremos  agregar integracion continua, para testear automaticamente ante cada c
 
 Prioridad: alta
 
-Estimado: 
+Estimado: 3
 
 Estado: en proceso
 
+#Puntos totales :17
 

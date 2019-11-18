@@ -52,3 +52,4 @@ Prioridad: Alta
 Estimado: 3
 Estado: en proceso
 
+#Puntos totales = 10

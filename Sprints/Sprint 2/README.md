@@ -25,7 +25,7 @@ Como usuario, quiero ingresar un nuevo vehículo al sistema.
 
 Prioridad: alta.
 
-Estimado: 5
+Estimado: 8
 
 Estado: en proceso.
 
@@ -70,6 +70,8 @@ Estado: en proceso.
    Estado: en proceso.
    
    
+   #Puntos totales: 19
+   
    
    ### **ESTIMACION PARA EL PROXIMO SPRINT**
    
@@ -81,7 +83,7 @@ Estado: en proceso.
    
    Prioridad: alta.
    
-   Estimado: 
+   Estimado: 3
    
    Estado: incompleto.
    
@@ -91,16 +93,60 @@ Estado: en proceso.
    
    Prioridad: alta.
    
-   Estimado: 
+   Estimado:  3
    
    Estado: incompleto.
    
-   #### #12 RetirarVehículo
+   #### #12 VerVehículosRetirados
    
    Como usuario, quiero poder retirar el vehículo del sistema.
    
    Prioridad: normal
    
-   Estimado: 
+   Estimado: 3
    
    Estado: Incompleto
+   
+   
+   
+   #### #13 CobrarPorElVehículoRetirado
+   
+   Como usuario, quiero poder cobrarle al dueño del vehículo al retirar el mismo.
+   
+   prioridad: normal
+   
+   Estimado: 3
+   
+   Estado: Incompleto
+   
+   #### #14  RegistrarLoCobrado
+   
+   Como usuario, quiero registar lo cobrado.
+   
+   Prioridad: Normal
+   
+   Estimado: 1
+   
+   Estado: Incompleto
+   
+   #### #15 ImprimirTicket
+   
+   Como usuario, quiero imprimir un ticket para el cliente.
+   
+   Prioridad: Normal
+   
+   estimado: 3
+   
+   Estado: Incompleto
+   
+   #### #16 InvestigarGeneracionDeTicket
+   
+   Como desarrollador, necesito investigar como generar el ticket del cliente.
+   
+   Prioridad: alta
+   
+   estimado: 1
+   
+   Estado: Incompleto
+   
+   ## Puntos estimados totales: 17
