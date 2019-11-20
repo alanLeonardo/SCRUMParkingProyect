@@ -1,20 +1,25 @@
 package com.SCRUMPakingProyect.ApiRest.model;
 
 import javax.persistence.*;
-import com.SCRUMPakingProyect.ApiRest.model.Propietario;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Vehiculo {
 
     @Id
+    @NotNull(message = "El nombre de pantente no puede ser vacio")
     private String patente;
 
+    @NotNull(message = "El tipo de vehiculo no puede ser vacio")
     private String tipoVehiculo;
 
+    @NotNull(message = "El nombre del vehiculo no puede ser vacio")
     private String nombreVehiculo;
 
-//    @Column(unique=true)
-//    private Propietario propietario;
+    //@NotNull(message = "El propietario no puede ser vacio")
+    //@Column(unique=true)
+    @ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    private Propietario propietario;
 
     public Vehiculo() {}
 
@@ -26,26 +31,54 @@ public class Vehiculo {
         this.patente = patente;
         this.tipoVehiculo = tipoVehiculo;
         this.nombreVehiculo = nombreVehiculo;
-        //this.propietario = propietario;
+    }
+
+    public Vehiculo(String patente,String tipoVehiculo, String nombreVehiculo,Propietario propietario) {
+        this.patente = patente;
+        this.tipoVehiculo = tipoVehiculo;
+        this.nombreVehiculo = nombreVehiculo;
+        this.propietario = propietario;
     }
 
     public String getPatente() {
         return patente;
     }
 
+    public void setPatente(String patente) {
+        this.patente = patente;
+    }
+
+    public String getTipoVehiculo() {
+        return tipoVehiculo;
+    }
+
+    public void setTipoVehiculo(String tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
+    }
+
     public String getNombreVehiculo() {
         return nombreVehiculo;
     }
 
-//    public Propietario getPropietario(){
-//           return this.propietario;
-//    }
+    public void setNombreVehiculo(String nombreVehiculo) {
+        this.nombreVehiculo = nombreVehiculo;
+    }
+
+    public Propietario getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
+    }
 
     @Override
     public String toString() {
         return "Vehiculo{" +
-                "patente=" + patente +
+                "patente='" + patente + '\'' +
+                ", tipoVehiculo='" + tipoVehiculo + '\'' +
                 ", nombreVehiculo='" + nombreVehiculo + '\'' +
+                ", propietario=" + propietario +
                 '}';
     }
 }

@@ -1,5 +1,6 @@
 package com.SCRUMPakingProyect.electronreactdemo;
 
+import com.SCRUMPakingProyect.ApiRest.model.Propietario;
 import com.SCRUMPakingProyect.ApiRest.model.Vehiculo;
 import com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner;
 import org.junit.After;
@@ -40,6 +41,21 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
 
         Assert.assertEquals(fiat.getPatente(), fiatRecuperado.getPatente());
         Assert.assertEquals(renault.getPatente(), renaultRecuperado.getPatente());
+    }
+
+    @Test
+    public void GuardamosUnFiatUnoYQueremosSaberLosDatosDelPropietario(){
+        Propietario cacho = TransactionRunner.run(this::propietarioDelFiatUno);
+        Vehiculo fiat = TransactionRunner.run(this::fiatUno);
+
+        Propietario cachoRecuperado = super.propietarioDelFiatUnoRecuperado(cacho.getDocumento());
+        Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPatente());
+
+        Assert.assertEquals(cacho.getDocumento(),cachoRecuperado.getDocumento());
+        Assert.assertEquals(fiat.getPatente(), fiatRecuperado.getPatente());
+
+        Assert.assertEquals(fiatRecuperado.getPropietario().getDocumento(),cachoRecuperado.getDocumento());
+        Assert.assertEquals(fiatRecuperado.getPropietario().getNombre(),cachoRecuperado.getNombre());
     }
 
 }

@@ -28,11 +28,10 @@
 		
 		<property name="hibernate.hbm2ddl.auto">update</property>
 
-		<!-- Vehiculo  -->
-		<mapping class="com.SCRUMPakingProyect.ApiRest.model.Vehiculo"/>
-
 		<!-- Propietario -->
 		<mapping class="com.SCRUMPakingProyect.ApiRest.model.Propietario"/>
+		<!-- Vehiculo  -->
+		<mapping class="com.SCRUMPakingProyect.ApiRest.model.Vehiculo"/>
 
 	</session-factory>
     </hibernate-configuration>

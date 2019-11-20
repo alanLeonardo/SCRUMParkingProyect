@@ -1,10 +1,11 @@
 package com.SCRUMPakingProyect.electronreactdemo;
 
-import com.SCRUMPakingProyect.ApiRest.apiRest.Dao.DataDAO;
-import com.SCRUMPakingProyect.ApiRest.apiRest.Dao.HibernateDataDAOImpl;
-import com.SCRUMPakingProyect.ApiRest.apiRest.Dao.VehiculoDAOImpl;
+import com.SCRUMPakingProyect.ApiRest.apiRest.Dao.*;
+import com.SCRUMPakingProyect.ApiRest.apiRest.Service.PropietarioService;
+import com.SCRUMPakingProyect.ApiRest.apiRest.Service.PropietarioServiceImpl;
 import com.SCRUMPakingProyect.ApiRest.apiRest.Service.VehiculoService;
 import com.SCRUMPakingProyect.ApiRest.apiRest.Service.VehiculoServiceImpl;
+import com.SCRUMPakingProyect.ApiRest.model.Propietario;
 import com.SCRUMPakingProyect.ApiRest.model.Vehiculo;
 import com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner;
 
@@ -14,6 +15,8 @@ public class BuilderTest {
     protected DataDAO dataDAO;
     protected VehiculoDAOImpl vehiculoDAO;
     protected VehiculoService vehiculoService;
+    protected PropietarioDAO propietarioDAO;
+    protected PropietarioService propietarioService;
 
     public BuilderTest(){}
 
@@ -21,6 +24,8 @@ public class BuilderTest {
         this.dataDAO = new HibernateDataDAOImpl();
         vehiculoDAO = new VehiculoDAOImpl();
         vehiculoService = new VehiculoServiceImpl(vehiculoDAO);
+        propietarioDAO = new PropietarioDAOImpl();
+        propietarioService = new PropietarioServiceImpl(propietarioDAO);
     }
 
     public void cleanup() {
@@ -29,11 +34,18 @@ public class BuilderTest {
                 );
     }
 
+    public Propietario propietarioDelFiatUno() {
+        Propietario propietarioDelFiatUno = new Propietario(30456789,"Cacho","Try");
+        this.propietarioDAO.register(propietarioDelFiatUno);
+        return propietarioDelFiatUno;
+    }
+
     public Vehiculo fiatUno() {
-        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT UNO");
+        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT UNO",propietarioDelFiatUnoRecuperado(30456789));
         this.vehiculoService.register(fiatUno);
         return fiatUno;
     }
+
 
     public Vehiculo fordka(){
         Vehiculo fordKa = new Vehiculo("FOR345","Auto","FORD KA");
@@ -50,6 +62,11 @@ public class BuilderTest {
     public Vehiculo fiatUnoRecuperado(String patente) {
         return TransactionRunner.run(() ->
                 this.vehiculoService.recuperarVehiculo(patente));
+    }
+
+    public Propietario propietarioDelFiatUnoRecuperado(int documento) {
+        return TransactionRunner.run(() ->
+                this.propietarioService.recuperarPropietario(documento));
     }
 
     public Vehiculo renaultDoceRecuperado(String patente) {
