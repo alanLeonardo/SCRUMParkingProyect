@@ -16,11 +16,6 @@ public class HibernateDAO<T>  {
             session.save(obj);
         }
 
-        public T recuperar(Long id) {
-            Session session = TransactionRunner.getCurrentSession();
-            return session.get(entityType, id);
-        }
-
         public void actualizar(T id) {
             Session session = TransactionRunner.getCurrentSession();
             session.update(id);

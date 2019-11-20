@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d79195-ac66-438f-877d-bb556e041597" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/Api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/model/Vehiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/model/Vehiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/BuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/BuilderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/ElectronReactDemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/ElectronReactDemoApplicationTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +43,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573357668546" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-apiRest" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
@@ -83,7 +79,9 @@
       <option name="presentableId" value="Default" />
       <updated>1573069552958</updated>
       <workItem from="1573680265045" duration="3296000" />
-      <workItem from="1573683626744" duration="147000" />
+      <workItem from="1573683626744" duration="1401000" />
+      <workItem from="1573760431129" duration="57000" />
+      <workItem from="1574199701446" duration="632000" />
     </task>
     <servers />
   </component>

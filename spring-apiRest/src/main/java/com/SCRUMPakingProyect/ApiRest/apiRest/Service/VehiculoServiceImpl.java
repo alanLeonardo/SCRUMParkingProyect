@@ -26,4 +26,9 @@ public class VehiculoServiceImpl implements VehiculoService {
     public void register(Vehiculo vehiculo) {
         this.vehiculoDAO.register(vehiculo);
     }
+
+    @Override
+    public Vehiculo recuperarVehiculo(String patente){
+        return this.vehiculoDAO.recuperarVehiculo(patente);
+    }
 }

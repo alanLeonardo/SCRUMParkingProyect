@@ -9,4 +9,6 @@ public interface VehiculoService {
     public void register(Vehiculo vehiculo);
 
     public List<Vehiculo> findAll();
+
+    public Vehiculo recuperarVehiculo(String patente);
 }

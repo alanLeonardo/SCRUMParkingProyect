@@ -1,16 +1,20 @@
 package com.SCRUMPakingProyect.ApiRest.model;
 
 import javax.persistence.*;
+import com.SCRUMPakingProyect.ApiRest.model.Propietario;
 
 @Entity
 public class Vehiculo {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id")
-    private int id;
 
-    @Column(name="nombreVehiculo")
+    @Id
+    private String patente;
+
+    private String tipoVehiculo;
+
     private String nombreVehiculo;
+
+//    @Column(unique=true)
+//    private Propietario propietario;
 
     public Vehiculo() {}
 
@@ -18,31 +22,29 @@ public class Vehiculo {
         this.nombreVehiculo = nombreVehiculo;
     }
 
-    public Vehiculo(int id, String nombreVehiculo) {
-        this.id = id;
+    public Vehiculo(String patente,String tipoVehiculo, String nombreVehiculo) {
+        this.patente = patente;
+        this.tipoVehiculo = tipoVehiculo;
         this.nombreVehiculo = nombreVehiculo;
+        //this.propietario = propietario;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public String getPatente() {
+        return patente;
     }
 
     public String getNombreVehiculo() {
         return nombreVehiculo;
     }
 
-    public void setNombreVehiculo(String nombreVehiculo) {
-        this.nombreVehiculo = nombreVehiculo;
-    }
+//    public Propietario getPropietario(){
+//           return this.propietario;
+//    }
 
     @Override
     public String toString() {
         return "Vehiculo{" +
-                "id=" + id +
+                "patente=" + patente +
                 ", nombreVehiculo='" + nombreVehiculo + '\'' +
                 '}';
     }

@@ -21,9 +21,25 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
 
 	@Test
     public void DadoUnAutoSeVerificaQueSeaUnFIATUNO() {
-        Vehiculo vehiculo = TransactionRunner.run(() -> this.fiatUno());
+        Vehiculo vehiculo = TransactionRunner.run(() ->
+                super.fiatUno());
 
         Assert.assertEquals("FIAT UNO",vehiculo.getNombreVehiculo());
+        Assert.assertEquals("FIA123",vehiculo.getPatente());
+        System.out.println(vehiculo.getPatente());
+        System.out.println(vehiculo.getNombreVehiculo());
 	}
+
+	@Test
+	public void GuardamosDosVehiculosYLosRecuperamos(){
+        Vehiculo fiat = TransactionRunner.run(this::fiatUno);
+        Vehiculo renault = TransactionRunner.run(this::renaultDoce);
+
+        Vehiculo renaultRecuperado = super.renaultDoceRecuperado(renault.getPatente());
+        Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPatente());
+
+        Assert.assertEquals(fiat.getPatente(), fiatRecuperado.getPatente());
+        Assert.assertEquals(renault.getPatente(), renaultRecuperado.getPatente());
+    }
 
 }
