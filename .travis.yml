@@ -1,7 +1,4 @@
 language: java
 
 jdk:
-  - openjdk8
-  
-before_install:
-  - cd java
+  - 1.8
