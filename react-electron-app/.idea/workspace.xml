@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d79195-ac66-438f-877d-bb556e041597" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GRIDParking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/GRIDParking.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,17 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GRIDParking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2035">
-              <caret line="576" column="27" lean-forward="true" selection-start-line="576" selection-start-column="27" selection-end-line="576" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="30" />
+            <state relative-caret-position="765">
+              <caret line="762" column="11" selection-start-line="762" selection-start-column="11" selection-end-line="762" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -68,7 +57,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="grid" />
+        <entry key="$PROJECT_DIR$/.." value="persistecia-front-Actualizados" />
       </map>
     </option>
   </component>
@@ -83,10 +72,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="292" />
-    <option name="y" value="177" />
-    <option name="width" value="835" />
-    <option name="height" value="480" />
+    <option name="x" value="108" />
+    <option name="y" value="266" />
+    <option name="width" value="1203" />
+    <option name="height" value="637" />
   </component>
   <component name="ProjectId" id="1TZv7CZyLCuxpuxJh7om63DqvnW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -132,18 +121,18 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574390146199" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574568350595" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../2019s2-Grupo03-UNQUIPay/react" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Components" />
       <recent name="$PROJECT_DIR$/src/CSS" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -197,9 +186,9 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Console" order="7" />
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.20775194" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2372093" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32868218" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -292,8 +281,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GRIDParking.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2035">
-          <caret line="576" column="27" lean-forward="true" selection-start-line="576" selection-start-column="27" selection-end-line="576" selection-end-column="27" />
+        <state relative-caret-position="765">
+          <caret line="762" column="11" selection-start-line="762" selection-start-column="11" selection-end-line="762" selection-end-column="11" />
         </state>
       </provider>
     </entry>
