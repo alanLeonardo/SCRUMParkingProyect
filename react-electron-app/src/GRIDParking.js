@@ -562,7 +562,8 @@ class GRIDParking extends React.Component {
             this.state = {
                 titulo: 'GRIDParking',
                 lugares: posiciones,
-                i: 0
+                i: 0,
+                lugarActual: ''
             }
         }
 
@@ -586,12 +587,10 @@ class GRIDParking extends React.Component {
       // this.onClearArray()
   // }
 
-
-
      modify = (event) => {
        event.preventDefault();
-        this.setState({index: event.target.getAttribute('data-index')});
-
+       this.handleLugar(event);
+       
             swal("GRIDParking! Elija una opción:", {
                 buttons: {
                     cargarDatos: "Ingresar Vehiculo",
@@ -620,43 +619,8 @@ class GRIDParking extends React.Component {
 
             })
          }
-     // Swal.mixin({
-            //     input: 'text',
-            //     confirmButtonText: 'Next &rarr;',
-            //     showCancelButton: true,
-            //     progressSteps: ['1', '2', '3']
-            // }).queue([
-            //     {
-            //         title: 'Patente',
-            //         text: ''
-            //     },
-            //     'Nombre',
-            //     'Apellido'
-            // ]).then((result) => {
-            //     if (result.value) {
-            //         Swal.fire({
-            //             title: 'All done!',
-            //             html:
-            //                 'Datos: <br/>' +
-            //                 'Patente ' + result.value[0] + '<br/>' +
-            //                 'Nombre ' + result.value[1] + '<br/>' +
-            //                 'Apellido ' + result.value[2],
-            //             confirmButtonText: 'Aceptar'
-            //         });
-            //         this.setState(state => {
-            //             const lugares = state.lugares.map((lugar, i) => {
-            //                 if(index == i){
-            //                     lugar = result.value[0];
-            //                     return lugar;
-            //                 }
-            //             });
-            //             return {lugares};
-            //         })
-            //     }
-            // })
 
-
-        cargarDatos = (lugar) => {
+        cargarDatos = () => {
             Swal.mixin({
                 input: 'text',
                 confirmButtonText: 'Next &rarr;',
@@ -675,96 +639,73 @@ class GRIDParking extends React.Component {
             ]).then((result) => {
 
                 if (result.value) {
-                 //   this.setState({ vehiculo: result.value[0].value[0] })
-                  /*  this.setState({ vehiculo: result.value[1][1]})
-                    this.setState({ vehiculo: result.value[1][2]})
-                    this.setState({ vehiculo: result.value[1][3]})
-                    this.setState({ vehiculo: result.value[1][4]})
-                    this.setState({ vehiculo: result.value[1][5]})
-                    this.setState({ vehiculo: result.value[1][6]})
-                    this.setState({ vehiculo: result.value[1][7]})
-                    this.setState({ vehiculo: result.value[1][9]})*/
-
-
-                           this.setState(state => {
-                                       const lugares = state.lugares.map((lugar, index) => {
-                                  if(this.state.i === index) {
-                                    lugar.set("patente", result.value[0])
-                                    .set("tipoVehiculo", result.value[1])
-                                    .set("marca", result.value[2])
-                                    .set("modelo", result.value[3])
-                                    .set("documento", result.value[4])
-                                    .set("nombre", result.value[5])
-                                    .set("apellido", result.value[6])
-                                    .set("valor", result.value[7])
-                                    .set("horaEntrada", result.value[8])
-                                  }
-                                   // return {lugares};
-                               })
-                               // return {lugares};
-                            })
-
-                 }
-               //});
-
-                /*this.state.lugares.forEach(lugar => this.verDatos(lugar));*/
-
-                    /*this.setState(state => {
-                        const lugares = state.lugares.map((lugar, i) => {
-                            if(this.state.index == i){
-                                lugar = result.value[i];
-                                return lugar;
+                    this.setState(state => {
+                        const lugares = state.lugares.map((lugar, index) => {
+                            if(this.state.i == index) {
+                            lugar.set("patente", result.value[0])
+                            .set("tipoVehiculo", result.value[1])
+                            .set("marca", result.value[2])
+                            .set("modelo", result.value[3])
+                            .set("documento", result.value[4])
+                            .set("nombre", result.value[5])
+                            .set("apellido", result.value[6])
+                            .set("valor", result.value[7])
+                            .set("horaEntrada", result.value[8])
                             }
-                        });
-                        return {lugares};
-                    })*/
+                        })
+                        // return {lugares};
+                    })
+                     this.verDatos()
+                 }
+            });
+        }
+        verDatos = () => {
+            this.state.lugares.map((lugar, index) => {
+                if(this.state.i == index) {
+                    this.setState({lugarActual: lugar});
+                }
             });
 
-     }
-      /*  verDatos = (lugar) => {
             Swal.fire({
                 title: 'Vehiculo ingresado!',
                 html:
                     '<strong><u> DATOS </u></strong><br/>' +
-                    '<strong> Patente: </strong>' +   this.state.lugar.get("patente")  + '<br/>' +
-                    '<strong> TipoVehiculo: </strong>' +  this.state.lugar.get("tipoVehiculo")  + '<br/>' +
-                    '<strong> Marca: </strong>' + this.state.lugar.get("marca") +'<br/>' +
-                    '<strong> Modelo: </strong>' +  this.state.lugar.get("modelo")  + '<br/>' +
-                    '<strong> DocumentoPropietario: </strong>' +  this.state.lugar.get("documento")  + '<br/>' +
-                    '<strong> NombrePropietario: </strong>' +  this.state.lugar.get("nombre") + '<br/>' +
-                    '<strong> ApellidoApellido: </strong>' +  this.state.lugar.get("apellido")  + '<br/>' +
-                   '<strong>  valor: </strong>' +  this.state.lugar.get("valor") + '<br/>' +
-                    '<strong> HoraEntrada: </strong>' + this.state.lugar.get("horaEntrada") ,
+                    '<strong> Patente: </strong>' +   this.state.lugarActual.get("patente")  + '<br/>' +
+                    '<strong> TipoVehiculo: </strong>' +  this.state.lugarActual.get("tipoVehiculo")  + '<br/>' +
+                    '<strong> Marca: </strong>' + this.state.lugarActual.get("marca") +'<br/>' +
+                    '<strong> Modelo: </strong>' +  this.state.lugarActual.get("modelo")  + '<br/>' +
+                    '<strong> DocumentoPropietario: </strong>' +  this.state.lugarActual.get("documento")  + '<br/>' +
+                    '<strong> NombrePropietario: </strong>' +  this.state.lugarActual.get("nombre") + '<br/>' +
+                    '<strong> ApellidoApellido: </strong>' +  this.state.lugarActual.get("apellido")  + '<br/>' +
+                   '<strong>  valor: </strong>' +  this.state.lugarActual.get("valor") + '<br/>' +
+                    '<strong> HoraEntrada: </strong>' + this.state.lugarActual.get("horaEntrada") ,
                 confirmButtonText: 'Aceptar'
             });
-        }*/
-
-        handleLugar(event) {
-          this.setState({i: event.target.value});
         }
+
+    handleLugar(event) {
+        this.setState({i: event.target.value});
+    }
 
      render() {
          return (
            <GridLayout className="layout" cols={12} rowHeight={30} width={1200}>
-                 <div key="0" data-grid={{x: 3, y: 3, w: 5, h: 4, minW: 10, maxW: 5, static: true}}>
-               <button className="btn btn-dark item-grid" value={0} onClick={this.modify} >{ this.state.lugares[0].get("patente")}</button>
-             </div>
-             <div key="1" data-grid={{x: 2, y: 2, w: 5, h: 4, minW: 2, maxW: 4, static: true}}>
-                <button className="btn btn-dark item-grid" value={1} onClick={this.modify} >{ this.state.lugares[1].get("patente")}</button>
-              </div>
-             <div key="2" data-grid={{x: 3, y: 3, w: 5, h: 4, minW: 2, maxW: 4, static: true}} >
-                <button className="btn btn-dark item-grid" value={2} onClick={this.modify} >{ this.state.lugares[2].get("patente")}</button>
-             </div>
+             {this.state.lugares.map((lugar, index) => {
+                    return (
+                        <div key={index} data-grid={{x: 3, y: 3, w: 5, h: 4, minW: 2, maxW: 4, static: true}}>
+                            <button className="btn btn-dark item-grid" value={index} onClick={this.modify} >{ lugar.get("patente")}</button>
+                        </div>
+                    )
+                })}
              <div  key="4"  data-grid={{x: 3, y: 3, w: 5, h: 4, minW: 2, maxW: 4, static: true}}>
                  <button type="btn btn-dark item-grid" onClick={this.onClearArray}>  Desocupar parcelas  </button>
              </div>
            </GridLayout>
          )
-       }
+    }
 }
 
 export default GRIDParking;
-
 
 /*
 render() {
@@ -832,41 +773,6 @@ componentDidMount() {
                 }
               });
         }
-            // Swal.mixin({
-            //     input: 'text',
-            //     confirmButtonText: 'Next &rarr;',
-            //     showCancelButton: true,
-            //     progressSteps: ['1', '2', '3']
-            // }).queue([
-            //     {
-            //         title: 'Patente',
-            //         text: ''
-            //     },
-            //     'Nombre',
-            //     'Apellido'
-            // ]).then((result) => {
-            //     if (result.value) {
-            //         Swal.fire({
-            //             title: 'All done!',
-            //             html:
-            //                 'Datos: <br/>' +
-            //                 'Patente ' + result.value[0] + '<br/>' +
-            //                 'Nombre ' + result.value[1] + '<br/>' +
-            //                 'Apellido ' + result.value[2],
-            //             confirmButtonText: 'Aceptar'
-            //         });
-            //         this.setState(state => {
-            //             const lugares = state.lugares.map((lugar, i) => {
-            //                 if(index == i){
-            //                     lugar = result.value[0];
-            //                     return lugar;
-            //                 }
-            //             });
-            //             return {lugares};
-            //         })
-            //     }
-            // })
-
 
         cargarDatos = (lugar) => {
             Swal.mixin({
