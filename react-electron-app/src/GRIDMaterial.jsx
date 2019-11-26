@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import './CSS/GRIDParking.css';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,22 +18,25 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function SpacingGrid(props) {
-  const [spacing] = React.useState(2);
+  const [spacing] = React.useState(5);
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.root} spacing={2}>
-      <Grid item xs={12}>
-        <Grid container justify="center" spacing={spacing}>
-          {props.lugares.map((lugar,index) => (
-            <Grid key={index} item>
-              <Paper className={classes.paper}>
-                <button className="btn btn-dark item-grid" value={index} onClick={props.modify} >{ lugar.get("patente")}</button>
-              </Paper>
-            </Grid>
-          ))}
+    <div className='containerGrid'>
+      <Grid container className={classes.root}>
+        <Grid item xs={12}>
+          <Grid container justify="center" spacing={spacing}>
+            {props.lugares.map((lugar,index) => (
+              <Grid key={index} item>
+                <Paper className={classes.paper}>
+                  <button className="btn btn-lg btn-outline-dark item-grid" value={index} onClick={props.modify} >{ lugar.get("patente")}</button>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+          <button className="btn btn-outline-danger" type="button" onClick={props.onClearArray}>  Desocupar parcelas  </button>
         </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 }

@@ -5,18 +5,8 @@ import swal from 'sweetalert';
 import {Link} from 'react-router-dom';
 import GridLayout from 'react-grid-layout';
 import GRIDMaterial from './GRIDMaterial';
-/*
-var a1,a2,a3,a4,a5,a6,a7,a8,b1,b2,b3,b4,b5,b6,b7,b8,c1,c2,c3,c4,c5,c6,c7,c8,d1,d2,d3,d4,d5,d6,d7,d8,e1,e2,e3,e4,e5,e6,e7,e8,f1,f2,f3,f4,f5,f6,f7,f8,g1,g2,g3,g4,g5,g6,g7,g8,h1,h2,h3,h4,h5,h6,h7,h8 = ''
 
-const ESTADO_INICIAL = [a1,a2,a3,a4,a5,a6,a7,a8,
-                b1,b2,b3,b4,b5,b6,b7,b8,
-                c1,c2,c3,c4,c5,c6,c7,c8,
-                d1,d2,d3,d4,d5,d6,d7,d8,
-                e1,e2,e3,e4,e5,e6,e7,e8,
-                f1,f2,f3,f4,f5,f6,f7,f8,
-                g1,g2,g3,g4,g5,g6,g7,g8,
-                h1,h2,h3,h4,h5,h6,h7,h8]
-*/
+// var a1,a2,a3,a4,a5,a6,a7,a8,b1,b2,b3,b4,b5,b6,b7,b8,c1,c2,c3,c4,c5,c6,c7,c8,d1,d2,d3,d4,d5,d6,d7,d8,e1,e2,e3,e4,e5,e6,e7,e8,f1,f2,f3,f4,f5,f6,f7,f8,g1,g2,g3,g4,g5,g6,g7,g8,h1,h2,h3,h4,h5,h6,h7,h8 = ''
 
 let a1 = new Map();
 a1.set("patente", "xcm");
@@ -564,7 +554,8 @@ class GRIDParking extends React.Component {
                 titulo: 'GRIDParking',
                 lugares: posiciones,
                 i: 0,
-                lugarActual: ''
+                lugarActual: '',
+                valor: 100
             }
         }
 
@@ -608,7 +599,11 @@ class GRIDParking extends React.Component {
                     break;
 
                     case "cargarDatos":
-                    this.cargarDatos();
+                    if(this.state.lugarActual != '' && this.state.lugarActual != undefined) {
+                        this.ExceptionDatosCargados();
+                    }else{
+                        this.cargarDatos();    
+                    }
                     break;
 
                     case "verDatos":
@@ -620,6 +615,10 @@ class GRIDParking extends React.Component {
 
             })
          }
+
+        ExceptionDatosCargados = () => {
+            swal("Ya hay un vehiculo ingresado en ésta parcela!", `Patente: $${this.state.lugarActual.get("patente")}`, "error");
+        }
 
         cargarDatos = () => {
             Swal.mixin({
@@ -703,7 +702,7 @@ class GRIDParking extends React.Component {
         //          <button type="btn btn-dark item-grid" onClick={this.onClearArray}>  Desocupar parcelas  </button>
         //      </div>
         //    </GridLayout>
-        <GRIDMaterial lugares={this.state.lugares} modify={this.modify}/>
+        <GRIDMaterial lugares={this.state.lugares} modify={this.modify} onClearArray={this.onClearArray}/>
          )
     }
 }
