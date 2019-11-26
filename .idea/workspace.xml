@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8ffd7a83-1f30-4074-89e1-927ff45d77e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sprints/Sprint 0/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Sprints/Sprint 0/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sprints/Sprint 1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Sprints/Sprint 1/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sprints/Sprint 2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Sprints/Sprint 2/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +11,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="actualizadaDocumentacionSprint3" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1SwdkW2057c72RKJ21zicHwcKh2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -97,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573940924192</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Estimación actualizada.">
+      <created>1574117174274</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574117174274</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +147,8 @@
     <MESSAGE value="Agregada la planificación a entregar en el proximo sprint." />
     <MESSAGE value="Agregada la estimación." />
     <MESSAGE value="Agregada la estimación actualizada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregada la estimación actualizada" />
+    <MESSAGE value="Estimación actualizada." />
+    <option name="LAST_COMMIT_MESSAGE" value="Estimación actualizada." />
   </component>
   <component name="masterDetails">
     <states>
