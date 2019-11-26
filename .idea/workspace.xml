@@ -107,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574117174274</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Actualizada la retrospectiva, planificación y lo estimado del sprint 3">
+      <created>1574806147536</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574806147536</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +155,8 @@
     <MESSAGE value="Agregada la estimación." />
     <MESSAGE value="Agregada la estimación actualizada" />
     <MESSAGE value="Estimación actualizada." />
-    <option name="LAST_COMMIT_MESSAGE" value="Estimación actualizada." />
+    <MESSAGE value="Actualizada la retrospectiva, planificación y lo estimado del sprint 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizada la retrospectiva, planificación y lo estimado del sprint 3" />
   </component>
   <component name="masterDetails">
     <states>
