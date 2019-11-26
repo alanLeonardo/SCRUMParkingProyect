@@ -16,7 +16,7 @@ public class Vehiculo {
     @NotNull(message = "El nombre del vehiculo no puede ser vacio")
     private String nombreVehiculo;
 
-    //@NotNull(message = "El propietario no puede ser vacio")
+    @NotNull(message = "El propietario no puede ser vacio")
     //@Column(unique=true)
     @ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     private Propietario propietario;

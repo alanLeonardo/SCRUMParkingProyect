@@ -8,6 +8,7 @@ import com.SCRUMPakingProyect.ApiRest.apiRest.Service.VehiculoServiceImpl;
 import com.SCRUMPakingProyect.ApiRest.model.Propietario;
 import com.SCRUMPakingProyect.ApiRest.model.Vehiculo;
 import com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 
 import static com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner.run;
 
@@ -40,8 +41,18 @@ public class BuilderTest {
         return propietarioDelFiatUno;
     }
 
+    public Propietario cachoSinPersistir(){
+        return new Propietario(30456789, "Cacho", "Try");
+    }
+
     public Vehiculo fiatUno() {
-        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT UNO",propietarioDelFiatUnoRecuperado(30456789));
+        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT UNO",cachoSinPersistir());
+        this.vehiculoService.register(fiatUno);
+        return fiatUno;
+    }
+
+    public Vehiculo fiatUnoSinPropietario(){
+        Vehiculo fiatUno = new Vehiculo("FIA123", "Auto", "FIAT UNO");
         this.vehiculoService.register(fiatUno);
         return fiatUno;
     }
@@ -64,7 +75,7 @@ public class BuilderTest {
                 this.vehiculoService.recuperarVehiculo(patente));
     }
 
-    public Propietario propietarioDelFiatUnoRecuperado(int documento) {
+    public Propietario propietarioRecuperado(int documento) {
         return TransactionRunner.run(() ->
                 this.propietarioService.recuperarPropietario(documento));
     }

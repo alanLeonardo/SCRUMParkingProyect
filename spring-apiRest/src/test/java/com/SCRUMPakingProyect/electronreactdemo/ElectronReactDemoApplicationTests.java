@@ -22,8 +22,7 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
 
 	@Test
     public void DadoUnAutoSeVerificaQueSeaUnFIATUNO() {
-        Vehiculo vehiculo = TransactionRunner.run(() ->
-                super.fiatUno());
+        Vehiculo vehiculo = TransactionRunner.run(super::fiatUno);
 
         Assert.assertEquals("FIAT UNO",vehiculo.getNombreVehiculo());
         Assert.assertEquals("FIA123",vehiculo.getPatente());
@@ -45,13 +44,12 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
 
     @Test
     public void GuardamosUnFiatUnoYQueremosSaberLosDatosDelPropietario(){
-        Propietario cacho = TransactionRunner.run(this::propietarioDelFiatUno);
-        Vehiculo fiat = TransactionRunner.run(this::fiatUno);
+        Vehiculo fiat = TransactionRunner.run(this::fiatUno); //El propietario cacho ya esta persistido
 
-        Propietario cachoRecuperado = super.propietarioDelFiatUnoRecuperado(cacho.getDocumento());
         Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPatente());
+        Propietario cachoRecuperado = super.propietarioRecuperado(30456789);
 
-        Assert.assertEquals(cacho.getDocumento(),cachoRecuperado.getDocumento());
+        Assert.assertEquals(30456789,cachoRecuperado.getDocumento());
         Assert.assertEquals(fiat.getPatente(), fiatRecuperado.getPatente());
 
         Assert.assertEquals(fiatRecuperado.getPropietario().getDocumento(),cachoRecuperado.getDocumento());
