@@ -5,6 +5,7 @@ import swal from 'sweetalert';
 import {Link} from 'react-router-dom';
 import GridLayout from 'react-grid-layout';
 import GRIDMaterial from './GRIDMaterial';
+import {crearVehiculo} from './Components/API.js'
 /*
 var a1,a2,a3,a4,a5,a6,a7,a8,b1,b2,b3,b4,b5,b6,b7,b8,c1,c2,c3,c4,c5,c6,c7,c8,d1,d2,d3,d4,d5,d6,d7,d8,e1,e2,e3,e4,e5,e6,e7,e8,f1,f2,f3,f4,f5,f6,f7,f8,g1,g2,g3,g4,g5,g6,g7,g8,h1,h2,h3,h4,h5,h6,h7,h8 = ''
 
@@ -19,7 +20,7 @@ const ESTADO_INICIAL = [a1,a2,a3,a4,a5,a6,a7,a8,
 */
 
 let a1 = new Map();
-a1.set("patente", "xcm");
+a1.set("patente", "");
 a1.set("tipoVehiculo", "");
 a1.set("marca", "");
 a1.set("modelo", "");
@@ -28,9 +29,10 @@ a1.set("nombre", "");
 a1.set("apellido", "");
 a1.set("valor", 100);
 a1.set("horaEntrada", 100);
+a1.set("posicion", 0);
 
 let a2 = new Map();
-a2.set("patente", "xcm");
+a2.set("patente", "");
 a2.set("tipoVehiculo", "");
 a2.set("marca", "");
 a2.set("modelo", "");
@@ -39,6 +41,7 @@ a2.set("nombre", "");
 a2.set("apellido", "");
 a2.set("valor", 100);
 a2.set("horaEntrada", 100);
+a2.set("posicion", 0);
 
 let a3 = new Map();
 a3.set("patente", "");
@@ -50,6 +53,7 @@ a3.set("nombre", "");
 a3.set("apellido", "");
 a3.set("valor", 100);
 a3.set("horaEntrada", 100);
+a3.set("posicion", 0);
 
 let a4 = new Map();
 a4.set("patente", "");
@@ -61,9 +65,10 @@ a4.set("nombre", "");
 a4.set("apellido", "");
 a4.set("valor", 100);
 a4.set("horaEntrada", 100);
+a4.set("posicion", 0);
 
 let a5 = new Map();
-a5.set("patente", "xcm");
+a5.set("patente", "");
 a5.set("tipoVehiculo", "");
 a5.set("marca", "");
 a5.set("modelo", "");
@@ -72,6 +77,7 @@ a5.set("nombre", "");
 a5.set("apellido", "");
 a5.set("valor", 100);
 a5.set("horaEntrada", 100);
+a5.set("posicion", 0);
 
 let a6 = new Map();
 a6.set("patente", "");
@@ -83,9 +89,10 @@ a6.set("nombre", "");
 a6.set("apellido", "");
 a6.set("valor", 100);
 a6.set("horaEntrada", 100);
+a6.set("posicion", 0);
 
 let a7 = new Map();
-a7.set("patente", "xcm");
+a7.set("patente", "");
 a7.set("tipoVehiculo", "");
 a7.set("marca", "");
 a7.set("modelo", "");
@@ -94,9 +101,10 @@ a7.set("nombre", "");
 a7.set("apellido", "");
 a7.set("valor", 100);
 a7.set("horaEntrada", 100);
+a7.set("posicion", 0);
 
 let a8 = new Map();
-a8.set("patente", "xcm");
+a8.set("patente", "");
 a8.set("tipoVehiculo", "");
 a8.set("marca", "");
 a8.set("modelo", "");
@@ -105,9 +113,10 @@ a8.set("nombre", "");
 a8.set("apellido", "");
 a8.set("valor", 100);
 a8.set("horaEntrada", 100);
+a8.set("posicion", 0);
 
 let b1 = new Map();
-b1.set("patente", "xcm");
+b1.set("patente", "");
 b1.set("tipoVehiculo", "");
 b1.set("marca", "");
 b1.set("modelo", "");
@@ -116,9 +125,10 @@ b1.set("nombre", "");
 b1.set("apellido", "");
 b1.set("valor", 100);
 b1.set("horaEntrada", 100);
+b1.set("posicion", 0);
 
 let b2 = new Map();
-b2.set("patente", "xcm");
+b2.set("patente", "");
 b2.set("tipoVehiculo", "");
 b2.set("marca", "");
 b2.set("modelo", "");
@@ -127,9 +137,10 @@ b2.set("nombre", "");
 b2.set("apellido", "");
 b2.set("valor", 100);
 b2.set("horaEntrada", 100);
+b2.set("posicion", 0);
 
 let b3 = new Map();
-b3.set("patente", "xcm");
+b3.set("patente", "");
 b3.set("tipoVehiculo", "");
 b3.set("marca", "");
 b3.set("modelo", "");
@@ -138,9 +149,10 @@ b3.set("nombre", "");
 b3.set("apellido", "");
 b3.set("valor", 100);
 b3.set("horaEntrada", 100);
+b3.set("posicion", 0);
 
 let b4 = new Map();
-b4.set("patente", "xcm");
+b4.set("patente", "");
 b4.set("tipoVehiculo", "");
 b4.set("marca", "");
 b4.set("modelo", "");
@@ -149,9 +161,10 @@ b4.set("nombre", "");
 b4.set("apellido", "");
 b4.set("valor", 100);
 b4.set("horaEntrada", 100);
+b4.set("posicion", 0);
 
 let b5 = new Map();
-b5.set("patente", "xcm");
+b5.set("patente", "");
 b5.set("tipoVehiculo", "");
 b5.set("marca", "");
 b5.set("modelo", "");
@@ -160,9 +173,10 @@ b5.set("nombre", "");
 b5.set("apellido", "");
 b5.set("valor", 100);
 b5.set("horaEntrada", 100);
+b5.set("posicion", 0);
 
 let b6 = new Map();
-b6.set("patente", "xcm");
+b6.set("patente", "");
 b6.set("tipoVehiculo", "");
 b6.set("marca", "");
 b6.set("modelo", "");
@@ -171,9 +185,10 @@ b6.set("nombre", "");
 b6.set("apellido", "");
 b6.set("valor", 100);
 b6.set("horaEntrada", 100);
+b6.set("posicion", 0);
 
 let b7 = new Map();
-b7.set("patente", "xcm");
+b7.set("patente", "");
 b7.set("tipoVehiculo", "");
 b7.set("marca", "");
 b7.set("modelo", "");
@@ -182,10 +197,11 @@ b7.set("nombre", "");
 b7.set("apellido", "");
 b7.set("valor", 100);
 b7.set("horaEntrada", 100);
+b7.set("posicion", 0);
 
 
 let b8 = new Map();
-b8.set("patente", "xcm");
+b8.set("patente", "");
 b8.set("tipoVehiculo", "");
 b8.set("marca", "");
 b8.set("modelo", "");
@@ -194,6 +210,7 @@ b8.set("nombre", "");
 b8.set("apellido", "");
 b8.set("valor", 100);
 b8.set("horaEntrada", 100);
+b8.set("posicion", 0);
 
 let c1 = new Map();
 c1.set("patente", "");
@@ -205,9 +222,10 @@ c1.set("nombre", "");
 c1.set("apellido", "");
 c1.set("valor", 100);
 c1.set("horaEntrada", 100);
+c1.set("posicion", 0);
 
 let c2 = new Map();
-c2.set("patente", "xcm");
+c2.set("patente", "");
 c2.set("tipoVehiculo", "");
 c2.set("marca", "");
 c2.set("modelo", "");
@@ -216,9 +234,10 @@ c2.set("nombre", "");
 c2.set("apellido", "");
 c2.set("valor", 100);
 c2.set("horaEntrada", 100);
+c2.set("posicion", 0);
 
 let c3 = new Map();
-c3.set("patente", "xcm");
+c3.set("patente", "");
 c3.set("tipoVehiculo", "");
 c3.set("marca", "");
 c3.set("modelo", "");
@@ -227,9 +246,10 @@ c3.set("nombre", "");
 c3.set("apellido", "");
 c3.set("valor", 100);
 c3.set("horaEntrada", 100);
+c3.set("posicion", 0);
 
 let c4 = new Map();
-c4.set("patente", "xcm");
+c4.set("patente", "");
 c4.set("tipoVehiculo", "");
 c4.set("marca", "");
 c4.set("modelo", "");
@@ -238,9 +258,10 @@ c4.set("nombre", "");
 c4.set("apellido", "");
 c4.set("valor", 100);
 c4.set("horaEntrada", 100);
+c4.set("posicion", 0);
 
 let c5 = new Map();
-c5.set("patente", "xcm");
+c5.set("patente", "");
 c5.set("tipoVehiculo", "");
 c5.set("marca", "");
 c5.set("modelo", "");
@@ -249,9 +270,10 @@ c5.set("nombre", "");
 c5.set("apellido", "");
 c5.set("valor", 100);
 c5.set("horaEntrada", 100);
+c5.set("posicion", 0);
 
 let c6 = new Map();
-c6.set("patente", "xcm");
+c6.set("patente", "");
 c6.set("tipoVehiculo", "");
 c6.set("marca", "");
 c6.set("modelo", "");
@@ -260,9 +282,10 @@ c6.set("nombre", "");
 c6.set("apellido", "");
 c6.set("valor", 100);
 c6.set("horaEntrada", 100);
+c6.set("posicion", 0);
 
 let c7 = new Map();
-c7.set("patente", "xcm");
+c7.set("patente", "");
 c7.set("tipoVehiculo", "");
 c7.set("marca", "");
 c7.set("modelo", "");
@@ -271,9 +294,10 @@ c7.set("nombre", "");
 c7.set("apellido", "");
 c7.set("valor", 100);
 c7.set("horaEntrada", 100);
+c7.set("posicion", 0);
 
 let c8 = new Map();
-c8.set("patente", "xcm");
+c8.set("patente", "");
 c8.set("tipoVehiculo", "");
 c8.set("marca", "");
 c8.set("modelo", "");
@@ -282,6 +306,7 @@ c8.set("nombre", "");
 c8.set("apellido", "");
 c8.set("valor", 100);
 c8.set("horaEntrada", 100);
+c8.set("posicion", 0);
 
 let d1 = new Map();
 d1.set("patente", "");
@@ -293,6 +318,7 @@ d1.set("nombre", "");
 d1.set("apellido", "");
 d1.set("valor", 100);
 d1.set("horaEntrada", 100);
+d1.set("posicion", 0);
 
 let d2 = new Map();
 d2.set("patente", "");
@@ -304,6 +330,7 @@ d2.set("nombre", "");
 d2.set("apellido", "");
 d2.set("valor", 100);
 d2.set("horaEntrada", 100);
+d2.set("posicion", 0);
 
 let d3 = new Map();
 d3.set("patente", "");
@@ -315,9 +342,10 @@ d3.set("nombre", "");
 d3.set("apellido", "");
 d3.set("valor", 100);
 d3.set("horaEntrada", 100);
+d3.set("posicion", 0);
 
 let d4 = new Map();
-d4.set("patente", "xcm");
+d4.set("patente", "");
 d4.set("tipoVehiculo", "");
 d4.set("marca", "");
 d4.set("modelo", "");
@@ -326,9 +354,10 @@ d4.set("nombre", "");
 d4.set("apellido", "");
 d4.set("valor", 100);
 d4.set("horaEntrada", 100);
+d4.set("posicion", 0);
 
 let d5 = new Map();
-d5.set("patente", "xcm");
+d5.set("patente", "");
 d5.set("tipoVehiculo", "");
 d5.set("marca", "");
 d5.set("modelo", "");
@@ -337,10 +366,11 @@ d5.set("nombre", "");
 d5.set("apellido", "");
 d5.set("valor", 100);
 d5.set("horaEntrada", 100);
+d5.set("posicion", 0);
 
 
 let d6 = new Map();
-d6.set("patente", "xcm");
+d6.set("patente", "");
 d6.set("tipoVehiculo", "");
 d6.set("marca", "");
 d6.set("modelo", "");
@@ -349,9 +379,10 @@ d6.set("nombre", "");
 d6.set("apellido", "");
 d6.set("valor", 100);
 d6.set("horaEntrada", 100);
+d6.set("posicion", 0);
 
 let d7 = new Map();
-d7.set("patente", "xcm");
+d7.set("patente", "");
 d7.set("tipoVehiculo", "");
 d7.set("marca", "");
 d7.set("modelo", "");
@@ -360,9 +391,10 @@ d7.set("nombre", "");
 d7.set("apellido", "");
 d7.set("valor", 100);
 d7.set("horaEntrada", 100);
+d7.set("posicion", 0);
 
 let d8 = new Map();
-d8.set("patente", "xcm");
+d8.set("patente", "");
 d8.set("tipoVehiculo", "");
 d8.set("marca", "");
 d8.set("modelo", "");
@@ -371,9 +403,10 @@ d8.set("nombre", "");
 d8.set("apellido", "");
 d8.set("valor", 100);
 d8.set("horaEntrada", 100);
+d8.set("posicion", 0);
 
 let e1 = new Map();
-e1.set("patente", "xcm");
+e1.set("patente", "");
 e1.set("tipoVehiculo", "");
 e1.set("marca", "");
 e1.set("modelo", "");
@@ -382,9 +415,10 @@ e1.set("nombre", "");
 e1.set("apellido", "");
 e1.set("valor", 100);
 e1.set("horaEntrada", 100);
+e1.set("posicion", 0);
 
 let e2 = new Map();
-e2.set("patente", "xcm");
+e2.set("patente", "");
 e2.set("tipoVehiculo", "");
 e2.set("marca", "");
 e2.set("modelo", "");
@@ -393,9 +427,10 @@ e2.set("nombre", "");
 e2.set("apellido", "");
 e2.set("valor", 100);
 e2.set("horaEntrada", 100);
+e2.set("posicion", 0);
 
 let e3 = new Map();
-e3.set("patente", "xcm");
+e3.set("patente", "");
 e3.set("tipoVehiculo", "");
 e3.set("marca", "");
 e3.set("modelo", "");
@@ -404,9 +439,10 @@ e3.set("nombre", "");
 e3.set("apellido", "");
 e3.set("valor", 100);
 e3.set("horaEntrada", 100);
+e3.set("posicion", 0);
 
 let e4 = new Map();
-e4.set("patente", "xcm");
+e4.set("patente", "");
 e4.set("tipoVehiculo", "");
 e4.set("marca", "");
 e4.set("modelo", "");
@@ -415,9 +451,10 @@ e4.set("nombre", "");
 e4.set("apellido", "");
 e4.set("valor", 100);
 e4.set("horaEntrada", 100);
+e4.set("posicion", 0);
 
 let e5 = new Map();
-e5.set("patente", "xcm");
+e5.set("patente", "");
 e5.set("tipoVehiculo", "");
 e5.set("marca", "");
 e5.set("modelo", "");
@@ -426,9 +463,10 @@ e5.set("nombre", "");
 e5.set("apellido", "");
 e5.set("valor", 100);
 e5.set("horaEntrada", 100);
+e5.set("posicion", 0);
 
 let e6 = new Map();
-e6.set("patente", "xcm");
+e6.set("patente", "");
 e6.set("tipoVehiculo", "");
 e6.set("marca", "");
 e6.set("modelo", "");
@@ -437,9 +475,10 @@ e6.set("nombre", "");
 e6.set("apellido", "");
 e6.set("valor", 100);
 e6.set("horaEntrada", 100);
+e6.set("posicion", 0);
 
 let e7 = new Map();
-e7.set("patente", "xcm");
+e7.set("patente", "");
 e7.set("tipoVehiculo", "");
 e7.set("marca", "");
 e7.set("modelo", "");
@@ -448,9 +487,10 @@ e7.set("nombre", "");
 e7.set("apellido", "");
 e7.set("valor", 100);
 e7.set("horaEntrada", 100);
+e7.set("posicion", 0);
 
 let e8 = new Map();
-e8.set("patente", "xcm");
+e8.set("patente", "");
 e8.set("tipoVehiculo", "");
 e8.set("marca", "");
 e8.set("modelo", "");
@@ -459,9 +499,10 @@ e8.set("nombre", "");
 e8.set("apellido", "");
 e8.set("valor", 100);
 e8.set("horaEntrada", 100);
+e8.set("posicion", 0);
 
 let f1 = new Map();
-f1.set("patente", "xcm");
+f1.set("patente", "");
 f1.set("tipoVehiculo", "");
 f1.set("marca", "");
 f1.set("modelo", "");
@@ -470,9 +511,10 @@ f1.set("nombre", "");
 f1.set("apellido", "");
 f1.set("valor", 100);
 f1.set("horaEntrada", 100);
+f1.set("posicion", 0);
 
 let f2 = new Map();
-f2.set("patente", "xcm");
+f2.set("patente", "");
 f2.set("tipoVehiculo", "");
 f2.set("marca", "");
 f2.set("modelo", "");
@@ -481,9 +523,10 @@ f2.set("nombre", "");
 f2.set("apellido", "");
 f2.set("valor", 100);
 f2.set("horaEntrada", 100);
+f2.set("posicion", 0);
 
 let f3 = new Map();
-f3.set("patente", "xcm");
+f3.set("patente", "");
 f3.set("tipoVehiculo", "");
 f3.set("marca", "");
 f3.set("modelo", "");
@@ -492,9 +535,10 @@ f3.set("nombre", "");
 f3.set("apellido", "");
 f3.set("valor", 100);
 f3.set("horaEntrada", 100);
+f3.set("posicion", 0);
 
 let f4 = new Map();
-f4.set("patente", "xcm");
+f4.set("patente", "");
 f4.set("tipoVehiculo", "");
 f4.set("marca", "");
 f4.set("modelo", "");
@@ -503,9 +547,10 @@ f4.set("nombre", "");
 f4.set("apellido", "");
 f4.set("valor", 100);
 f4.set("horaEntrada", 100);
+f4.set("posicion", 0);
 
 let f5 = new Map();
-f5.set("patente", "xcm");
+f5.set("patente", "");
 f5.set("tipoVehiculo", "");
 f5.set("marca", "");
 f5.set("modelo", "");
@@ -514,9 +559,10 @@ f5.set("nombre", "");
 f5.set("apellido", "");
 f5.set("valor", 100);
 f5.set("horaEntrada", 100);
+f5.set("posicion", 0);
 
 let f6 = new Map();
-f6.set("patente", "xcm");
+f6.set("patente", "");
 f6.set("tipoVehiculo", "");
 f6.set("marca", "");
 f6.set("modelo", "");
@@ -525,9 +571,10 @@ f6.set("nombre", "");
 f6.set("apellido", "");
 f6.set("valor", 100);
 f6.set("horaEntrada", 100);
+f6.set("posicion", 0);
 
 let f7 = new Map();
-f7.set("patente", "xcm");
+f7.set("patente", "");
 f7.set("tipoVehiculo", "");
 f7.set("marca", "");
 f7.set("modelo", "");
@@ -536,9 +583,10 @@ f7.set("nombre", "");
 f7.set("apellido", "");
 f7.set("valor", 100);
 f7.set("horaEntrada", 100);
+f7.set("posicion", 0);
 
 let f8 = new Map();
-f8.set("patente", "xcm");
+f8.set("patente", "");
 f8.set("tipoVehiculo", "");
 f8.set("marca", "");
 f8.set("modelo", "");
@@ -547,6 +595,7 @@ f8.set("nombre", "");
 f8.set("apellido", "");
 f8.set("valor", 100);
 f8.set("horaEntrada", 100);
+f8.set("posicion", 0);
 
 const posiciones = [a1,a2,a3,a4,a5,a6,a7,a8,
                    b1,b2,b3,b4,b5,b6,b7,b8,
@@ -578,7 +627,8 @@ class GRIDParking extends React.Component {
                                                            .set("nombre", "")
                                                            .set("apellido", "")
                                                            .set("valor", "")
-                                                           .set("horaEntrada",""))
+                                                           .set("horaEntrada","")
+                                                           .set("posicion",0))
                 return {lugares};
             });
         };
@@ -626,7 +676,7 @@ class GRIDParking extends React.Component {
                 input: 'text',
                 confirmButtonText: 'Next &rarr;',
                 showCancelButton: true,
-                progressSteps: ['1', '2', '3', '4', '5','6','7','8']
+                progressSteps: ['1', '2', '3', '4', '5','6','7']
             }).queue([
                 'Patente',
                 'TipoVehiculo',
@@ -635,7 +685,7 @@ class GRIDParking extends React.Component {
                 'DocumentoPropietario',
                 'NombrePropietario',
                 'ApellidoPropietario',
-                'horaEntrada'
+                'posicion'
 
             ]).then((result) => {
 
@@ -650,9 +700,23 @@ class GRIDParking extends React.Component {
                             .set("documento", result.value[4])
                             .set("nombre", result.value[5])
                             .set("apellido", result.value[6])
-                            .set("valor", result.value[7])
-                            .set("horaEntrada", result.value[8])
+                            //.set("valor", result.value[7])
+                            //.set("horaEntrada", result.value[8])
+                            .set("posicion", result.value[7])
+
+                             crearVehiculo({patente: result.value[0],
+                                            tipoVehiculo: result.value[1],
+                                            marca: result.value[2],
+                                            modelo: result.value[3],
+                                            documento: result.value[4],
+                                            nombre: result.value[5],
+                                            apellido: result.value[6],
+                                            posicion: result.value[7]})
+                                                         	   .then(data => console.log(data))
+                                                         	   .catch(error => console.log(error));
+
                             }
+
                         })
                         // return {lugares};
                     })
@@ -677,9 +741,7 @@ class GRIDParking extends React.Component {
                     '<strong> Modelo: </strong>' +  this.state.lugarActual.get("modelo")  + '<br/>' +
                     '<strong> DocumentoPropietario: </strong>' +  this.state.lugarActual.get("documento")  + '<br/>' +
                     '<strong> NombrePropietario: </strong>' +  this.state.lugarActual.get("nombre") + '<br/>' +
-                    '<strong> ApellidoApellido: </strong>' +  this.state.lugarActual.get("apellido")  + '<br/>' +
-                   '<strong>  valor: </strong>' +  this.state.lugarActual.get("valor") + '<br/>' +
-                    '<strong> HoraEntrada: </strong>' + this.state.lugarActual.get("horaEntrada") ,
+                    '<strong> ApellidoApellido: </strong>' +  this.state.lugarActual.get("apellido"),
                 confirmButtonText: 'Aceptar'
             });
         }
