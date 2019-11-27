@@ -1,17 +1,9 @@
-dist: trusty
-
 language: java
 
 Jdk: 
   - openjdk8
   - oraclejdk8
-
-addons:
-  apt:
-    packages:
-      - ant
-
+  
 before_script: 
 ls
-
 cd react-electron-apps
