@@ -18,6 +18,7 @@ public class Propietario {
 
         @NotNull(message = "El nombre no puede ser vacio")
         private String nombre;
+
         @NotNull(message = "El apellido no puede ser vacio")
         private String apellido;
 

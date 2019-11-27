@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface PropietarioDAO {
 
-    public void register(Propietario propietario);
+    public void registrar(Propietario propietario);
 
-    public List<Propietario> findAll();
+    public List<Propietario> listarTodos();
 
     public Propietario recuperarPropietario(int documento);
 }

@@ -14,14 +14,14 @@ public class PropietarioServiceImpl implements PropietarioService {
     }
 
     @Override
-    public void register(Propietario propietario) {
-        this.propietarioDAO.register(propietario);
+    public void registrar(Propietario propietario) {
+        this.propietarioDAO.registrar(propietario);
     }
 
     @Override
-    public List<Propietario> findAll() {
-        List<Propietario> listPropietarios= propietarioDAO.findAll();
-        return listPropietarios;
+    public List<Propietario> listarTodos() {
+        List<Propietario> listaPropietarios= propietarioDAO.listarTodos();
+        return listaPropietarios;
     }
 
     @Override

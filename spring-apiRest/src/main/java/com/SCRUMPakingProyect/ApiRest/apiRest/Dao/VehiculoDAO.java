@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface VehiculoDAO {
 
-    public void register(Vehiculo vehiculo);
+    public void registrar(Vehiculo vehiculo);
 
-    public List<Vehiculo> findAll();
+    public List<Vehiculo> listarTodos();
 
     public Vehiculo recuperarVehiculo(String patente);
 

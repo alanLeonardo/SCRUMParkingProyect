@@ -21,20 +21,20 @@ public class VehiculoServiceImpl implements VehiculoService {
 
 
     @Override
-        public List<Vehiculo> findAll() {
-        List<Vehiculo> listVehiculos= vehiculoDAO.findAll();
-        return listVehiculos;
+        public List<Vehiculo> listarTodos() {
+        List<Vehiculo> listaVehiculos= vehiculoDAO.listarTodos();
+        return listaVehiculos;
     }
 
     @Override
-    public void register(Vehiculo vehiculo) {
-        this.vehiculoDAO.register(vehiculo);
+    public void registrar(Vehiculo vehiculo) {
+        this.vehiculoDAO.registrar(vehiculo);
     }
 
     @Override
-    public void registerVehiculoAndPropietario(Vehiculo vehiculo, Propietario propietario) {
-        this.propietarioDAO.register(propietario);
-        this.vehiculoDAO.register(vehiculo);
+    public void registrarVehiculoYPropietario(Vehiculo vehiculo, Propietario propietario) {
+        this.propietarioDAO.registrar(propietario);
+        this.vehiculoDAO.registrar(vehiculo);
     }
 
     @Override

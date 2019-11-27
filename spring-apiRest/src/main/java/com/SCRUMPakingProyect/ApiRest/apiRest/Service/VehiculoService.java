@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface VehiculoService {
 
-    public void register(Vehiculo vehiculo);
+    public void registrar(Vehiculo vehiculo);
 
-    public void registerVehiculoAndPropietario(Vehiculo vehiculo, Propietario propietario);
+    public void registrarVehiculoYPropietario(Vehiculo vehiculo, Propietario propietario);
 
-    public List<Vehiculo> findAll();
+    public List<Vehiculo> listarTodos();
 
     public Vehiculo recuperarVehiculo(String patente);
 

@@ -15,11 +15,11 @@ public class Vehiculo {
     @NotBlank(message = "El nombre de pantente no puede ser vacio")
     private String patente;
 
-    @NotBlank(message = "El tipo de vehiculo no puede ser vacio")
-    private String tipoVehiculo;
-
     @NotBlank(message = "La marca del vehiculo no puede ser vacio")
     private String marca;
+
+    @NotBlank(message = "El modelo del vehiculo no puede ser vacio")
+    private String modelo;
 
     @NotNull(message = "El dia de ingreso no puede ser vacio")
     private String diaDeIngreso;
@@ -27,24 +27,15 @@ public class Vehiculo {
     @NotNull(message = "La hora de ingreso no puede ser vacio")
     private String horaDeIngreso;
 
-    @NotNull(message = "El propietario no puede ser vacio")
-    @NotBlank(message = "El modelo del vehiculo no puede ser vacio")
-    private String modelo;
-
     //@Column(unique=true)
+    @NotNull(message = "El propietario no puede ser vacio")
     @ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     private Propietario propietario;
 
     @Min(1)
     private int posicion;
 
-    private int horarioEntrada;
-
-    private int horarioSalida;
-
     private int valor;
-
-
 
     public Vehiculo() {}
 

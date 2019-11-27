@@ -14,13 +14,13 @@ public class PropietarioDAOImpl extends HibernateDAO<Propietario> implements Pro
     }
 
     @Override
-    public void register(Propietario propietario) {
+    public void registrar(Propietario propietario) {
         Session session = TransactionRunner.getCurrentSession();
         session.save(propietario);
     }
 
     @Override
-    public List<Propietario> findAll() {
+    public List<Propietario> listarTodos() {
         Session session = TransactionRunner.getCurrentSession();
         String hql = "select documento " +
                 "from Propietario";
