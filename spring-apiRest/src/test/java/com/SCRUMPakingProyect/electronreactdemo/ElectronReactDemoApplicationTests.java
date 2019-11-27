@@ -14,7 +14,7 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
     public void setUp(){
         super.setUp();
     }
-/*
+
     @After
     public void cleanup(){
         super.cleanup();
@@ -22,13 +22,12 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
 
 	@Test
     public void DadoUnAutoSeVerificaQueSeaUnFIATUNO() {
-        Vehiculo vehiculo = TransactionRunner.run(() ->
-                super.fiatUno());
+        Vehiculo vehiculo = TransactionRunner.run(super::fiatUno);
 
-       // Assert.assertEquals("FIAT UNO",vehiculo.getNombreVehiculo());
+        Assert.assertEquals("FIAT UNO",vehiculo.getNombreVehiculo());
         Assert.assertEquals("FIA123",vehiculo.getPatente());
         System.out.println(vehiculo.getPatente());
-       // System.out.println(vehiculo.getNombreVehiculo());
+        System.out.println(vehiculo.getNombreVehiculo());
 	}
 
 	@Test
@@ -42,14 +41,13 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
         Assert.assertEquals(fiat.getPatente(), fiatRecuperado.getPatente());
         Assert.assertEquals(renault.getPatente(), renaultRecuperado.getPatente());
     }
-*/
+
     @Test
     public void GuardamosUnFiatUnoYQueremosSaberLosDatosDelPropietario(){
-        Propietario cacho = TransactionRunner.run(this::propietarioDelFiatUno);
-        Vehiculo fiat = TransactionRunner.run(this::fiatUno);
+        Vehiculo fiat = TransactionRunner.run(this::fiatUno); //El propietario cacho ya esta persistido
 
-        Propietario cachoRecuperado = super.propietarioDelFiatUnoRecuperado(cacho.getDocumento());
         Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPatente());
+        Propietario cachoRecuperado = super.propietarioRecuperado(30456789);
 
         Assert.assertEquals(cacho.getDocumento(),cachoRecuperado.getDocumento());
         Assert.assertEquals(fiat.getPatente(), fiatRecuperado.getPatente());
@@ -59,18 +57,9 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
     }
 
     @Test
-    public void GuardamosUnFiatSiena(){
-        //Propietario cacho = TransactionRunner.run(this::propietarioDelFiatUno);
-        Vehiculo fiat = TransactionRunner.run(this::fiatSiena);
-
-        //Propietario cachoRecuperado = super.propietarioDelFiatUnoRecuperado(30456789);
-        Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPatente());
-
-        //Assert.assertEquals(cacho.getDocumento(),cachoRecuperado.getDocumento());
-        Assert.assertEquals(fiat.getPatente(), fiatRecuperado.getPatente());
-
-       // Assert.assertEquals(fiatRecuperado.getPropietario().getDocumento(),cachoRecuperado.getDocumento());
-        //Assert.assertEquals(fiatRecuperado.getPropietario().getNombre(),cachoRecuperado.getNombre());
+    public void GuardamosUnFiatUnoYLoRetiramos(){
+        Vehiculo fiatUno = new Vehiculo("FIA123", "Auto", "FIAT UNO");
+        TransactionRunner.run(() ->
+                this.vehiculoService.retirarVehiculo(fiatUno.getPatente()));
     }
-
 }

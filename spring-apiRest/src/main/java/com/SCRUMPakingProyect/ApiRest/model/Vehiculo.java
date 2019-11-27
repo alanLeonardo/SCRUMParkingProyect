@@ -21,6 +21,13 @@ public class Vehiculo {
     @NotBlank(message = "La marca del vehiculo no puede ser vacio")
     private String marca;
 
+    @NotNull(message = "El dia de ingreso no puede ser vacio")
+    private String diaDeIngreso;
+
+    @NotNull(message = "La hora de ingreso no puede ser vacio")
+    private String horaDeIngreso;
+
+    @NotNull(message = "El propietario no puede ser vacio")
     @NotBlank(message = "El modelo del vehiculo no puede ser vacio")
     private String modelo;
 
@@ -30,13 +37,13 @@ public class Vehiculo {
 
     @Min(1)
     private int posicion;
-   /*
+
     private int horarioEntrada;
 
     private int horarioSalida;
 
     private int valor;
-*/
+
 
 
     public Vehiculo() {}
@@ -108,6 +115,22 @@ public class Vehiculo {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public String getHoraDeIngreso(){
+        return this.horaDeIngreso;
+    }
+
+    public void setHoraDeIngreso(String horaDeIngreso){
+        this.horaDeIngreso = horaDeIngreso;
+    }
+
+    public String getDiaDeIngreso(){
+        return this.diaDeIngreso;
+    }
+
+    public void setDiaDeIngreso(String diaDeIngreso){
+        this.diaDeIngreso = diaDeIngreso;
     }
 
     public Propietario getPropietario() {

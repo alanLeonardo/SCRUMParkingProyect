@@ -15,5 +15,5 @@ public interface VehiculoService {
 
     public Vehiculo recuperarVehiculo(String patente);
 
-    public void delete(String patente);
+    public void retirarVehiculo(String patente);
 }

@@ -1,0 +1,8 @@
+language: java
+
+Jdk: 
+  - openjdk8
+  - oraclejdk8
+  
+before_install: 
+  - cd react-electron-app

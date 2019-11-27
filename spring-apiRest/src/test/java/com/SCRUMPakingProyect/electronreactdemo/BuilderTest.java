@@ -8,6 +8,15 @@ import com.SCRUMPakingProyect.ApiRest.apiRest.Service.VehiculoServiceImpl;
 import com.SCRUMPakingProyect.ApiRest.model.Propietario;
 import com.SCRUMPakingProyect.ApiRest.model.Vehiculo;
 import com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
+import org.apache.tomcat.jni.Local;
+import sun.util.calendar.BaseCalendar;
+import sun.util.calendar.LocalGregorianCalendar;
+
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
 
 import static com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner.run;
 
@@ -23,10 +32,9 @@ public class BuilderTest {
     public void setUp() {
         this.dataDAO = new HibernateDataDAOImpl();
         vehiculoDAO = new VehiculoDAOImpl();
+        vehiculoService = new VehiculoServiceImpl(vehiculoDAO);
         propietarioDAO = new PropietarioDAOImpl();
         propietarioService = new PropietarioServiceImpl(propietarioDAO);
-        vehiculoService = new VehiculoServiceImpl(vehiculoDAO,propietarioDAO);
-
     }
 
     public void cleanup() {
@@ -41,19 +49,23 @@ public class BuilderTest {
         return propietarioDelFiatUno;
     }
 
+    public Propietario cacho(){
+        return new Propietario(30456789, "Cacho", "Try");
+    }
+
     public Vehiculo fiatUno() {
-        Vehiculo fiatUno = new Vehiculo(1,"FIA123","Auto","FIAT","FIAT UNO",propietarioDelFiatUnoRecuperado(30456789),4);
+        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT UNO",cacho());
+        fiatUno.setDiaDeIngreso("HOY");
+        fiatUno.setHoraDeIngreso(LocalTime.now().toString());
         this.vehiculoService.register(fiatUno);
         return fiatUno;
     }
 
-
-    public Vehiculo fiatSiena() {
-        Vehiculo fiatUno = new Vehiculo(1,"TIQ123","Auto","FIAT","FIAT SIENA",propietarioDelFiatUnoRecuperado(30456789),3);
+    public Vehiculo fiatUnoSinPropietario(){
+        Vehiculo fiatUno = new Vehiculo("FIA123", "Auto", "FIAT UNO");
         this.vehiculoService.register(fiatUno);
         return fiatUno;
     }
-
 
 
     public Vehiculo fordka(){
@@ -63,7 +75,9 @@ public class BuilderTest {
     }
 
     public Vehiculo renaultDoce(){
-        Vehiculo renaultDoce = new Vehiculo("REN456","Auto","RENAULT DOCE");
+        Vehiculo renaultDoce = new Vehiculo("REN456","Auto","RENAULT DOCE",cacho());
+        renaultDoce.setDiaDeIngreso("HOY");
+        renaultDoce.setHoraDeIngreso(LocalTime.now().toString());
         this.vehiculoService.register(renaultDoce);
         return renaultDoce;
     }
@@ -73,7 +87,7 @@ public class BuilderTest {
                 this.vehiculoService.recuperarVehiculo(patente));
     }
 
-    public Propietario propietarioDelFiatUnoRecuperado(int documento) {
+    public Propietario propietarioRecuperado(int documento) {
         return TransactionRunner.run(() ->
                 this.propietarioService.recuperarPropietario(documento));
     }
