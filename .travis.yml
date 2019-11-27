@@ -5,5 +5,5 @@ Jdk:
   - oraclejdk8
   
 before_script: 
-ls
-cd react-electron-apps
+  - ls
+  - cd react-electron-apps
