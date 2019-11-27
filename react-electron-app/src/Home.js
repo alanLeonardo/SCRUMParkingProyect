@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
-import logo from './logo.jpeg';
+// import logo from './logo.jpeg';
+import logo from './resources/img6.png';
 import './CSS/principal.css';
 import {withRouter} from 'react-router-dom';
-
 
 class Home extends Component {
     constructor(props) {
@@ -18,19 +18,16 @@ class Home extends Component {
            return (
                <div className="container-fluid">
                    <div className="row">
-                       <div className="col-12" id="menu">
-                           <h1>SCRUMParking</h1>
+                       <div className="col-12 text-center" id="menu">
+                           <div className='titleGRID'>
+                                <h1 className="titleH1">SCRUMParking</h1>
+                           </div>
                            <div id="img2">
                                <img src={logo} alt="Logo"
                                />
                            </div>
-                           {/* <div className="form-group">
-                               <button type="button" className="btn btn-outline-success">Ingresar vehiculo</button>
-                               <button type="button" className="btn btn-outline-success">Retirar vehiculo</button>
-                           </div> */}
                            <div className="form-group">
-                               <button type="button" className="btn btn-outline-success" onClick={this.handleListarVehiculos}>Ingresar</button>
-                               {/* <button type="button" className="btn btn-outline-success w-25">Salir</button> */}
+                               <button type="button" className="btn btn-dark btn-lg ingresar" onClick={this.handleListarVehiculos}>Ingresar</button>
                            </div>
                        </div>
                    </div>

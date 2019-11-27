@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.7.0",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-grid-layout": "^0.17.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "swal": "^0.1.0",
@@ -32,7 +34,7 @@
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-start": "node src/start-react",
-    "react-start": "BROWSER=none react-scripts start",
+    "react-start": "react-scripts start",
     "pack": "build --dir",
     "dist": "npm run build && build",
     "postinstall": "install-app-deps"
