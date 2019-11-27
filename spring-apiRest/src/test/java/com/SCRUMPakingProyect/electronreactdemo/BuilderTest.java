@@ -23,9 +23,10 @@ public class BuilderTest {
     public void setUp() {
         this.dataDAO = new HibernateDataDAOImpl();
         vehiculoDAO = new VehiculoDAOImpl();
-        vehiculoService = new VehiculoServiceImpl(vehiculoDAO);
         propietarioDAO = new PropietarioDAOImpl();
         propietarioService = new PropietarioServiceImpl(propietarioDAO);
+        vehiculoService = new VehiculoServiceImpl(vehiculoDAO,propietarioDAO);
+
     }
 
     public void cleanup() {
@@ -41,10 +42,18 @@ public class BuilderTest {
     }
 
     public Vehiculo fiatUno() {
-        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT UNO",propietarioDelFiatUnoRecuperado(30456789));
+        Vehiculo fiatUno = new Vehiculo(1,"FIA123","Auto","FIAT","FIAT UNO",propietarioDelFiatUnoRecuperado(30456789),4);
         this.vehiculoService.register(fiatUno);
         return fiatUno;
     }
+
+
+    public Vehiculo fiatSiena() {
+        Vehiculo fiatUno = new Vehiculo(1,"TIQ123","Auto","FIAT","FIAT SIENA",propietarioDelFiatUnoRecuperado(30456789),3);
+        this.vehiculoService.register(fiatUno);
+        return fiatUno;
+    }
+
 
 
     public Vehiculo fordka(){

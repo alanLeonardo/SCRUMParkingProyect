@@ -17,8 +17,7 @@ public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoD
     @Override
     public List<Vehiculo> findAll() {
         Session session = TransactionRunner.getCurrentSession();
-        String hql = "select patente " +
-                     "from Vehiculo";
+        String hql = "from Vehiculo";
         Query<Vehiculo> query = session.createQuery(hql, Vehiculo.class);
 
         return query.getResultList();
@@ -39,5 +38,15 @@ public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoD
         Query<Vehiculo> query = session.createQuery(hql, Vehiculo.class);
         query.setParameter("laPatente", patente);
         return query.getSingleResult();
+    }
+
+    @Override
+    public void delete(String patente) {
+        Session session = TransactionRunner.getCurrentSession();
+        String hql =  "delete from Vehiculo " +
+                "WHERE patente = :laPatente";
+        Query query = session.createQuery(hql);
+        query.setParameter("laPatente", patente);
+        query.executeUpdate();
     }
 }
