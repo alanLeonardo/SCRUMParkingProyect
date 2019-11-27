@@ -18,5 +18,6 @@
 }
 
 .containerGrid {
-    background-color: darkred;
+    /* background-color: darkred; */
+    background: url('../resources/img3.jfif');
 }

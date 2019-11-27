@@ -555,7 +555,9 @@ class GRIDParking extends React.Component {
                 lugares: posiciones,
                 i: 0,
                 lugarActual: '',
-                valor: 100
+                valor: 100,
+                horaIngreso: 14,
+                horaSalida: 16
             }
         }
 
@@ -583,7 +585,7 @@ class GRIDParking extends React.Component {
        event.preventDefault();
        this.handleLugar(event);
        
-            swal("GRIDParking! Elija una opción:", {
+            swal("SCRUMParking! Elija una opción:", {
                 buttons: {
                     cargarDatos: "Ingresar Vehiculo",
                     verDatos: "Ver Datos",
@@ -595,7 +597,16 @@ class GRIDParking extends React.Component {
 
                    switch (value) {
                     case "catch":
-                    swal("Vehiculo retirado!", `Valor: $${this.state.valor}`, "success");
+                    Swal.fire({
+                        title: 'Vehiculo retirado!',
+                        html:
+                            '<strong><u> Ticket - SCRUMParking! </u></strong><br/>' +
+                            '<strong> Valor: $</strong>' +   this.state.valor  + '<br/>' +
+                            '<strong> Hora Ingreso: </strong>' +  this.state.horaIngreso  + '<br/>' +
+                            '<strong> Hora Salida: </strong>' + this.state.horaSalida,
+                        confirmButtonText: 'Aceptar',
+                        icon: 'success'
+                    });
                     break;
 
                     case "cargarDatos":
@@ -617,7 +628,7 @@ class GRIDParking extends React.Component {
          }
 
         ExceptionDatosCargados = () => {
-            swal("Ya hay un vehiculo ingresado en ésta parcela!", `Patente: $${this.state.lugarActual.get("patente")}`, "error");
+            swal("Ya hay un vehiculo ingresado en ésta parcela!", ``, "error");
         }
 
         cargarDatos = () => {
@@ -625,6 +636,13 @@ class GRIDParking extends React.Component {
                 input: 'text',
                 confirmButtonText: 'Next &rarr;',
                 showCancelButton: true,
+                width: 550,
+//                 backdrop: `
+//     rgba(0,0,123,0.4)
+    
+//     left top
+//     no-repeat
+//   `,
                 progressSteps: ['1', '2', '3', '4', '5','6','7','8']
             }).queue([
                 'Patente',
@@ -679,7 +697,8 @@ class GRIDParking extends React.Component {
                     '<strong> ApellidoApellido: </strong>' +  this.state.lugarActual.get("apellido")  + '<br/>' +
                    '<strong>  valor: </strong>' +  this.state.lugarActual.get("valor") + '<br/>' +
                     '<strong> HoraEntrada: </strong>' + this.state.lugarActual.get("horaEntrada") ,
-                confirmButtonText: 'Aceptar'
+                confirmButtonText: 'Aceptar',
+                icon: 'success'
             });
         }
 
@@ -689,361 +708,9 @@ class GRIDParking extends React.Component {
 
      render() {
          return (
-        //    <GridLayout className="layout" cols={12} rowHeight={30} width={1200}>
-        //      {this.state.lugares.map((lugar, index) => {
-        //          const posY = index > 7 ? index+1 : index;
-        //             return (
-        //                 <div key={index} data-grid={{x: index, y: index+1, w: 5, h: 4, minW: 2, maxW: 4, static: true}}>
-        //                     <button className="btn btn-dark item-grid" value={index} onClick={this.modify} >{ lugar.get("patente")}</button>
-        //                 </div>
-        //             )
-        //         })}
-        //      <div  key="4"  data-grid={{x: 3, y: 3, w: 5, h: 4, minW: 2, maxW: 4, static: true}}>
-        //          <button type="btn btn-dark item-grid" onClick={this.onClearArray}>  Desocupar parcelas  </button>
-        //      </div>
-        //    </GridLayout>
-        <GRIDMaterial lugares={this.state.lugares} modify={this.modify} onClearArray={this.onClearArray}/>
+            <GRIDMaterial lugares={this.state.lugares} modify={this.modify} onClearArray={this.onClearArray}/>
          )
     }
 }
 
 export default GRIDParking;
-
-/*
-render() {
-                  return(
-                      <div className="grid">
-                          {  this.state.lugares.map((lugar, index) => {
-                         return (<button className="btn btn-dark item-grid" value={index} onClick={this.modify} data-index={index} key={index}>{ lugar.get("patente") index }</button>);
-                             })
-                           }
-
-                          <div className="clearArray">
-                              <button type="button" onClick={this.onClearArray}>
-                                  Desocupar parcelas
-                              </button>
-                              <Link to="/"> Home </Link>
-                          </div>
-                      </div>
-                  )
-              }
-
-componentDidMount() {
-       this.gridParking()
-       this.onClearArray()
-   }
-
-
-   gridParking() {
-        this.state.lugares.map((lugar, index) => {
-             console.log(lugar);
-             console.log(lugar.get("patente"));
-              this.cargarDatos(lugar);
-              this.verDatos(lugar);
-
-        return <div className="grid"> <button className="btn btn-dark item-grid" value={lugar} onChange={this.handleLugar} onClick={this.modify} data-index={index} key={index}>{lugar.get("patente")}</button></div>;
-     });
-
-   }
-
-        modify = (event) => {
-            event.preventDefault();
-            this.setState({index: event.target.getAttribute('data-index')});
-            swal("GRIDParking! Elija una opción:", {
-                buttons: {
-                    cargarDatos: "Ingresar Vehiculo",
-                    verDatos: "Ver Datos",
-                    catch: "Retirar Vehiculo",
-                    cancel: "Cancelar"
-                },
-            })
-            .then((value) => {
-                switch (value) {
-                  case "catch":
-                    swal("Vehiculo retirado!", `Valor: $${this.state.valor}`, "success");
-                    break;
-
-                    case "cargarDatos":
-                    this.cargarDatos();
-                    break;
-
-                    case "verDatos":
-                    this.verDatos();
-                    break;
-
-                  default:
-                }
-              });
-        }
-
-        cargarDatos = (lugar) => {
-            Swal.mixin({
-                input: 'text',
-                confirmButtonText: 'Next &rarr;',
-                showCancelButton: true,
-                progressSteps: ['1', '2', '3', '4', '5','6','7','8']
-            }).queue([
-                'Patente',
-                'TipoVehiculo',
-                'Marca',
-                'Modelo',
-                'DocumentoPropietario',
-                'NombrePropietario',
-                'ApellidoPropietario',
-                'horaEntrada'
-
-            ]).then((result) => {
-                if (result.value) {
-                 //   this.setState({ vehiculo: result.value[0].value[0] })
-                    this.setState({ vehiculo: result.value[1][1]})
-                    this.setState({ vehiculo: result.value[1][2]})
-                    this.setState({ vehiculo: result.value[1][3]})
-                    this.setState({ vehiculo: result.value[1][4]})
-                    this.setState({ vehiculo: result.value[1][5]})
-                    this.setState({ vehiculo: result.value[1][6]})
-                    this.setState({ vehiculo: result.value[1][7]})
-                    this.setState({ vehiculo: result.value[1][9]})
-
-              //this.state.lugares.map((lugar, i) => {
-
-
-                                console.log(this.state.lugar)
-                                //console.log(result.value[0])
-                                  lugar.set("patente", result.value[0])
-                                  lugar.set("tipoVehiculo", result.value[1])
-                                  lugar.set("marca", result.value[2])
-                                  lugar.set("modelo", result.value[3])
-                                  lugar.set("documento", result.value[4])
-                                  lugar.set("nombre", result.value[5])
-                                  lugar.set("apellido", result.value[6])
-                                  lugar.set("horaEntrada", result.value[8])
-                                  //this.setState({ lugares: this.upDateLugar(lugar,result.value[1],1)})
-                                  this.verDatos();
-
-               //});
-
-                /*this.state.lugares.forEach(lugar => this.verDatos(lugar));
-
-                    this.setState(state => {
-                        const lugares = state.lugares.map((lugar, i) => {
-                            if(this.state.index == i){
-                                lugar = result.value[i];
-                                return lugar;
-                            }
-                        });
-                        return {lugares};
-                    })
-                }
-            });
-        }
-
-        verDatos = (lugar) => {
-            Swal.fire({
-                title: 'Vehiculo ingresado!',
-                html:
-                    '<strong><u> DATOS </u></strong><br/>' +
-                    '<strong> Patente: </strong>' +   this.state.lugar.get("patente")  + '<br/>' +
-                    '<strong> TipoVehiculo: </strong>' +  this.state.lugar.get("tipoVehiculo")  + '<br/>' +
-                    '<strong> Marca: </strong>' + this.state.lugar.get("marca") +'<br/>' +
-                    '<strong> Modelo: </strong>' +  this.state.lugar.get("modelo")  + '<br/>' +
-                    '<strong> DocumentoPropietario: </strong>' +  this.state.lugar.get("documento")  + '<br/>' +
-                    '<strong> NombrePropietario: </strong>' +  this.state.lugar.get("nombre") + '<br/>' +
-                    '<strong> ApellidoApellido: </strong>' +  this.state.lugar.get("apellido")  + '<br/>' +
-                   '<strong>  valor: </strong>' +  this.state.lugar.get("valor") + '<br/>' +
-                    '<strong> HoraEntrada: </strong>' + this.state.lugar.get("horaEntrada") ,
-                confirmButtonText: 'Aceptar'
-            });
-        }
-*/
-
-/*
-     constructor(props){
-            super(props);
-
-            this.state = {
-                titulo: 'GRIDParking',
-                lugares: ESTADO_INICIAL,
-                index: '',
-                lugarActual: '',
-                patente: '',
-                tipoVehiculo: '',
-                marca: '',
-                modelo: '',
-                documento: '',
-                nombre: '',
-                apellido: '',
-                valor: 100,
-                horaEntrada: 'Hora Actual'
-            }
-        }
-        onClearArray = () => {
-            this.setState(state => {
-                const lugares = state.lugares.map(lugar => lugar = '');
-                return {lugares};
-            });
-        };
-        modify = (event) => {
-            event.preventDefault();
-            this.setState({index: event.target.getAttribute('data-index')});
-            swal("GRIDParking! Elija una opción:", {
-                buttons: {
-                    cargarDatos: "Ingresar Vehiculo",
-                    verDatos: "Ver Datos",
-                    catch: "Retirar Vehiculo",
-                    cancel: "Cancelar"
-                },
-            })
-            .then((value) => {
-                switch (value) {
-                  case "catch":
-                    swal("Vehiculo retirado!", `Valor: $${this.state.valor}`, "success");
-                    break;
-
-                    case "cargarDatos":
-                    this.cargarDatos();
-                    break;
-
-                    case "verDatos":
-                    this.verDatos();
-                    break;
-
-                  default:
-                }
-              });
-
-            // Swal.mixin({
-            //     input: 'text',
-            //     confirmButtonText: 'Next &rarr;',
-            //     showCancelButton: true,
-            //     progressSteps: ['1', '2', '3']
-            // }).queue([
-            //     {
-            //         title: 'Patente',
-            //         text: ''
-            //     },
-            //     'Nombre',
-            //     'Apellido'
-            // ]).then((result) => {
-            //     if (result.value) {
-            //         Swal.fire({
-            //             title: 'All done!',
-            //             html:
-            //                 'Datos: <br/>' +
-            //                 'Patente ' + result.value[0] + '<br/>' +
-            //                 'Nombre ' + result.value[1] + '<br/>' +
-            //                 'Apellido ' + result.value[2],
-            //             confirmButtonText: 'Aceptar'
-            //         });
-            //         this.setState(state => {
-            //             const lugares = state.lugares.map((lugar, i) => {
-            //                 if(index == i){
-            //                     lugar = result.value[0];
-            //                     return lugar;
-            //                 }
-            //             });
-            //             return {lugares};
-            //         })
-            //     }
-            // })
-        }
-
-        cargarDatos = () => {
-            Swal.mixin({
-                input: 'text',
-                confirmButtonText: 'Next &rarr;',
-                showCancelButton: true,
-                progressSteps: ['1', '2', '3', '4', '5','6','7']
-            }).queue([
-                'Patente',
-                'TipoVehiculo',
-                'Marca',
-                'Modelo',
-                'DocumentoPropietario',
-                'NombrePropietario',
-                'ApellidoPropietario',
-            ]).then((result) => {
-                if (result.value) {
-                    this.setState({ patente: result.value[0] })
-                    this.setState({ tipoVehiculo: result.value[1] })
-                    this.setState({ marca: result.value[2] })
-                    this.setState({ modelo: result.value[3] })
-                    this.setState({ documento: result.value[4] })
-                    this.setState({ nombre: result.value[5] })
-                    this.setState({ apellido: result.value[6] })
-                    this.setState({ horaEntrada: result.value[7] })
-
-                    // this.setState(state => {
-                    //     const lugares = state.lugares.map((lugar, i) => {
-                    //         if(this.state.index == i){
-                    //             lugar.patente = result.value[0];
-                    //             lugar.marca = result.value[1];
-                    //             lugar.modelo = result.value[2];
-                    //             lugar.nombre = result.value[3];
-                    //             lugar.apellido = result.value[4];
-                    //             this.setState({ lugarActual:lugar });
-                    //             return lugar;
-                    //         }
-                    //     });
-                    //     return {lugares};
-                    // })
-
-                    this.verDatos();
-                    this.setState(state => {
-                        const lugares = state.lugares.map((lugar, i) => {
-                            if(this.state.index == i){
-                                lugar = result.value[0];
-                                return lugar;
-                            }
-                        });
-                        return {lugares};
-                    })
-                }
-            })
-        }
-
-        verDatos() {
-            Swal.fire({
-                title: 'Vehiculo ingresado!',
-                html:
-                    '<strong><u> DATOS </u></strong><br/>' +
-                    '<strong> Patente: </strong>' + this.state.patente + '<br/>' +
-                    '<strong> TipoVehiculo: </strong>' + this.state.tipoVehiculo + '<br/>' +
-                    '<strong> Marca: </strong>' + this.state.marca + '<br/>' +
-                    '<strong> Modelo: </strong>' + this.state.modelo + '<br/>' +
-                    '<strong> DocumentoPropietario: </strong>' + this.state.documento + '<br/>' +
-                    '<strong> NombrePropietario: </strong>' + this.state.nombre + '<br/>' +
-                    '<strong> ApellidoApellido: </strong>' + this.state.apellido + '<br/>' +
-                    '<strong> HoraEntrada: </strong>' + this.state.horaEntrada,
-                confirmButtonText: 'Aceptar'
-            });
-        }
-
-        render() {
-            return(
-                <div className="grid">
-                    {this.state.lugares.map((lugar, index) => {
-                        return (<button className="btn btn-dark item-grid" onClick={this.modify} data-index={index} key={index}>{lugar}</button>)
-                    })}
-                    <div className="clearArray">
-                        <button type="button" onClick={this.onClearArray}>
-                            Desocupar parcelas
-                        </button>
-                        <Link to="/"> Home </Link>
-                    </div>
-                </div>
-            )
-        }
-
-          render() {
-                return (
-                <GridLayout className="layout" cols={12} rowHeight={30} width={1200}>
-                  <div className="grid" key="a" data-grid={{x: 0, y: 0, w: 1, h: 2, minW: 2, maxW: 4, static: true}} onClick={this.modify}><button className="btn btn-dark item-grid" >Seccion-A-lugar</button></div>
-                  <div className="grid" key="b" data-grid={{x: 3, y: 0, w: 3, h: 2, minW: 2, maxW: 4, static: true}} onClick={this.modify}><button className="btn btn-dark item-grid" >Seccion-A-lugar2</button></div>
-                  <div className="grid" key="c" data-grid={{x: 3, y: 3, w: 1, h: 2, minW: 2, maxW: 4, static: true}} onClick={this.modify}><button className="btn btn-dark item-grid" >Seccion-A-lugar3</button></div>
-                  <div className="grid" key="d" data-grid={{x: 0, y: 3, w: 1, h: 2, minW: 2, maxW: 4, static: true}} onClick={this.modify}><button className="btn btn-dark item-grid" >Seccion-A-lugar4</button></div>
-                  <div className="grid" key="e" data-grid={{x: 3, y: 6, w: 1, h: 2, minW: 2, maxW: 4, static: true}} onClick={this.modify}><button className="btn btn-dark item-grid" >Seccion-A-lugar5</button></div>
-                  <div className="grid" key="f" data-grid={{x: 0, y: 6, w: 1, h: 2, minW: 2, maxW: 4, static: true}} onClick={this.modify}><button className="btn btn-dark item-grid" >Seccion-A-lugar6</button></div>
-                </GridLayout>
-                )
-             }
-}*/
