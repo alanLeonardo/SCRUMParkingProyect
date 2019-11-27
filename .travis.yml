@@ -10,3 +10,5 @@ addons:
   apt:
     packages:
       - ant
+
+before_script: cd react-electron-apps
