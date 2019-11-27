@@ -34,7 +34,7 @@ export default function SpacingGrid(props) {
               </Grid>
             ))}
           </Grid>
-          <button className="btn btn-danger" type="button" onClick={props.onClearArray}>  Desocupar parcelas  </button>
+          <button className="btn btn-danger btn-lg btnDesocupar" type="button" onClick={props.onClearArray}>  Desocupar parcelas  </button>
         </Grid>
       </Grid>
     </div>

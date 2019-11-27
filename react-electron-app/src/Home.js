@@ -25,7 +25,7 @@ class Home extends Component {
                            <div id="img2">
                                <img src={logo} alt="Logo"
                                />
-                           </div><br></br><br></br>
+                           </div>
                            <div className="form-group">
                                <button type="button" className="btn btn-dark btn-lg ingresar" onClick={this.handleListarVehiculos}>Ingresar</button>
                            </div>

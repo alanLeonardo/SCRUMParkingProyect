@@ -21,3 +21,8 @@
     /* background-color: darkred; */
     background: url('../resources/img3.jfif');
 }
+
+.btnDesocupar {
+    margin-top: 3%;
+    width: 100%;
+}
