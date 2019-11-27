@@ -5,5 +5,4 @@ Jdk:
   - oraclejdk8
   
 before_install: 
-  - ls
-  - cd react-electron-apps
+  - cd react-electron-app
