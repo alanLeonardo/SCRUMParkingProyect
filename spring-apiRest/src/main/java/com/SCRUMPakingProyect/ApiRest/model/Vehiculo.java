@@ -83,7 +83,7 @@ public class Vehiculo {
     }
 
     public void setDiaDeIngreso(String diaDeIngreso){
-        this.horaDeIngreso = diaDeIngreso;
+        this.diaDeIngreso = diaDeIngreso;
     }
 
     public Propietario getPropietario() {

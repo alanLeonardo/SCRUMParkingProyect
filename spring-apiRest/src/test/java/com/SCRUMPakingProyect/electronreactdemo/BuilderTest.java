@@ -55,7 +55,7 @@ public class BuilderTest {
 
     public Vehiculo fiatUno() {
         Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT UNO",cacho());
-        fiatUno.setDiaDeIngreso(LocalDate.now().toString());
+        fiatUno.setDiaDeIngreso("HOY");
         fiatUno.setHoraDeIngreso(LocalTime.now().toString());
         this.vehiculoService.register(fiatUno);
         return fiatUno;
@@ -75,7 +75,9 @@ public class BuilderTest {
     }
 
     public Vehiculo renaultDoce(){
-        Vehiculo renaultDoce = new Vehiculo("REN456","Auto","RENAULT DOCE");
+        Vehiculo renaultDoce = new Vehiculo("REN456","Auto","RENAULT DOCE",cacho());
+        renaultDoce.setDiaDeIngreso("HOY");
+        renaultDoce.setHoraDeIngreso(LocalTime.now().toString());
         this.vehiculoService.register(renaultDoce);
         return renaultDoce;
     }
