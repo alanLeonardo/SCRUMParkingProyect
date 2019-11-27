@@ -11,4 +11,7 @@ addons:
     packages:
       - ant
 
-before_script: cd react-electron-apps
+before_script: 
+ls
+
+cd react-electron-apps
