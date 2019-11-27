@@ -40,4 +40,11 @@ public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoD
         query.setParameter("laPatente", patente);
         return query.getSingleResult();
     }
+
+    @Override
+    public void retirarVehiculo(String patente){
+        Session session = TransactionRunner.getCurrentSession();
+        Vehiculo vehiculo = recuperarVehiculo(patente);
+        session.delete(vehiculo);
+    }
 }

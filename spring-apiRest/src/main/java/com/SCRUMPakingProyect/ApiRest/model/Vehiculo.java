@@ -16,6 +16,12 @@ public class Vehiculo {
     @NotNull(message = "El nombre del vehiculo no puede ser vacio")
     private String nombreVehiculo;
 
+    @NotNull(message = "El dia de ingreso no puede ser vacio")
+    private String diaDeIngreso;
+
+    @NotNull(message = "La hora de ingreso no puede ser vacio")
+    private String horaDeIngreso;
+
     @NotNull(message = "El propietario no puede ser vacio")
     //@Column(unique=true)
     @ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
@@ -62,6 +68,22 @@ public class Vehiculo {
 
     public void setNombreVehiculo(String nombreVehiculo) {
         this.nombreVehiculo = nombreVehiculo;
+    }
+
+    public String getHoraDeIngreso(){
+        return this.horaDeIngreso;
+    }
+
+    public void setHoraDeIngreso(String horaDeIngreso){
+        this.horaDeIngreso = horaDeIngreso;
+    }
+
+    public String getDiaDeIngreso(){
+        return this.diaDeIngreso;
+    }
+
+    public void setDiaDeIngreso(String diaDeIngreso){
+        this.horaDeIngreso = diaDeIngreso;
     }
 
     public Propietario getPropietario() {

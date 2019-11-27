@@ -11,4 +11,6 @@ public interface VehiculoDAO {
     public List<Vehiculo> findAll();
 
     public Vehiculo recuperarVehiculo(String patente);
+
+    public void retirarVehiculo(String patente);
 }

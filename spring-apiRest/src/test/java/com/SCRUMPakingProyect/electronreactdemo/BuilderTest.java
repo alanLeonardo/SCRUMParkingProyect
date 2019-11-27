@@ -9,6 +9,14 @@ import com.SCRUMPakingProyect.ApiRest.model.Propietario;
 import com.SCRUMPakingProyect.ApiRest.model.Vehiculo;
 import com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner;
 import com.fasterxml.jackson.databind.annotation.JsonAppend;
+import org.apache.tomcat.jni.Local;
+import sun.util.calendar.BaseCalendar;
+import sun.util.calendar.LocalGregorianCalendar;
+
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
 
 import static com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner.run;
 
@@ -41,12 +49,14 @@ public class BuilderTest {
         return propietarioDelFiatUno;
     }
 
-    public Propietario cachoSinPersistir(){
+    public Propietario cacho(){
         return new Propietario(30456789, "Cacho", "Try");
     }
 
     public Vehiculo fiatUno() {
-        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT UNO",cachoSinPersistir());
+        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT UNO",cacho());
+        fiatUno.setDiaDeIngreso(LocalDate.now().toString());
+        fiatUno.setHoraDeIngreso(LocalTime.now().toString());
         this.vehiculoService.register(fiatUno);
         return fiatUno;
     }

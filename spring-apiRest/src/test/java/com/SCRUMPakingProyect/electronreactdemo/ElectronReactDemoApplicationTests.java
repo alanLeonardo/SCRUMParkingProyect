@@ -15,10 +15,10 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
         super.setUp();
     }
 
-    @After
-    public void cleanup(){
-        super.cleanup();
-    }
+//    @After
+//    public void cleanup(){
+//        super.cleanup();
+//    }
 
 	@Test
     public void DadoUnAutoSeVerificaQueSeaUnFIATUNO() {
@@ -56,4 +56,10 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
         Assert.assertEquals(fiatRecuperado.getPropietario().getNombre(),cachoRecuperado.getNombre());
     }
 
+    @Test
+    public void GuardamosUnFiatUnoYLoRetiramos(){
+        Vehiculo fiatUno = new Vehiculo("FIA123", "Auto", "FIAT UNO");
+        TransactionRunner.run(() ->
+                this.vehiculoService.retirarVehiculo(fiatUno.getPatente()));
+    }
 }
