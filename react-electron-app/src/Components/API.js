@@ -36,4 +36,14 @@ const getVehiculo = (patente) => {
     })
 }
 
-export {crearVehiculo}
+const getVehiculos = () => {
+    return axios.get(`/vehiculos`)
+    .then(response => {
+      return Promise.resolve(response);
+    })
+    .catch(error => {
+      return Promise.reject(error.response.data);
+    })
+}
+
+export {crearVehiculo,getVehiculos}
