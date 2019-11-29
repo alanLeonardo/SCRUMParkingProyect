@@ -37,7 +37,7 @@ public class VehiculoRestController {
         //retornará todos los vehiculos
         return TransactionRunner.run(() -> {
             List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
-            vehiculos = vehiculoService.findAll();
+            vehiculos = vehiculoService.listarTodos();
             return vehiculos;
         });
     }
@@ -45,14 +45,14 @@ public class VehiculoRestController {
     @PostMapping("/vehiculoIngresado")
     public void ingresarVehiculo(@RequestBody Vehiculo vehiculo) {
         TransactionRunner.run(() ->
-            vehiculoService.registerVehiculoAndPropietario(vehiculo,vehiculo.getPropietario()));
+            vehiculoService.registrarVehiculoYPropietario(vehiculo,vehiculo.getPropietario()));
     }
 
 
     @DeleteMapping("/vehiculoRetirado")
     public void retirarVehiculo(@RequestBody Vehiculo vehiculo) {
         TransactionRunner.run(() ->
-                vehiculoService.delete(vehiculo.getPatente()));
+                vehiculoService.retirarVehiculo(vehiculo.getPatente()));
     }
 
     @GetMapping("/error")

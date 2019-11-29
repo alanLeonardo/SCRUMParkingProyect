@@ -803,17 +803,20 @@ class GRIDParking extends React.Component {
         }
 
     getVehiculoGuardado() {
-           getVehiculos()
-      		  .then(data => {data.data.map((lugar, index) => {
-                                            if(this.state.i == lugar.posicion) {
-                                                this.setState({lugarActual: lugar});
-                                            }
-                                        });
-                                        console.log(data.data)
-                           });
-      		  //.catch(error => console.log(error));
+        getVehiculos()
+            .then(response => {
+                this.setState({lugares: response.data})
+                // response.data.map((lugar, index) => {
+                // if(this.state.i == lugar.posicion) {
+                //     this.setState({lugarActual: lugar});
+                // }});
+        }).catch(error => this.swalForError(error));
     }
 
+    // Lanza un alerta de que hubo un error en buscar las transacciones del usuario.
+    swalForError(error) {
+        Swal.fire(`${error.code} ${error.type}`, error.message, 'error');
+    }
 
     handleLugar(event) {
         this.setState({i: event.target.value});
@@ -821,7 +824,6 @@ class GRIDParking extends React.Component {
 
      render() {
          return (
-             console.log(this.getVehiculoGuardado()),
             <GRIDMaterial lugares={this.state.lugares} modify={this.modify} onClearArray={this.onClearArray}/>
          )
     }

@@ -32,8 +32,8 @@ public class BuilderTest {
     public void setUp() {
         this.dataDAO = new HibernateDataDAOImpl();
         vehiculoDAO = new VehiculoDAOImpl();
-        vehiculoService = new VehiculoServiceImpl(vehiculoDAO);
         propietarioDAO = new PropietarioDAOImpl();
+        vehiculoService = new VehiculoServiceImpl(vehiculoDAO, propietarioDAO);
         propietarioService = new PropietarioServiceImpl(propietarioDAO);
     }
 
@@ -45,40 +45,37 @@ public class BuilderTest {
 
     public Propietario propietarioDelFiatUno() {
         Propietario propietarioDelFiatUno = new Propietario(30456789,"Cacho","Try");
-        this.propietarioDAO.register(propietarioDelFiatUno);
+        this.propietarioDAO.registrar(propietarioDelFiatUno);
         return propietarioDelFiatUno;
     }
 
-    public Propietario cacho(){
-        return new Propietario(30456789, "Cacho", "Try");
-    }
+    public Propietario cacho = new Propietario(30456789, "Cacho", "Try");
 
     public Vehiculo fiatUno() {
-        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT UNO",cacho());
+        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT" ,"UNO",cacho,1);
         fiatUno.setDiaDeIngreso("HOY");
         fiatUno.setHoraDeIngreso(LocalTime.now().toString());
-        this.vehiculoService.register(fiatUno);
+        this.vehiculoService.registrar(fiatUno);
         return fiatUno;
     }
 
     public Vehiculo fiatUnoSinPropietario(){
         Vehiculo fiatUno = new Vehiculo("FIA123", "Auto", "FIAT UNO");
-        this.vehiculoService.register(fiatUno);
+        this.vehiculoService.registrar(fiatUno);
         return fiatUno;
     }
 
-
     public Vehiculo fordka(){
         Vehiculo fordKa = new Vehiculo("FOR345","Auto","FORD KA");
-        this.vehiculoService.register(fordKa);
+        this.vehiculoService.registrar(fordKa);
         return fordKa;
     }
 
     public Vehiculo renaultDoce(){
-        Vehiculo renaultDoce = new Vehiculo("REN456","Auto","RENAULT DOCE",cacho());
+        Vehiculo renaultDoce = new Vehiculo("REN456","Auto","RENAULT", "DOCE",cacho,2);
         renaultDoce.setDiaDeIngreso("HOY");
         renaultDoce.setHoraDeIngreso(LocalTime.now().toString());
-        this.vehiculoService.register(renaultDoce);
+        this.vehiculoService.registrar(renaultDoce);
         return renaultDoce;
     }
 

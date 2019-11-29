@@ -24,10 +24,11 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
     public void DadoUnAutoSeVerificaQueSeaUnFIATUNO() {
         Vehiculo vehiculo = TransactionRunner.run(super::fiatUno);
 
-        Assert.assertEquals("FIAT UNO",vehiculo.getNombreVehiculo());
+        Assert.assertEquals("FIAT" ,vehiculo.getMarca());
+        Assert.assertEquals("UNO" ,vehiculo.getModelo());
         Assert.assertEquals("FIA123",vehiculo.getPatente());
         System.out.println(vehiculo.getPatente());
-        System.out.println(vehiculo.getNombreVehiculo());
+        System.out.println(vehiculo.getMarca());
 	}
 
 	@Test
@@ -58,7 +59,7 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
 
     @Test
     public void GuardamosUnFiatUnoYLoRetiramos(){
-        Vehiculo fiatUno = new Vehiculo("FIA123", "Auto", "FIAT UNO");
+        Vehiculo fiatUno = new Vehiculo("FIA123", "Auto", "FIAT");
         TransactionRunner.run(() ->
                 this.vehiculoService.retirarVehiculo(fiatUno.getPatente()));
     }

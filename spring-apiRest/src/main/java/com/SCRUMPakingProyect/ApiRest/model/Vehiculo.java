@@ -3,6 +3,7 @@ package com.SCRUMPakingProyect.ApiRest.model;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Vehiculo {
@@ -26,6 +27,9 @@ public class Vehiculo {
 
     @NotNull(message = "La hora de ingreso no puede ser vacio")
     private String horaDeIngreso;
+
+    @NotNull(message = "El tipo de vehiculo no puede ser vacio")
+    private String tipoVehiculo;
 
     //@Column(unique=true)
     @NotNull(message = "El propietario no puede ser vacio")
