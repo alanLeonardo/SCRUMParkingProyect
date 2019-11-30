@@ -6,16 +6,19 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const crearVehiculo = ({patente,tipoVehiculo,marca,modelo,
                        documento,nombre,apellido,posicion}) => {
-  return axios.post('/vehiculos', {
+  return axios.post('/vehiculoIngresado', {
       patente: patente,
       tipoVehiculo: tipoVehiculo,
       marca: marca,
       modelo: modelo,
-      propietario: {
-                  documento: documento,
-                  nombre: nombre,
-                  apellido: apellido
+      diaDeIngreso: "",
+      horaDeIngreso: "",
+      propietario:{
+                     documento: documento,
+                      nombre: nombre,
+                     apellido: apellido
                   },
+      valor: 0,
       posicion: posicion
      })
   .then(response => {
@@ -26,8 +29,8 @@ const crearVehiculo = ({patente,tipoVehiculo,marca,modelo,
   });
 }
 
-const getVehiculo = (patente) => {
-    return axios.get(`/vehiculo/${patente}`)
+const getVehiculo = (posicion) => {
+    return axios.get(`/vehiculo`)
     .then(response => {
       return Promise.resolve(response);
     })
@@ -46,4 +49,14 @@ const getVehiculos = () => {
     })
 }
 
-export {crearVehiculo,getVehiculos}
+const retirarVehiculo = ({posicion}) => {
+    return axios.get(`/vehiculoRetirado`)
+    .then(response => {
+      return Promise.resolve(response);
+    })
+    .catch(error => {
+      return Promise.reject(error.response.data);
+    })
+}
+
+export {crearVehiculo,getVehiculos,retirarVehiculo}

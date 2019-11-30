@@ -2,26 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d79195-ac66-438f-877d-bb556e041597" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/img3.jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CSS/GRIDParking.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/CSS/GRIDParking.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GRIDMaterial.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/GRIDMaterial.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GRIDParking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/GRIDParking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/logo.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-apiRest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/Controller/VehiculoRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/Controller/VehiculoRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/HibernateDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/HibernateDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/model/Propietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/model/Propietario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/model/Vehiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/model/Vehiculo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/BuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/BuilderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/ElectronReactDemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/ElectronReactDemoApplicationTests.java" afterDir="false" />
     </list>
@@ -37,10 +29,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Home.js">
+        <entry file="file://$PROJECT_DIR$/src/Components/API.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="44" />
+            <state relative-caret-position="54">
+              <caret line="31" column="17" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -48,17 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GRIDParking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="810" column="40" lean-forward="true" selection-start-line="810" selection-start-column="40" selection-end-line="810" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/API.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+            <state relative-caret-position="40">
+              <caret line="746" column="24" selection-start-line="746" selection-start-column="24" selection-end-line="746" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -91,9 +74,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="219" />
-    <option name="y" value="191" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="163" />
+    <option name="y" value="159" />
     <option name="width" value="1203" />
     <option name="height" value="609" />
   </component>
@@ -134,15 +117,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574787869402" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
@@ -185,9 +168,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="219" y="191" width="1203" height="609" extended-state="0" />
+    <frame x="306" y="157" width="948" height="573" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11495246" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1518847" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="DB Browser" order="3" />
@@ -206,7 +189,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Console" order="7" />
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32987553" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34304932" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32780084" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -280,29 +263,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="44" />
+        <state relative-caret-position="-165">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-92">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="30" />
+        <state relative-caret-position="204">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/API.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+        <state relative-caret-position="54">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GRIDParking.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="810" column="40" lean-forward="true" selection-start-line="810" selection-start-column="40" selection-end-line="810" selection-end-column="40" />
+        <state relative-caret-position="40">
+          <caret line="746" column="24" selection-start-line="746" selection-start-column="24" selection-end-line="746" selection-end-column="24" />
         </state>
       </provider>
     </entry>
