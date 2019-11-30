@@ -42,10 +42,16 @@ public class VehiculoServiceImpl implements VehiculoService {
         return this.vehiculoDAO.recuperarVehiculo(patente);
     }
 
+
     @Override
-    public void retirarVehiculo(String patente){
+    public Vehiculo recuperarVehiculoPorPosicion(int posicion) {
+        return this.vehiculoDAO.recuperarVehiculoPorPosicion(posicion);
+    }
+
+    @Override
+    public void retirarVehiculo(int posicion){
         //imprimirTicket();
         //calculoDeIngresos();
-        this.vehiculoDAO.retirarVehiculo(patente);
+        this.vehiculoDAO.retirarVehiculo(posicion);
     }
 }

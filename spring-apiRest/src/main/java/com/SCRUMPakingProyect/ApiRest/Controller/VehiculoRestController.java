@@ -11,7 +11,10 @@ import com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 //Indiciamos que es un controlador rest
@@ -20,20 +23,22 @@ import java.util.List;
 //@RequestMapping("/api") //esta sera la raiz de la url, es decir http://127.0.0.1:8080/api/
 public class VehiculoRestController {
 
-    //Inyectamos el servicio para poder hacer uso de el
-  /*  @Autowired*/
-    private VehiculoService vehiculoService = new VehiculoServiceImpl(new VehiculoDAOImpl(),new PropietarioDAOImpl());
-   // private PropietarioService propietarioService = new PropietarioServiceImpl(new PropietarioDAOImpl());
 
-    @RequestMapping("/hello")
-    public String index() {
-        return "Spring Boot Example!!";
+    private VehiculoService vehiculoService = new VehiculoServiceImpl(new VehiculoDAOImpl(),new PropietarioDAOImpl());
+
+    @GetMapping("/vehiculo")
+    public Vehiculo vehiculo(@RequestBody int posicion) {
+        //retornará todos los vehiculos
+        return TransactionRunner.run(() -> {
+            List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
+            return vehiculoService.recuperarVehiculoPorPosicion(posicion);
+        });
     }
 
     /*Este método se hará cuando por una petición GET (como indica la anotación) se llame a la url
-    http://127.0.0.1:8080/api/vehiculos*/
+    http://8080/api/vehiculos*/
     @GetMapping("/vehiculos")
-    public List<Vehiculo> findAll() {
+    public List<Vehiculo> vehiculos() {
         //retornará todos los vehiculos
         return TransactionRunner.run(() -> {
             List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
@@ -44,15 +49,19 @@ public class VehiculoRestController {
 
     @PostMapping("/vehiculoIngresado")
     public void ingresarVehiculo(@RequestBody Vehiculo vehiculo) {
+        vehiculo.setDiaDeIngreso(LocalDate.now().toString());
+        vehiculo.setHoraDeIngreso(new SimpleDateFormat("HH:mm:ss").format(new Date()));
+        vehiculo.setValor(100);
         TransactionRunner.run(() ->
             vehiculoService.registrarVehiculoYPropietario(vehiculo,vehiculo.getPropietario()));
+
     }
 
 
     @DeleteMapping("/vehiculoRetirado")
-    public void retirarVehiculo(@RequestBody Vehiculo vehiculo) {
+    public void retirarVehiculo(@RequestBody int posicion) {
         TransactionRunner.run(() ->
-                vehiculoService.retirarVehiculo(vehiculo.getPatente()));
+                vehiculoService.retirarVehiculo(posicion));
     }
 
     @GetMapping("/error")

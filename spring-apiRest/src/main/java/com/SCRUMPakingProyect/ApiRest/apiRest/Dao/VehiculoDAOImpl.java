@@ -41,9 +41,18 @@ public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoD
     }
 
     @Override
-    public void retirarVehiculo(String patente){
+    public Vehiculo recuperarVehiculoPorPosicion(int posicion) {
         Session session = TransactionRunner.getCurrentSession();
-        Vehiculo vehiculo = recuperarVehiculo(patente);
-        session.delete(vehiculo);
+        String hql =  "from Vehiculo v " +
+                "WHERE posicion = :laPosicion";
+        Query<Vehiculo> query = session.createQuery(hql, Vehiculo.class);
+        query.setParameter("laPosicion", posicion);
+        return query.getSingleResult();
+    }
+
+    @Override
+    public void retirarVehiculo(int posicion){
+        Session session = TransactionRunner.getCurrentSession();
+        session.delete(posicion);
     }
 }

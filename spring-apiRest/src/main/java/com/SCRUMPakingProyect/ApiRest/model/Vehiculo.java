@@ -9,9 +9,6 @@ import javax.validation.constraints.NotNull;
 public class Vehiculo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
     @Column(unique=true)
     @NotBlank(message = "El nombre de pantente no puede ser vacio")
     private String patente;
@@ -22,23 +19,22 @@ public class Vehiculo {
     @NotBlank(message = "El modelo del vehiculo no puede ser vacio")
     private String modelo;
 
-    @NotNull(message = "El dia de ingreso no puede ser vacio")
     private String diaDeIngreso;
 
-    @NotNull(message = "La hora de ingreso no puede ser vacio")
     private String horaDeIngreso;
 
-    @NotNull(message = "El tipo de vehiculo no puede ser vacio")
+    @NotBlank(message = "El tipo de vehiculo no puede ser vacio")
     private String tipoVehiculo;
 
     //@Column(unique=true)
-    @NotNull(message = "El propietario no puede ser vacio")
+    @NotNull(message = "El propietario no puede ser nullo")
     @ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     private Propietario propietario;
 
-    @Min(1)
+    @Min(0)
     private int posicion;
 
+    @Min(0)
     private int valor;
 
     public Vehiculo() {}
@@ -53,7 +49,7 @@ public class Vehiculo {
         this.marca = marca;
     }
 
-    public Vehiculo(@NotBlank(message = "El nombre de pantente no puede ser vacio") String patente, @NotBlank(message = "El tipo de vehiculo no puede ser vacio") String tipoVehiculo, @NotBlank(message = "La marca del vehiculo no puede ser vacio") String marca, @NotBlank(message = "El modelo del vehiculo no puede ser vacio") String modelo, Propietario propietario, @Min(1) int posicion) {
+    public Vehiculo(@NotBlank(message = "El nombre de pantente no puede ser vacio") String patente, @NotBlank(message = "El tipo de vehiculo no puede ser vacio") String tipoVehiculo, @NotBlank(message = "La marca del vehiculo no puede ser vacio") String marca, @NotBlank(message = "El modelo del vehiculo no puede ser vacio") String modelo, Propietario propietario, @Min(0) int posicion) {
         this.patente = patente;
         this.tipoVehiculo = tipoVehiculo;
         this.marca = marca;
@@ -62,23 +58,30 @@ public class Vehiculo {
         this.posicion = posicion;
     }
 
-    public Vehiculo(int id, @NotBlank(message = "El nombre de pantente no puede ser vacio") String patente, @NotBlank(message = "El tipo de vehiculo no puede ser vacio") String tipoVehiculo, @NotBlank(message = "La marca del vehiculo no puede ser vacio") String marca, @NotBlank(message = "El modelo del vehiculo no puede ser vacio") String modelo, Propietario propietario, @Min(1) int posicion) {
-        this.id = id;
+    public Vehiculo(@NotBlank(message = "El nombre de pantente no puede ser vacio") String patente, @NotBlank(message = "La marca del vehiculo no puede ser vacio") String marca, @NotBlank(message = "El modelo del vehiculo no puede ser vacio") String modelo, String diaDeIngreso, String horaDeIngreso, @NotBlank(message = "El tipo de vehiculo no puede ser vacio") String tipoVehiculo, @NotNull(message = "El propietario no puede ser vacio") Propietario propietario, @Min(0) int posicion, @Min(0) int valor) {
         this.patente = patente;
-        this.tipoVehiculo = tipoVehiculo;
         this.marca = marca;
         this.modelo = modelo;
+        this.diaDeIngreso = diaDeIngreso;
+        this.horaDeIngreso = horaDeIngreso;
+        this.tipoVehiculo = tipoVehiculo;
+        this.propietario = propietario;
+        this.posicion = posicion;
+        this.valor = valor;
+    }
+
+    public Vehiculo(@NotBlank(message = "El nombre de pantente no puede ser vacio") String patente, @NotBlank(message = "La marca del vehiculo no puede ser vacio") String marca, @NotBlank(message = "El modelo del vehiculo no puede ser vacio") String modelo,  String diaDeIngreso, String horaDeIngreso, @NotNull(message = "El tipo de vehiculo no puede ser vacio") String tipoVehiculo, @NotNull(message = "El propietario no puede ser vacio") Propietario propietario, @Min(0) int posicion) {
+        this.patente = patente;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.diaDeIngreso = diaDeIngreso;
+        this.horaDeIngreso = horaDeIngreso;
+        this.tipoVehiculo = tipoVehiculo;
         this.propietario = propietario;
         this.posicion = posicion;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getPatente() {
         return patente;
@@ -144,15 +147,11 @@ public class Vehiculo {
         this.posicion = posicion;
     }
 
-    @Override
-    public String toString() {
-        return "Vehiculo{" +
-                "patente='" + patente + '\'' +
-                ", tipoVehiculo='" + tipoVehiculo + '\'' +
-                ", marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", propietario=" + propietario +
-                ", posicion=" + posicion +
-                '}';
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
     }
 }

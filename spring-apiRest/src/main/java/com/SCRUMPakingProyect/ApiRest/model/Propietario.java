@@ -2,49 +2,35 @@ package com.SCRUMPakingProyect.ApiRest.model;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 
 @Entity
 public class Propietario {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
-        private int id;
 
+        @Id
         @Column(unique = true)
-        @NotNull(message = "El numero de documento no puede ser vacio")
+        //@Max(9)
         private int documento;
 
-        @NotNull(message = "El nombre no puede ser vacio")
+        @NotBlank(message = "El nombre no puede ser vacio")
         private String nombre;
 
-        @NotNull(message = "El apellido no puede ser vacio")
+        @NotBlank(message = "El apellido no puede ser vacio")
         private String apellido;
 
 
         public Propietario() {}
 
-        public Propietario(@NotNull(message = "El numero de documento no puede ser vacio") int documento, @NotNull(message = "El nombre no puede ser vacio") String nombre, @NotNull(message = "El apellido no puede ser vacio") String apellido) {
+        public Propietario(int documento, @NotNull(message = "El nombre no puede ser vacio") String nombre, @NotNull(message = "El apellido no puede ser vacio") String apellido) {
            this.documento = documento;
            this.nombre = nombre;
            this.apellido = apellido;
         }
 
-        public Propietario(int id, @NotNull(message = "El numero de documento no puede ser vacio") int documento, @NotNull(message = "El nombre no puede ser vacio") String nombre, @NotNull(message = "El apellido no puede ser vacio") String apellido) {
-                this.id = id;
-                this.documento = documento;
-                this.nombre = nombre;
-                this.apellido = apellido;
-        }
-
-        public int getId() {
-                return id;
-        }
-
-        public void setId(int id) {
-                this.id = id;
-        }
 
         public int getDocumento() {
                 return documento;
@@ -70,12 +56,5 @@ public class Propietario {
                 this.apellido = apellido;
         }
 
-    @Override
-    public String toString() {
-        return "Propietario{" +
-                "documento=" + documento +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                '}';
-    }
+
 }

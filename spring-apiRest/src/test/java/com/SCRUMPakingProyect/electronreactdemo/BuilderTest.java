@@ -52,9 +52,9 @@ public class BuilderTest {
     public Propietario cacho = new Propietario(30456789, "Cacho", "Try");
 
     public Vehiculo fiatUno() {
-        Vehiculo fiatUno = new Vehiculo("FIA123","Auto","FIAT" ,"UNO",cacho,1);
-        fiatUno.setDiaDeIngreso("HOY");
-        fiatUno.setHoraDeIngreso(LocalTime.now().toString());
+        Vehiculo fiatUno = new Vehiculo("FIA123","FIAT","FIAT UNO" ,"30/11/2019","14:00","Auto",cacho,1);
+        //fiatUno.setDiaDeIngreso("HOY");
+        //fiatUno.setHoraDeIngreso(LocalTime.now().toString());
         this.vehiculoService.registrar(fiatUno);
         return fiatUno;
     }
