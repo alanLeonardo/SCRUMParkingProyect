@@ -655,6 +655,10 @@ class GRIDParking extends React.Component {
             }
         }
 
+        componentDidMount() {
+            this.agregarVehiculosEnSusLugares();
+        }
+
         onClearArray = () => {
             this.setState(state => {
                 const lugares = state.lugares.map(lugar => lugar.set("patente", "")
@@ -710,15 +714,15 @@ class GRIDParking extends React.Component {
          }
 
         valoresUndefined = (lugar) => {
-            return lugar.get("patente") === undefined &&
-                    lugar.get("tipoVehiculo") === undefined &&
-                    lugar.get("marca") === undefined &&
-                    lugar.get("modelo") === undefined &&
-                    lugar.get("documento") === undefined &&
-                    lugar.get("nombre") === undefined &&
-                    lugar.get("apellido") === undefined &&
-                    lugar.get("valor") === undefined &&
-                    lugar.get("horaEntrada") === undefined;
+            return lugar.get("patente") == undefined &&
+                    lugar.get("tipoVehiculo") == undefined &&
+                    lugar.get("marca") == undefined &&
+                    lugar.get("modelo") == undefined &&
+                    lugar.get("documento") == undefined &&
+                    lugar.get("nombre") == undefined &&
+                    lugar.get("apellido") == undefined &&
+                    lugar.get("valor") == undefined &&
+                    lugar.get("horaEntrada") == undefined;
         }
 
         ExceptionDatosCargados = () => {
@@ -726,29 +730,35 @@ class GRIDParking extends React.Component {
         }
 
         retirarVehiculo = () => {
-
-             //'<strong> Hora Ingreso: </strong>' +  this.lugarActual.get("horaIngreso")  + '<br/>' +
-            Swal.fire({
-                title: 'Vehiculo retirado!',
-                html:
-                    '<strong><u> Ticket - SCRUMParking! </u></strong><br/>' +
-                    '<strong> Valor: $</strong>' +   this.lugarActual.get("valor")  + '<br/>' +
-                    '<strong> Hora DiaIngreso: </strong>' +  this.lugarActual.get("diaDeIngreso")  + '<br/>' +
-                    '<strong> Hora Ingreso: </strong>' + this.lugarActual.get("horaIngreso"),
-                confirmButtonText: 'Aceptar',
-                icon: 'success'
-            });
-
             retirarVehiculo(this.state.i)
-                     .then(data => data)
-                     .catch(error => this.swalForError(error));
+                     .then(data => {
+                        this.swalForVehiculoRetirado(data);
+                        this.actualizarLugarSiFueRetirado();
+                        })
+                     .catch(error => {
+                        this.swalForError(error)});
+        }
 
+        actualizarLugarSiFueRetirado() {
             this.state.lugares.map((lugar, index) => {
-                if(this.state.i === index) {
+                if(this.state.i == index) {
                     lugar.clear();
                     lugar.set("modificado", false);
                     this.setState({lugarActual: lugar});
                 }
+            });
+        }
+
+        swalForVehiculoRetirado = (data) => {
+            Swal.fire({
+                title: 'Vehiculo retirado!',
+                html:
+                    '<strong><u> Ticket - SCRUMParking! </u></strong><br/>' +
+                    '<strong> Valor: $</strong>' +   data.get("valor")  + '<br/>' +
+                    '<strong> Hora DiaIngreso: </strong>' +  data.get("diaDeIngreso")  + '<br/>' +
+                    '<strong> Hora Ingreso: </strong>' + data.get("horaIngreso"),
+                confirmButtonText: 'Aceptar',
+                icon: 'success'
             });
         }
 
@@ -774,13 +784,12 @@ class GRIDParking extends React.Component {
                 'NombrePropietario',
                 'ApellidoPropietario'
 
-
             ]).then((result) => {
 
                 if (result.value) {
                     this.setState(state => {
                         const lugares = state.lugares.map((lugar, index) => {
-                            if(this.state.i === index) {
+                            if(this.state.i == index) {
                             lugar.set("patente", result.value[0])
                             .set("tipoVehiculo", result.value[1])
                             .set("marca", result.value[2])
@@ -798,8 +807,6 @@ class GRIDParking extends React.Component {
                                apellido: result.value[6],posicion: this.state.i})
                         	    .then(data => console.log(data))
                         	    .catch(error => this.swalForError(error));
-
-
                     })
                     this.actualizarLugarActual();
                     this.verDatos()
@@ -808,16 +815,20 @@ class GRIDParking extends React.Component {
         }
 
         mostrarVehiculos(lugarOcupado) {
+            var lugaresActualizados = this.state.lugares;
+
             this.state.lugares.map((lugar, index) => {
-                if(this.state.i === lugarOcupado.get("posicion")) {
-                    this.setState({lugarActual: lugar});
+                if(index == lugarOcupado.get("posicion")) {
+                    lugarOcupado.set("modificado", true);
+                    lugaresActualizados[index] = lugarOcupado;
+                    this.setState({lugares: lugaresActualizados});
                 }
             });
         }
 
          actualizarLugarActual() {
                     this.state.lugares.map((lugar, index) => {
-                        if(this.state.i === index) {
+                        if(this.state.i == index) {
                             this.setState({lugarActual: lugar});
                         }
                     });
@@ -826,24 +837,13 @@ class GRIDParking extends React.Component {
         modificado() {
             this.actualizarLugarActual();
             var res = false;
-            if(this.state.lugarActual !== ''){
+            if(this.state.lugarActual != ''){
                 res = this.state.lugarActual.get("modificado");
-                console.log(res);
             }
             return res;
         }
 
         verDatos = () => {
-            console.log(this.state.lugarActual);
-            console.log(this.state.lugarActual[0]);
-            if(this.state.lugarActual !== ''){
-                console.log(this.state.lugarActual.get("patente"));
-            }
-
-            //console.log(this.agregarVehiculosEnSusLugares())
-            console.log(this.state.lista)
-
-
             if(this.modificado()) {
                 this.actualizarLugarActual();
     
@@ -858,7 +858,7 @@ class GRIDParking extends React.Component {
                         '<strong> DocumentoPropietario: </strong>' +  this.state.lugarActual.get("documento")  + '<br/>' +
                         '<strong> NombrePropietario: </strong>' +  this.state.lugarActual.get("nombre") + '<br/>' +
                         '<strong> ApellidoApellido: </strong>' +  this.state.lugarActual.get("apellido")  + '<br/>' +
-                       '<strong>  valor: </strong>' +  this.state.lugarActual.get("valor") + '<br/>' +
+                        '<strong>  valor: </strong>' +  this.state.lugarActual.get("valor") + '<br/>' +
                         '<strong> HoraEntrada: </strong>' + this.state.lugarActual.get("horaEntrada") ,
                     confirmButtonText: 'Aceptar',
                     icon: 'success'
@@ -885,22 +885,15 @@ class GRIDParking extends React.Component {
            return lugar
          }
 
-
-
-
     agregarVehiculosEnSusLugares() {
         getVehiculos()
-        //.then((response) =>  { this.setState({lista: response.data})})
             .then(response => {
-              // this.setState({lugares: response.data})
                  response.data.map((json) => {
                         this.mostrarVehiculos(this.lugarAdapter(json))
-                        console.log(this.lugarAdapter(json))
                     });
 
         }).catch(error => this.swalForError(error));
     }
-
 
     // Lanza un alerta de que hubo un error en buscar las transacciones del usuario.
     swalForError(error) {
@@ -913,7 +906,6 @@ class GRIDParking extends React.Component {
 
      render() {
          return (
-            console.log(this.state.lista),
             <GRIDMaterial lugares={this.state.lugares} modify={this.modify} onClearArray={this.onClearArray}/>
          )
     }

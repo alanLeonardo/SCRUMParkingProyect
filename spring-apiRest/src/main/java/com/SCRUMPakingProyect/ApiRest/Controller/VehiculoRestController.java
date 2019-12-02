@@ -23,16 +23,11 @@ import java.util.List;
 //@RequestMapping("/api") //esta sera la raiz de la url, es decir http://127.0.0.1:8080/api/
 public class VehiculoRestController {
 
-
     private VehiculoService vehiculoService = new VehiculoServiceImpl(new VehiculoDAOImpl(),new PropietarioDAOImpl());
 
     @GetMapping("/vehiculo")
     public Vehiculo vehiculo(@RequestBody int posicion) {
-        //retornará todos los vehiculos
-        return TransactionRunner.run(() -> {
-            List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
-            return vehiculoService.recuperarVehiculoPorPosicion(posicion);
-        });
+        return TransactionRunner.run(() -> vehiculoService.recuperarVehiculoPorPosicion(posicion));
     }
 
     /*Este método se hará cuando por una petición GET (como indica la anotación) se llame a la url
@@ -54,19 +49,15 @@ public class VehiculoRestController {
         vehiculo.setValor(100);
         TransactionRunner.run(() ->
             vehiculoService.registrarVehiculoYPropietario(vehiculo,vehiculo.getPropietario()));
-
     }
-
 
     @DeleteMapping("/vehiculoRetirado")
     public void retirarVehiculo(@RequestBody int posicion) {
-        TransactionRunner.run(() ->
-                vehiculoService.retirarVehiculo(posicion));
+        TransactionRunner.run(() -> vehiculoService.retirarVehiculo(posicion));
     }
 
     @GetMapping("/error")
     public String getError(){
         throw new RuntimeException("Exception .. hay un problema");
     }
-
 }

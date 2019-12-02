@@ -38,9 +38,9 @@ public class BuilderTest {
     }
 
     public void cleanup() {
-        run(() ->
-                dataDAO.clear()
-                );
+//        run(() ->
+//                dataDAO.clear()
+//                );
     }
 
     public Propietario propietarioDelFiatUno() {
