@@ -25,10 +25,4 @@ public class HibernateDAO<T>  {
             Session session = TransactionRunner.getCurrentSession();
             return session.get(entityType, id);
         }
-
-        public void delete(T patente) {
-            Session session = TransactionRunner.getCurrentSession();
-            session.delete(patente);
-        }
-
 }

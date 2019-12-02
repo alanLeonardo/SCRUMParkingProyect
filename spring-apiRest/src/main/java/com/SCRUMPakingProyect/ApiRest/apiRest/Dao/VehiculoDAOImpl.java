@@ -6,6 +6,8 @@ import java.util.List;
 import org.hibernate.Session;
 import com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner;
 
+import javax.persistence.TypedQuery;
+
 
 public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoDAO {
 
@@ -41,18 +43,12 @@ public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoD
     }
 
     @Override
-    public Vehiculo recuperarVehiculoPorPosicion(int posicion) {
-        Session session = TransactionRunner.getCurrentSession();
-        String hql =  "from Vehiculo v " +
-                "WHERE posicion = :laPosicion";
-        Query<Vehiculo> query = session.createQuery(hql, Vehiculo.class);
-        query.setParameter("laPosicion", posicion);
-        return query.getSingleResult();
-    }
+    public void retirarVehiculo(String patente){
 
-    @Override
-    public void retirarVehiculo(int posicion){
         Session session = TransactionRunner.getCurrentSession();
-        session.delete(posicion);
+        String hql = "DELETE FROM Vehiculo WHERE patente = :laPatente";
+        TypedQuery query = session.createQuery(hql);
+        query.setParameter("laPatente", patente);
+        query.executeUpdate();
     }
 }

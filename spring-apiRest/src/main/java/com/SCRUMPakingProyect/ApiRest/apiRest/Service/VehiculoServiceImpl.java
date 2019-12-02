@@ -13,12 +13,10 @@ public class VehiculoServiceImpl implements VehiculoService {
     private VehiculoDAO vehiculoDAO;
     private PropietarioDAO propietarioDAO;
 
-
     public VehiculoServiceImpl(VehiculoDAO vehiculoDAO, PropietarioDAO propietarioDAO) {
         this.vehiculoDAO = vehiculoDAO;
         this.propietarioDAO = propietarioDAO;
     }
-
 
     @Override
         public List<Vehiculo> listarTodos() {
@@ -42,16 +40,8 @@ public class VehiculoServiceImpl implements VehiculoService {
         return this.vehiculoDAO.recuperarVehiculo(patente);
     }
 
-
     @Override
-    public Vehiculo recuperarVehiculoPorPosicion(int posicion) {
-        return this.vehiculoDAO.recuperarVehiculoPorPosicion(posicion);
-    }
-
-    @Override
-    public void retirarVehiculo(int posicion){
-        //imprimirTicket();
-        //calculoDeIngresos();
-        this.vehiculoDAO.retirarVehiculo(posicion);
+    public void retirarVehiculo(String patente){
+        this.vehiculoDAO.retirarVehiculo(patente);
     }
 }

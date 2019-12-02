@@ -25,9 +25,9 @@ public class VehiculoRestController {
 
     private VehiculoService vehiculoService = new VehiculoServiceImpl(new VehiculoDAOImpl(),new PropietarioDAOImpl());
 
-    @GetMapping("/vehiculo")
-    public Vehiculo vehiculo(@RequestBody int posicion) {
-        return TransactionRunner.run(() -> vehiculoService.recuperarVehiculoPorPosicion(posicion));
+    @GetMapping("/vehiculo/{patente}")
+    public Vehiculo vehiculo(@PathVariable String patente) {
+           return TransactionRunner.run(() -> vehiculoService.recuperarVehiculo(patente));
     }
 
     /*Este método se hará cuando por una petición GET (como indica la anotación) se llame a la url
@@ -43,7 +43,7 @@ public class VehiculoRestController {
     }
 
     @PostMapping("/vehiculoIngresado")
-    public void ingresarVehiculo(@RequestBody Vehiculo vehiculo) {
+    public void ingresarVehiculo(@Valid @RequestBody Vehiculo vehiculo) {
         vehiculo.setDiaDeIngreso(LocalDate.now().toString());
         vehiculo.setHoraDeIngreso(new SimpleDateFormat("HH:mm:ss").format(new Date()));
         vehiculo.setValor(100);
@@ -51,9 +51,9 @@ public class VehiculoRestController {
             vehiculoService.registrarVehiculoYPropietario(vehiculo,vehiculo.getPropietario()));
     }
 
-    @DeleteMapping("/vehiculoRetirado")
-    public void retirarVehiculo(@RequestBody int posicion) {
-        TransactionRunner.run(() -> vehiculoService.retirarVehiculo(posicion));
+    @DeleteMapping("/vehiculo/{patente}")
+    public void retirarVehiculo(@PathVariable String patente) {
+            TransactionRunner.run(() -> vehiculoService.retirarVehiculo(patente));
     }
 
     @GetMapping("/error")
