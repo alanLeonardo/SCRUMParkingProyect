@@ -18,7 +18,7 @@ El software debe poder listar los veh√≠culos si ya fueron retirados o no, tambi√
 
 **TECNOLOGIAS UTILIZADAS**
 
-LENGUAJES
+**LENGUAJES**
 
 Java: Para crear el modelo del dominio.
 
