@@ -6,16 +6,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GRIDParking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/GRIDParking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/Controller/VehiculoRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/Controller/VehiculoRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/HibernateDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/HibernateDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/model/Propietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/model/Propietario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/model/Vehiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/model/Vehiculo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/BuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/BuilderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/ElectronReactDemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/test/java/com/SCRUMPakingProyect/electronreactdemo/ElectronReactDemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/API.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="31" column="17" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="360">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
             </state>
           </provider>
         </entry>
@@ -40,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GRIDParking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="746" column="24" selection-start-line="746" selection-start-column="24" selection-end-line="746" selection-end-column="24" />
+            <state relative-caret-position="321">
+              <caret line="764" lean-forward="true" selection-start-line="764" selection-end-line="764" />
             </state>
           </provider>
         </entry>
@@ -60,7 +58,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="persistecia-front-Actualizados" />
+        <entry key="$PROJECT_DIR$/.." value="modificaciones" />
       </map>
     </option>
   </component>
@@ -69,16 +67,17 @@
       <list>
         <option value="$PROJECT_DIR$/src/CSS/principal.css" />
         <option value="$PROJECT_DIR$/src/Home.js" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Components/API.js" />
         <option value="$PROJECT_DIR$/src/GRIDParking.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="163" />
-    <option name="y" value="159" />
-    <option name="width" value="1203" />
-    <option name="height" value="609" />
+    <option name="x" value="65" />
+    <option name="y" value="157" />
+    <option name="width" value="1201" />
+    <option name="height" value="573" />
   </component>
   <component name="ProjectId" id="1TZv7CZyLCuxpuxJh7om63DqvnW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -89,6 +88,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -117,15 +118,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574787869402" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-apiRest" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
@@ -168,9 +167,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="306" y="157" width="948" height="573" extended-state="0" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1518847" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11075697" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="DB Browser" order="3" />
@@ -189,17 +188,17 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Console" order="7" />
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.34304932" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2372093" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32780084" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="2" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +237,10 @@
       </map>
     </option>
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/CSS/principal.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -270,22 +273,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="30" />
+        <state relative-caret-position="114">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/API.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="17" />
+        <state relative-caret-position="360">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GRIDParking.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="746" column="24" selection-start-line="746" selection-start-column="24" selection-end-line="746" selection-end-column="24" />
+        <state relative-caret-position="321">
+          <caret line="764" lean-forward="true" selection-start-line="764" selection-end-line="764" />
         </state>
       </provider>
     </entry>

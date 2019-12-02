@@ -29,7 +29,7 @@ const crearVehiculo = ({patente,tipoVehiculo,marca,modelo,
   });
 }
 
-const getVehiculo = (posicion) => {
+const getVehiculo = (patente) => {
     return axios.get(`/vehiculo`)
     .then(response => {
       return Promise.resolve(response);
@@ -49,8 +49,8 @@ const getVehiculos = () => {
     })
 }
 
-const retirarVehiculo = ({posicion}) => {
-    return axios.get(`/vehiculoRetirado`)
+const retirarVehiculo = ({patente}) => {
+    return axios.get(`/vehiculo/{patente}`)
     .then(response => {
       return Promise.resolve(response);
     })

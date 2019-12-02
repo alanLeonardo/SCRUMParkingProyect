@@ -648,9 +648,6 @@ class GRIDParking extends React.Component {
                 lugares: posiciones,
                 i: 0,
                 lugarActual: '',
-                valor: 100,
-                horaIngreso: 14,
-                horaSalida: 16,
                 lista: []
             }
         }
@@ -760,6 +757,10 @@ class GRIDParking extends React.Component {
                 confirmButtonText: 'Aceptar',
                 icon: 'success'
             });
+
+            retirarVehiculo({patente: this.lugarActual.get("patente")})
+                                    	    .then(data => console.log(data))
+                                    	    .catch(error => this.swalForError(error));
         }
 
         cargarDatos = () => {
@@ -797,7 +798,6 @@ class GRIDParking extends React.Component {
                             .set("documento", result.value[4])
                             .set("nombre", result.value[5])
                             .set("apellido", result.value[6])
-                            //.set("valor", result.value[7])
                             .set("modificado",true)
                             }
                         })
@@ -877,8 +877,8 @@ class GRIDParking extends React.Component {
            lugar.set("documento", json.propietario.documento);
            lugar.set("nombre", json.propietario.nombre);
            lugar.set("apellido", json.propietario.apellido);
-           lugar.set("valor", 100);
-           lugar.set("horaEntrada", 100);
+           lugar.set("valor", json.valor);
+           lugar.set("horaEntrada", json.horaDeIngreso);
            lugar.set("modificado", false);
            lugar.set("posicion", json.posicion);
 
