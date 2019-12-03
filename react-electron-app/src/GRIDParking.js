@@ -16,7 +16,7 @@ a1.set("documento", "");
 a1.set("nombre", "");
 a1.set("apellido", "");
 a1.set("valor", 100);
-a1.set("horaEntrada", 100);
+a1.set("horaEntrada", "");
 a1.set("modificado", false);
 a1.set("posicion", 0);
 
@@ -29,7 +29,7 @@ a2.set("documento", "");
 a2.set("nombre", "");
 a2.set("apellido", "");
 a2.set("valor", 100);
-a2.set("horaEntrada", 100);
+a2.set("horaEntrada", "");
 a2.set("modificado", false);
 a2.set("posicion", 0);
 
@@ -42,7 +42,7 @@ a3.set("documento", "");
 a3.set("nombre", "");
 a3.set("apellido", "");
 a3.set("valor", 100);
-a3.set("horaEntrada", 100);
+a3.set("horaEntrada", "");
 a3.set("modificado", false);
 a3.set("posicion", 0);
 
@@ -55,7 +55,7 @@ a4.set("documento", "");
 a4.set("nombre", "");
 a4.set("apellido", "");
 a4.set("valor", 100);
-a4.set("horaEntrada", 100);
+a4.set("horaEntrada", "");
 a4.set("modificado", false);
 a4.set("posicion", 0);
 
@@ -68,7 +68,7 @@ a5.set("documento", "");
 a5.set("nombre", "");
 a5.set("apellido", "");
 a5.set("valor", 100);
-a5.set("horaEntrada", 100);
+a5.set("horaEntrada", "");
 a5.set("modificado", false);
 a5.set("posicion", 0);
 
@@ -81,7 +81,7 @@ a6.set("documento", "");
 a6.set("nombre", "");
 a6.set("apellido", "");
 a6.set("valor", 100);
-a6.set("horaEntrada", 100);
+a6.set("horaEntrada", "");
 a6.set("modificado", false);
 a6.set("posicion", 0);
 
@@ -94,7 +94,7 @@ a7.set("documento", "");
 a7.set("nombre", "");
 a7.set("apellido", "");
 a7.set("valor", 100);
-a7.set("horaEntrada", 100);
+a7.set("horaEntrada", "");
 a7.set("modificado", false);
 a7.set("posicion", 0);
 
@@ -107,7 +107,7 @@ a8.set("documento", "");
 a8.set("nombre", "");
 a8.set("apellido", "");
 a8.set("valor", 100);
-a8.set("horaEntrada", 100);
+a8.set("horaEntrada", "");
 a8.set("modificado", false);
 a8.set("posicion", 0);
 
@@ -120,7 +120,7 @@ b1.set("documento", "");
 b1.set("nombre", "");
 b1.set("apellido", "");
 b1.set("valor", 100);
-b1.set("horaEntrada", 100);
+b1.set("horaEntrada", "");
 b1.set("modificado", false);
 b1.set("posicion", 0);
 
@@ -133,7 +133,7 @@ b2.set("documento", "");
 b2.set("nombre", "");
 b2.set("apellido", "");
 b2.set("valor", 100);
-b2.set("horaEntrada", 100);
+b2.set("horaEntrada", "");
 b2.set("modificado", false);
 b2.set("posicion", 0);
 
@@ -146,7 +146,7 @@ b3.set("documento", "");
 b3.set("nombre", "");
 b3.set("apellido", "");
 b3.set("valor", 100);
-b3.set("horaEntrada", 100);
+b3.set("horaEntrada", "");
 b3.set("modificado", false);
 b3.set("posicion", 0);
 
@@ -159,7 +159,7 @@ b4.set("documento", "");
 b4.set("nombre", "");
 b4.set("apellido", "");
 b4.set("valor", 100);
-b4.set("horaEntrada", 100);
+b4.set("horaEntrada", "");
 b4.set("modificado", false);
 b4.set("posicion", 0);
 
@@ -172,7 +172,7 @@ b5.set("documento", "");
 b5.set("nombre", "");
 b5.set("apellido", "");
 b5.set("valor", 100);
-b5.set("horaEntrada", 100);
+b5.set("horaEntrada", "");
 b5.set("modificado", false);
 b5.set("posicion", 0);
 
@@ -185,7 +185,7 @@ b6.set("documento", "");
 b6.set("nombre", "");
 b6.set("apellido", "");
 b6.set("valor", 100);
-b6.set("horaEntrada", 100);
+b6.set("horaEntrada", "");
 b6.set("modificado", false);
 b6.set("posicion", 0);
 
@@ -198,7 +198,7 @@ b7.set("documento", "");
 b7.set("nombre", "");
 b7.set("apellido", "");
 b7.set("valor", 100);
-b7.set("horaEntrada", 100);
+b7.set("horaEntrada", "");
 b7.set("modificado", false);
 b7.set("posicion", 0);
 
@@ -211,7 +211,7 @@ b8.set("documento", "");
 b8.set("nombre", "");
 b8.set("apellido", "");
 b8.set("valor", 100);
-b8.set("horaEntrada", 100);
+b8.set("horaEntrada", "");
 b8.set("modificado", false);
 b8.set("posicion", 0);
 
@@ -224,7 +224,7 @@ c1.set("documento", "");
 c1.set("nombre", "");
 c1.set("apellido", "");
 c1.set("valor", 100);
-c1.set("horaEntrada", 100);
+c1.set("horaEntrada", "");
 c1.set("modificado", false);
 c1.set("posicion", 0);
 
@@ -237,7 +237,7 @@ c2.set("documento", "");
 c2.set("nombre", "");
 c2.set("apellido", "");
 c2.set("valor", 100);
-c2.set("horaEntrada", 100);
+c2.set("horaEntrada", "");
 c2.set("modificado", false);
 c2.set("posicion", 0);
 
@@ -250,7 +250,7 @@ c3.set("documento", "");
 c3.set("nombre", "");
 c3.set("apellido", "");
 c3.set("valor", 100);
-c3.set("horaEntrada", 100);
+c3.set("horaEntrada", "");
 c3.set("modificado", false);
 c3.set("posicion", 0);
 
@@ -263,7 +263,7 @@ c4.set("documento", "");
 c4.set("nombre", "");
 c4.set("apellido", "");
 c4.set("valor", 100);
-c4.set("horaEntrada", 100);
+c4.set("horaEntrada", "");
 c4.set("modificado", false);
 c4.set("posicion", 0);
 
@@ -276,7 +276,7 @@ c5.set("documento", "");
 c5.set("nombre", "");
 c5.set("apellido", "");
 c5.set("valor", 100);
-c5.set("horaEntrada", 100);
+c5.set("horaEntrada", "");
 c5.set("modificado", false);
 c5.set("posicion", 0);
 
@@ -289,7 +289,7 @@ c6.set("documento", "");
 c6.set("nombre", "");
 c6.set("apellido", "");
 c6.set("valor", 100);
-c6.set("horaEntrada", 100);
+c6.set("horaEntrada", "");
 c6.set("modificado", false);
 c6.set("posicion", 0);
 
@@ -302,7 +302,7 @@ c7.set("documento", "");
 c7.set("nombre", "");
 c7.set("apellido", "");
 c7.set("valor", 100);
-c7.set("horaEntrada", 100);
+c7.set("horaEntrada", "");
 c7.set("modificado", false);
 c7.set("posicion", 0);
 
@@ -315,7 +315,7 @@ c8.set("documento", "");
 c8.set("nombre", "");
 c8.set("apellido", "");
 c8.set("valor", 100);
-c8.set("horaEntrada", 100);
+c8.set("horaEntrada", "");
 c8.set("modificado", false);
 c8.set("posicion", 0);
 
@@ -328,7 +328,7 @@ d1.set("documento", "");
 d1.set("nombre", "");
 d1.set("apellido", "");
 d1.set("valor", 100);
-d1.set("horaEntrada", 100);
+d1.set("horaEntrada", "");
 d1.set("modificado", false);
 d1.set("posicion", 0);
 
@@ -341,7 +341,7 @@ d2.set("documento", "");
 d2.set("nombre", "");
 d2.set("apellido", "");
 d2.set("valor", 100);
-d2.set("horaEntrada", 100);
+d2.set("horaEntrada", "");
 d2.set("modificado", false);
 d2.set("posicion", 0);
 
@@ -354,7 +354,7 @@ d3.set("documento", "");
 d3.set("nombre", "");
 d3.set("apellido", "");
 d3.set("valor", 100);
-d3.set("horaEntrada", 100);
+d3.set("horaEntrada", "");
 d3.set("modificado", false);
 d3.set("posicion", 0);
 
@@ -367,7 +367,7 @@ d4.set("documento", "");
 d4.set("nombre", "");
 d4.set("apellido", "");
 d4.set("valor", 100);
-d4.set("horaEntrada", 100);
+d4.set("horaEntrada", "");
 d4.set("modificado", false);
 d4.set("posicion", 0);
 
@@ -380,7 +380,7 @@ d5.set("documento", "");
 d5.set("nombre", "");
 d5.set("apellido", "");
 d5.set("valor", 100);
-d5.set("horaEntrada", 100);
+d5.set("horaEntrada", "");
 d5.set("modificado", false);
 d5.set("posicion", 0);
 
@@ -393,7 +393,7 @@ d6.set("documento", "");
 d6.set("nombre", "");
 d6.set("apellido", "");
 d6.set("valor", 100);
-d6.set("horaEntrada", 100);
+d6.set("horaEntrada", "");
 d6.set("modificado", false);
 d6.set("posicion", 0);
 
@@ -406,7 +406,7 @@ d7.set("documento", "");
 d7.set("nombre", "");
 d7.set("apellido", "");
 d7.set("valor", 100);
-d7.set("horaEntrada", 100);
+d7.set("horaEntrada", "");
 d7.set("modificado", false);
 d7.set("posicion", 0);
 
@@ -419,7 +419,7 @@ d8.set("documento", "");
 d8.set("nombre", "");
 d8.set("apellido", "");
 d8.set("valor", 100);
-d8.set("horaEntrada", 100);
+d8.set("horaEntrada", "");
 d8.set("modificado", false);
 d8.set("posicion", 0);
 
@@ -432,7 +432,7 @@ e1.set("documento", "");
 e1.set("nombre", "");
 e1.set("apellido", "");
 e1.set("valor", 100);
-e1.set("horaEntrada", 100);
+e1.set("horaEntrada", "");
 e1.set("modificado", false);
 e1.set("posicion", 0);
 
@@ -445,7 +445,7 @@ e2.set("documento", "");
 e2.set("nombre", "");
 e2.set("apellido", "");
 e2.set("valor", 100);
-e2.set("horaEntrada", 100);
+e2.set("horaEntrada", "");
 e2.set("modificado", false);
 e2.set("posicion", 0);
 
@@ -458,7 +458,7 @@ e3.set("documento", "");
 e3.set("nombre", "");
 e3.set("apellido", "");
 e3.set("valor", 100);
-e3.set("horaEntrada", 100);
+e3.set("horaEntrada", "");
 e3.set("modificado", false);
 e3.set("posicion", 0);
 
@@ -471,7 +471,7 @@ e4.set("documento", "");
 e4.set("nombre", "");
 e4.set("apellido", "");
 e4.set("valor", 100);
-e4.set("horaEntrada", 100);
+e4.set("horaEntrada", "");
 e4.set("modificado", false);
 e4.set("posicion", 0);
 
@@ -484,7 +484,7 @@ e5.set("documento", "");
 e5.set("nombre", "");
 e5.set("apellido", "");
 e5.set("valor", 100);
-e5.set("horaEntrada", 100);
+e5.set("horaEntrada", "");
 e5.set("modificado", false);
 e5.set("posicion", 0);
 
@@ -497,7 +497,7 @@ e6.set("documento", "");
 e6.set("nombre", "");
 e6.set("apellido", "");
 e6.set("valor", 100);
-e6.set("horaEntrada", 100);
+e6.set("horaEntrada", "");
 e6.set("modificado", false);
 e6.set("posicion", 0);
 
@@ -510,7 +510,7 @@ e7.set("documento", "");
 e7.set("nombre", "");
 e7.set("apellido", "");
 e7.set("valor", 100);
-e7.set("horaEntrada", 100);
+e7.set("horaEntrada", "");
 e7.set("modificado", false);
 e7.set("posicion", 0);
 
@@ -523,7 +523,7 @@ e8.set("documento", "");
 e8.set("nombre", "");
 e8.set("apellido", "");
 e8.set("valor", 100);
-e8.set("horaEntrada", 100);
+e8.set("horaEntrada", "");
 e8.set("modificado", false);
 e8.set("posicion", 0);
 
@@ -536,7 +536,7 @@ f1.set("documento", "");
 f1.set("nombre", "");
 f1.set("apellido", "");
 f1.set("valor", 100);
-f1.set("horaEntrada", 100);
+f1.set("horaEntrada", "");
 f1.set("modificado", false);
 f1.set("posicion", 0);
 
@@ -549,7 +549,7 @@ f2.set("documento", "");
 f2.set("nombre", "");
 f2.set("apellido", "");
 f2.set("valor", 100);
-f2.set("horaEntrada", 100);
+f2.set("horaEntrada", "");
 f2.set("modificado", false);
 f2.set("posicion", 0);
 
@@ -562,7 +562,7 @@ f3.set("documento", "");
 f3.set("nombre", "");
 f3.set("apellido", "");
 f3.set("valor", 100);
-f3.set("horaEntrada", 100);
+f3.set("horaEntrada", "");
 f3.set("modificado", false);
 f3.set("posicion", 0);
 
@@ -575,7 +575,7 @@ f4.set("documento", "");
 f4.set("nombre", "");
 f4.set("apellido", "");
 f4.set("valor", 100);
-f4.set("horaEntrada", 100);
+f4.set("horaEntrada", "");
 f4.set("modificado", false);
 f4.set("posicion", 0);
 
@@ -588,7 +588,7 @@ f5.set("documento", "");
 f5.set("nombre", "");
 f5.set("apellido", "");
 f5.set("valor", 100);
-f5.set("horaEntrada", 100);
+f5.set("horaEntrada", "");
 f5.set("modificado", false);
 f5.set("posicion", 0);
 
@@ -601,7 +601,7 @@ f6.set("documento", "");
 f6.set("nombre", "");
 f6.set("apellido", "");
 f6.set("valor", 100);
-f6.set("horaEntrada", 100);
+f6.set("horaEntrada", "");
 f6.set("modificado", false);
 f6.set("posicion", 0);
 
@@ -614,7 +614,7 @@ f7.set("documento", "");
 f7.set("nombre", "");
 f7.set("apellido", "");
 f7.set("valor", 100);
-f7.set("horaEntrada", 100);
+f7.set("horaEntrada", "");
 f7.set("modificado", false);
 f7.set("posicion", 0);
 
@@ -627,7 +627,7 @@ f8.set("documento", "");
 f8.set("nombre", "");
 f8.set("apellido", "");
 f8.set("valor", 100);
-f8.set("horaEntrada", 100);
+f8.set("horaEntrada", "");
 f8.set("modificado", false);
 f8.set("posicion", 0);
 
@@ -658,16 +658,17 @@ class GRIDParking extends React.Component {
 
         onClearArray = () => {
             this.setState(state => {
-                const lugares = state.lugares.map(lugar => lugar.set("patente", "")
-                                                           .set("tipoVehiculo","" )
-                                                           .set("marca", "")
-                                                           .set("modelo", "")
-                                                           .set("documento","")
-                                                           .set("nombre", "")
-                                                           .set("apellido", "")
-                                                           .set("valor", "")
-                                                           .set("horaEntrada","")
-                                                           .set("modificado", false))
+                const lugares = state.lugares.map(lugar => 
+                    lugar.set("patente", "")
+                    .set("tipoVehiculo","" )
+                    .set("marca", "")
+                    .set("modelo", "")
+                    .set("documento","")
+                    .set("nombre", "")
+                    .set("apellido", "")
+                    .set("valor", "")
+                    .set("horaEntrada","")
+                    .set("modificado", false))
                 return {lugares};
             });
         };
@@ -688,25 +689,25 @@ class GRIDParking extends React.Component {
             })
             .then((value) => {
 
-                   switch (value) {
-                    case "retirarVehiculo":
-                    this.retirarVehiculo();
-                    break;
+                switch (value) {
+                case "retirarVehiculo":
+                this.retirarVehiculo();
+                break;
 
-                    case "cargarDatos":
-                    if(this.modificado()) {
-                        this.ExceptionDatosCargados();
-                    }else{
-                        this.cargarDatos();
-                    }
-                    break;
+                case "cargarDatos":
+                if(this.modificado()) {
+                    this.exceptionDatosCargados();
+                }else{
+                    this.cargarDatos();
+                }
+                break;
 
-                    case "verDatos":
-                    this.verDatos();
-                    break;
+                case "verDatos":
+                this.verDatos();
+                break;
 
-                    default:
-                  }
+                default:
+                }
             })
          }
 
@@ -722,31 +723,46 @@ class GRIDParking extends React.Component {
                     lugar.get("horaEntrada") == undefined;
         }
 
-        ExceptionDatosCargados = () => {
+        exceptionDatosCargados = () => {
             swal("Ya hay un vehiculo ingresado en ésta parcela!", ``, "error");
         }
 
+        excepcionAlRetirarVehiculo = () => {
+            swal("No hay ningun vehiculo para retirar en ésta parcela!", ``, "error");
+        }
+
         retirarVehiculo = () => {
-            const posicion = this.state.i;
-            retirarVehiculo(posicion)
+            if(!this.modificado()){
+                this.excepcionAlRetirarVehiculo();
+            }else {
+                const posicion = this.state.i;
+                getVehiculo(posicion)
                     .then(res => {
-                        this.swalForVehiculoRetirado();
-                        this.actualizarLugarSiFueRetirado();
-                        })
+                        const data = res.data;
+                        retirarVehiculo(posicion)
+                        .then(res => {
+                            this.swalForVehiculoRetirado(data);
+                            this.actualizarLugarSiFueRetirado();
+                            })
+                        .catch(error => {
+                            this.swalForError(error)
+                        });
+                    })
                     .catch(error => {
                         this.swalForError(error)
                     });
+            }
         }
 
         getVehiculo = () => {
             const posicion = this.state.i;
             getVehiculo(posicion)
-                    .then(res => {
-                        return res.data;
-                    })
-                    .catch(error => {
-                        this.swalForError(error)
-                    });
+                .then(res => {
+                    return res.data;
+                })
+                .catch(error => {
+                    this.swalForError(error)
+                });
         }
 
         actualizarLugarSiFueRetirado() {
@@ -759,24 +775,19 @@ class GRIDParking extends React.Component {
             });
         }
 
-        swalForVehiculoRetirado = () => {
-            getVehiculo(this.state.i)
-                .then(res => {
-                    this.actualizarLugarActual();
-                    Swal.fire({
-                        title: 'Vehiculo retirado!',
-                        html:
-                            '<strong><u> Ticket - SCRUMParking! </u></strong><br/>' +
-                            '<strong> Valor: $</strong>' +   res.data.valor  + '<br/>' +
-                            '<strong> Dia Ingreso: </strong>' +  res.data.diaDeIngreso  + '<br/>' +
-                            '<strong> Hora Ingreso: </strong>' + res.data.horaIngreso,
-                        confirmButtonText: 'Aceptar',
-                        icon: 'success'
-                    });
-                })
-                .catch(error => {
-                    this.swalForError(error)
-                });
+        swalForVehiculoRetirado = (data) => {
+            this.actualizarLugarActual();
+            Swal.fire({
+                title: 'Vehiculo retirado!',
+                html:
+                    '<strong><u> Ticket - SCRUMParking! </u></strong><br/>' +
+                    '<strong> Patente: $</strong>' +   data.patente  + '<br/>' +
+                    '<strong> Valor: $</strong>' +   data.valor  + '<br/>' +
+                    '<strong> Fecha Ingreso: </strong>' +  data.diaDeIngreso  + '<br/>' +
+                    '<strong> Hora Ingreso: </strong>' + data.horaDeIngreso,
+                confirmButtonText: 'Aceptar',
+                icon: 'success'
+            });
         }
 
         cargarDatos = () => {
@@ -847,12 +858,12 @@ class GRIDParking extends React.Component {
         }
 
          actualizarLugarActual() {
-                    this.state.lugares.map((lugar, index) => {
-                        if(this.state.i == index) {
-                            this.setState({lugarActual: lugar});
-                        }
-                    });
+            this.state.lugares.map((lugar, index) => {
+                if(this.state.i == index) {
+                    this.setState({lugarActual: lugar});
                 }
+            });
+        }
 
         modificado() {
             this.actualizarLugarActual();
@@ -869,9 +880,8 @@ class GRIDParking extends React.Component {
                     .then(res => {
                         this.actualizarLugarActual();
                         Swal.fire({
-                            title: 'Datos!',
+                            title: 'Datos:',
                             html:
-                                '<strong><u> DATOS </u></strong><br/>' +
                                 '<strong> Patente: </strong>' +   res.data.patente  + '<br/>' +
                                 '<strong> TipoVehiculo: </strong>' +  res.data.tipoVehiculo  + '<br/>' +
                                 '<strong> Marca: </strong>' + res.data.marca +'<br/>' +
@@ -915,10 +925,9 @@ class GRIDParking extends React.Component {
         getVehiculos()
             .then(response => {
                  response.data.map((json) => {
-                        this.mostrarVehiculos(this.lugarAdapter(json))
-                    });
-
-        }).catch(error => this.swalForError(error));
+                    this.mostrarVehiculos(this.lugarAdapter(json))
+                });
+            }).catch(error => this.swalForError(error));
     }
 
     // Lanza un alerta de que hubo un error en buscar las transacciones del usuario.
