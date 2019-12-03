@@ -1,9 +1,5 @@
 dist: xenial
 language: java
-addons:
-  apt:
-    packages:
-      - ant
 
 before_install: 
     - cd spring-apiRest/
