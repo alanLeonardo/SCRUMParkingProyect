@@ -1,8 +1,8 @@
 language: java
 
-install: ant deps
+before_install: cd spring-apiRest
 
-before_install: cd react-electron-app
+install: ant deps
 
 script:
   - sbt compile
