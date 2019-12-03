@@ -796,13 +796,16 @@ class GRIDParking extends React.Component {
                 confirmButtonText: 'Next &rarr;',
                 showCancelButton: true,
                 width: 550,
-//                 backdrop: `
-                //     rgba(0,0,123,0.4)
-                    
-                //     left top
-                //     no-repeat
-                //   `,
-                progressSteps: ['1', '2', '3', '4', '5','6','7']
+                progressSteps: ['1','2','3','4','5','6','7'],
+                inputValidator: (value) => {
+                    return new Promise((resolve) => {
+                        if(value == ''){
+                            resolve('Debe ingresar un valor')
+                        }else{
+                            resolve()
+                        }
+                    })
+                }
             }).queue([
                 'Patente',
                 'TipoVehiculo',
@@ -813,9 +816,16 @@ class GRIDParking extends React.Component {
                 'ApellidoPropietario'
 
             ]).then((result) => {
-
                 if (result.value) {
-                    crearVehiculo({patente: result.value[0], tipoVehiculo: result.value[1],marca: result.value[2],
+                    const patente = result.value[0];
+                    const tipoVehiculo = result.value[1];
+                    const marca = result.value[2];
+                    const modelo = result.value[3];
+                    const documento = result.value[4];
+                    const nombre = result.value[5];
+                    const apellido = result.value[6];
+
+                    crearVehiculo({patente: patente, tipoVehiculo: result.value[1],marca: result.value[2],
                         modelo: result.value[3], documento: result.value[4], nombre: result.value[5],
                         apellido: result.value[6],posicion: this.state.i})
                         .then(data => {
@@ -826,6 +836,10 @@ class GRIDParking extends React.Component {
                         .catch(error => this.swalForError(error));
                 }
             });
+        }
+
+        validaciones = (value) => {
+
         }
 
         cargarDatosEnLugar = (result) => {
