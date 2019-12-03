@@ -7,8 +7,6 @@ addons:
 
 before_install: 
     - cd spring-apiRest/
-
-install:
-    - ./gradlew assemble
+    
 script:
-    - ./gradlew check 
+    - ./mvnw test -B
