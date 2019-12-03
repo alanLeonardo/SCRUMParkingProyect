@@ -6,7 +6,3 @@ addons:
       - ant
 
 before_install: cd spring-apiRest
-
-script:
-  - sbt compile
-  - sbt test
