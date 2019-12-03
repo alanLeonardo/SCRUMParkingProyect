@@ -81,7 +81,7 @@ Tuvimos problemas para hacer funcionar la Api, lo que dificulto poder llegar a l
    
    ## Puntos estimados totales: 17
    
-   ### **ESTIMACION PARA EL PROXIMO SPRINT**
+   ### **ESTIMACION PARA EL PROXIMO SPRINT( SE ACLARA QUE YA TERMINARON LOS SPRINTS, PERO ESTIMAMOS DE TODAS FORMAS)**
       
   Desarrollar todo lo referido al arqueo de caja.
   
