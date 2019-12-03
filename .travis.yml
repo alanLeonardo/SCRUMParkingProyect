@@ -1,8 +1,12 @@
+dist: xenial
 language: java
+addons:
+  apt:
+    packages:
+      - ant
 
-Jdk: 
-  - openjdk8
-  - oraclejdk8
-  
 before_install: 
-  - cd react-electron-app
+    - cd spring-apiRest/
+    
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
