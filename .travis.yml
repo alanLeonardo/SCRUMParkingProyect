@@ -1,8 +1,9 @@
 language: java
 
-Jdk: 
-  - openjdk8
-  - oraclejdk8
-  
-before_install: 
-  - cd react-electron-app
+install: ant deps
+
+before_install: cd react-electron-app
+
+script:
+  - sbt compile
+  - sbt test
