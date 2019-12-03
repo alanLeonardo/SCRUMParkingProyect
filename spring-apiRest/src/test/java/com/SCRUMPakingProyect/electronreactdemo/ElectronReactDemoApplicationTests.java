@@ -37,8 +37,8 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
         Vehiculo fiat = TransactionRunner.run(this::fiatUno);
         Vehiculo renault = TransactionRunner.run(this::renaultDoce);
 
-        Vehiculo renaultRecuperado = super.renaultDoceRecuperado(renault.getPatente());
-        Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPatente());
+        Vehiculo renaultRecuperado = super.renaultDoceRecuperado(renault.getPosicion());
+        Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPosicion());
 
         Assert.assertEquals(fiat.getPatente(), fiatRecuperado.getPatente());
         Assert.assertEquals(renault.getPatente(), renaultRecuperado.getPatente());
@@ -49,7 +49,7 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
 	   // Propietario cacho = TransactionRunner.run(this::propietarioDelFiatUno);
         Vehiculo fiat = TransactionRunner.run(this::fiatUno);
 
-        Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPatente());
+        Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPosicion());
         Propietario cachoRecuperado = super.propietarioRecuperado(30456789);
 
         Assert.assertEquals(cacho.getDocumento(),cachoRecuperado.getDocumento());

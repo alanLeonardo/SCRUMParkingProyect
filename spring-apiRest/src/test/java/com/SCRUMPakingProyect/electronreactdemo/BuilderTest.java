@@ -79,9 +79,9 @@ public class BuilderTest {
         return renaultDoce;
     }
 
-    public Vehiculo fiatUnoRecuperado(String patente) {
+    public Vehiculo fiatUnoRecuperado(Integer posicion) {
         return TransactionRunner.run(() ->
-                this.vehiculoService.recuperarVehiculo(patente));
+                this.vehiculoService.recuperarVehiculo(posicion));
     }
 
     public Propietario propietarioRecuperado(int documento) {
@@ -89,14 +89,14 @@ public class BuilderTest {
                 this.propietarioService.recuperarPropietario(documento));
     }
 
-    public Vehiculo renaultDoceRecuperado(String patente) {
+    public Vehiculo renaultDoceRecuperado(Integer posicion) {
         return TransactionRunner.run(() ->
-                this.vehiculoService.recuperarVehiculo(patente));
+                this.vehiculoService.recuperarVehiculo(posicion));
     }
 
-    public Vehiculo fordKaRecuperado(String patente) {
+    public Vehiculo fordKaRecuperado(Integer posicion) {
         return TransactionRunner.run(() ->
-                this.vehiculoService.recuperarVehiculo(patente));
+                this.vehiculoService.recuperarVehiculo(posicion));
     }
 
 }

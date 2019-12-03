@@ -3,7 +3,7 @@ import './CSS/GRIDParking.css';
 import Swal from 'sweetalert2';
 import swal from 'sweetalert';
 import GRIDMaterial from './GRIDMaterial';
-import {retirarVehiculo,getVehiculos,crearVehiculo} from './Components/API'
+import {retirarVehiculo,getVehiculos,crearVehiculo,getVehiculo} from './Components/API'
 
 // var a1,a2,a3,a4,a5,a6,a7,a8,b1,b2,b3,b4,b5,b6,b7,b8,c1,c2,c3,c4,c5,c6,c7,c8,d1,d2,d3,d4,d5,d6,d7,d8,e1,e2,e3,e4,e5,e6,e7,e8,f1,f2,f3,f4,f5,f6,f7,f8,g1,g2,g3,g4,g5,g6,g7,g8,h1,h2,h3,h4,h5,h6,h7,h8 = ''
 
@@ -727,13 +727,26 @@ class GRIDParking extends React.Component {
         }
 
         retirarVehiculo = () => {
-            retirarVehiculo(this.state.i)
-                     .then(data => {
-                        this.swalForVehiculoRetirado(data);
+            const posicion = this.state.i;
+            retirarVehiculo(posicion)
+                    .then(res => {
+                        this.swalForVehiculoRetirado();
                         this.actualizarLugarSiFueRetirado();
                         })
-                     .catch(error => {
-                        this.swalForError(error)});
+                    .catch(error => {
+                        this.swalForError(error)
+                    });
+        }
+
+        getVehiculo = () => {
+            const posicion = this.state.i;
+            getVehiculo(posicion)
+                    .then(res => {
+                        return res.data;
+                    })
+                    .catch(error => {
+                        this.swalForError(error)
+                    });
         }
 
         actualizarLugarSiFueRetirado() {
@@ -746,21 +759,24 @@ class GRIDParking extends React.Component {
             });
         }
 
-        swalForVehiculoRetirado = (data) => {
-            Swal.fire({
-                title: 'Vehiculo retirado!',
-                html:
-                    '<strong><u> Ticket - SCRUMParking! </u></strong><br/>' +
-                    '<strong> Valor: $</strong>' +   data.get("valor")  + '<br/>' +
-                    '<strong> Hora DiaIngreso: </strong>' +  data.get("diaDeIngreso")  + '<br/>' +
-                    '<strong> Hora Ingreso: </strong>' + data.get("horaIngreso"),
-                confirmButtonText: 'Aceptar',
-                icon: 'success'
-            });
-
-            retirarVehiculo({patente: this.lugarActual.get("patente")})
-                                    	    .then(data => console.log(data))
-                                    	    .catch(error => this.swalForError(error));
+        swalForVehiculoRetirado = () => {
+            getVehiculo(this.state.i)
+                .then(res => {
+                    this.actualizarLugarActual();
+                    Swal.fire({
+                        title: 'Vehiculo retirado!',
+                        html:
+                            '<strong><u> Ticket - SCRUMParking! </u></strong><br/>' +
+                            '<strong> Valor: $</strong>' +   res.data.valor  + '<br/>' +
+                            '<strong> Dia Ingreso: </strong>' +  res.data.diaDeIngreso  + '<br/>' +
+                            '<strong> Hora Ingreso: </strong>' + res.data.horaIngreso,
+                        confirmButtonText: 'Aceptar',
+                        icon: 'success'
+                    });
+                })
+                .catch(error => {
+                    this.swalForError(error)
+                });
         }
 
         cargarDatos = () => {
@@ -788,30 +804,34 @@ class GRIDParking extends React.Component {
             ]).then((result) => {
 
                 if (result.value) {
-                    this.setState(state => {
-                        const lugares = state.lugares.map((lugar, index) => {
-                            if(this.state.i == index) {
-                            lugar.set("patente", result.value[0])
-                            .set("tipoVehiculo", result.value[1])
-                            .set("marca", result.value[2])
-                            .set("modelo", result.value[3])
-                            .set("documento", result.value[4])
-                            .set("nombre", result.value[5])
-                            .set("apellido", result.value[6])
-                            .set("modificado",true)
-                            }
+                    crearVehiculo({patente: result.value[0], tipoVehiculo: result.value[1],marca: result.value[2],
+                        modelo: result.value[3], documento: result.value[4], nombre: result.value[5],
+                        apellido: result.value[6],posicion: this.state.i})
+                        .then(data => {
+                            this.cargarDatosEnLugar(result);
+                            this.actualizarLugarActual();
+                            this.verDatos()
                         })
-
-                        crearVehiculo({patente: result.value[0], tipoVehiculo: result.value[1],marca: result.value[2],
-                               modelo: result.value[3], documento: result.value[4], nombre: result.value[5],
-                               apellido: result.value[6],posicion: this.state.i})
-                        	    .then(data => console.log(data))
-                        	    .catch(error => this.swalForError(error));
-                    })
-                    this.actualizarLugarActual();
-                    this.verDatos()
-                 }
+                        .catch(error => this.swalForError(error));
+                }
             });
+        }
+
+        cargarDatosEnLugar = (result) => {
+            this.setState(state => {
+                const lugares = state.lugares.map((lugar, index) => {
+                    if(this.state.i == index) {
+                    lugar.set("patente", result.value[0])
+                    .set("tipoVehiculo", result.value[1])
+                    .set("marca", result.value[2])
+                    .set("modelo", result.value[3])
+                    .set("documento", result.value[4])
+                    .set("nombre", result.value[5])
+                    .set("apellido", result.value[6])
+                    .set("modificado",true)
+                    }
+                })
+            })
         }
 
         mostrarVehiculos(lugarOcupado) {
@@ -845,24 +865,30 @@ class GRIDParking extends React.Component {
 
         verDatos = () => {
             if(this.modificado()) {
-                this.actualizarLugarActual();
-    
-                Swal.fire({
-                    title: 'Vehiculo ingresado!',
-                    html:
-                        '<strong><u> DATOS </u></strong><br/>' +
-                        '<strong> Patente: </strong>' +   this.state.lugarActual.get("patente")  + '<br/>' +
-                        '<strong> TipoVehiculo: </strong>' +  this.state.lugarActual.get("tipoVehiculo")  + '<br/>' +
-                        '<strong> Marca: </strong>' + this.state.lugarActual.get("marca") +'<br/>' +
-                        '<strong> Modelo: </strong>' +  this.state.lugarActual.get("modelo")  + '<br/>' +
-                        '<strong> DocumentoPropietario: </strong>' +  this.state.lugarActual.get("documento")  + '<br/>' +
-                        '<strong> NombrePropietario: </strong>' +  this.state.lugarActual.get("nombre") + '<br/>' +
-                        '<strong> ApellidoApellido: </strong>' +  this.state.lugarActual.get("apellido")  + '<br/>' +
-                        '<strong>  valor: </strong>' +  this.state.lugarActual.get("valor") + '<br/>' +
-                        '<strong> HoraEntrada: </strong>' + this.state.lugarActual.get("horaEntrada") ,
-                    confirmButtonText: 'Aceptar',
-                    icon: 'success'
-                });
+                getVehiculo(this.state.i)
+                    .then(res => {
+                        this.actualizarLugarActual();
+                        Swal.fire({
+                            title: 'Datos!',
+                            html:
+                                '<strong><u> DATOS </u></strong><br/>' +
+                                '<strong> Patente: </strong>' +   res.data.patente  + '<br/>' +
+                                '<strong> TipoVehiculo: </strong>' +  res.data.tipoVehiculo  + '<br/>' +
+                                '<strong> Marca: </strong>' + res.data.marca +'<br/>' +
+                                '<strong> Modelo: </strong>' +  res.data.modelo  + '<br/>' +
+                                '<strong> DocumentoPropietario: </strong>' +  res.data.propietario.documento  + '<br/>' +
+                                '<strong> NombrePropietario: </strong>' +  res.data.propietario.nombre + '<br/>' +
+                                '<strong> ApellidoApellido: </strong>' +  res.data.propietario.apellido  + '<br/>' +
+                                '<strong>  valor: </strong>' +  res.data.valor + '<br/>' +
+                                '<strong> Fecha ingreso: </strong>' + res.data.diaDeIngreso + '<br/>' +
+                                '<strong> Hora ingreso: </strong>' + res.data.horaDeIngreso ,
+                            confirmButtonText: 'Aceptar',
+                            icon: 'success'
+                        });
+                    })
+                    .catch(error => {
+                        this.swalForError(error)
+                    });
             }else{
                 swal("No hay datos cargados!", ``, "error");
             }
