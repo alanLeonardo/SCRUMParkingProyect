@@ -89,7 +89,7 @@ Tuvimos problemas para hacer funcionar la Api, lo que dificulto poder llegar a l
    
    como usuario, quiero poder ver todos los ingresos del dia para conocer el dinero obtenido
    
-   Prioridad: alta
+   Prioridad: normal
    
    estimado: 3
    
@@ -99,7 +99,7 @@ Tuvimos problemas para hacer funcionar la Api, lo que dificulto poder llegar a l
    
    como usuario, quiero poder ver todos los ingresos semanales para conocer el dinero obtenido
    
-   Prioridad: alta
+   Prioridad: normal
    
    estimado: 3
    
@@ -109,7 +109,7 @@ Tuvimos problemas para hacer funcionar la Api, lo que dificulto poder llegar a l
    
    como usuario, quiero poder ver todos los ingresos mensuales para conocer el dinero obtenido
    
-   Prioridad: alta
+   Prioridad: normal
    
    estimado: 3
    
@@ -119,13 +119,23 @@ Tuvimos problemas para hacer funcionar la Api, lo que dificulto poder llegar a l
     
    como usuario, quiero poder ver todos los ingresos del año, para conocer el dinero obtenido
     
-   Prioridad: alta
+   Prioridad: normal
     
    estimado: 3
     
    Estado: Incompleto
    
-   ## Puntos estimados totales: 12
+   ### #21 VerIngresoActual
+       
+   como usuario, quiero poder ver el ingreso actual.
+       
+   Prioridad: alta
+       
+   estimado: 3
+       
+   Estado: completo
+   
+   ## Puntos estimados totales: 15
   
   
   
