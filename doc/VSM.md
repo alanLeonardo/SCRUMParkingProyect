@@ -1,1 +1,0 @@
-##<a href="https://trello.com/b/7bCVM44F">ACCEDER AL VISUAL STORY MAP </a>

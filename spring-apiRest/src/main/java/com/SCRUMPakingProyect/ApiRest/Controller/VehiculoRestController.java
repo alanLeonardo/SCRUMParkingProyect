@@ -1,12 +1,16 @@
 package com.SCRUMPakingProyect.ApiRest.Controller;
 
+import com.SCRUMPakingProyect.ApiRest.apiRest.Dao.PropietarioDAOImpl;
 import com.SCRUMPakingProyect.ApiRest.apiRest.Dao.VehiculoDAOImpl;
+import com.SCRUMPakingProyect.ApiRest.apiRest.Service.PropietarioService;
+import com.SCRUMPakingProyect.ApiRest.apiRest.Service.PropietarioServiceImpl;
 import com.SCRUMPakingProyect.ApiRest.apiRest.Service.VehiculoService;
 import com.SCRUMPakingProyect.ApiRest.apiRest.Service.VehiculoServiceImpl;
 import com.SCRUMPakingProyect.ApiRest.model.Vehiculo;
 import com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +22,8 @@ public class VehiculoRestController {
 
     //Inyectamos el servicio para poder hacer uso de el
   /*  @Autowired*/
-    private VehiculoService vehiculoService = new VehiculoServiceImpl(new VehiculoDAOImpl());
-
+    private VehiculoService vehiculoService = new VehiculoServiceImpl(new VehiculoDAOImpl(),new PropietarioDAOImpl());
+   // private PropietarioService propietarioService = new PropietarioServiceImpl(new PropietarioDAOImpl());
 
     @RequestMapping("/hello")
     public String index() {
@@ -33,15 +37,27 @@ public class VehiculoRestController {
         //retornará todos los vehiculos
         return TransactionRunner.run(() -> {
             List<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
-            vehiculos = vehiculoService.findAll();
+            vehiculos = vehiculoService.listarTodos();
             return vehiculos;
         });
     }
 
-/*
+    @PostMapping("/vehiculoIngresado")
+    public void ingresarVehiculo(@RequestBody Vehiculo vehiculo) {
+        TransactionRunner.run(() ->
+            vehiculoService.registrarVehiculoYPropietario(vehiculo,vehiculo.getPropietario()));
+    }
+
+
+    @DeleteMapping("/vehiculoRetirado")
+    public void retirarVehiculo(@RequestBody Vehiculo vehiculo) {
+        TransactionRunner.run(() ->
+                vehiculoService.retirarVehiculo(vehiculo.getPatente()));
+    }
+
     @GetMapping("/error")
     public String getError(){
         throw new RuntimeException("Exception .. hay un problema");
     }
-*/
+
 }

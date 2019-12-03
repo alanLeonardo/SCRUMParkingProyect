@@ -29,9 +29,9 @@ Tuvimos problemas para hacer funcionar la Api, lo que dificulto poder llegar a l
    
    Estado: En proceso.
    
-   #### #19 IngresarHorarioyDiaDeSalida
+   #### #19 RegistrarHorarioyDiaDeSalida
    
-   Como usuario, quiero poder ingresar el horario y dia de salida.
+   Como usuario, quiero poder registrar el horario y dia de salida.
    
    Prioridad: alta.
    
@@ -41,7 +41,7 @@ Tuvimos problemas para hacer funcionar la Api, lo que dificulto poder llegar a l
    
    #### #12 VerVehículosRetirados
    
-   Como usuario, quiero poder retirar el vehículo del sistema.
+   Como usuario, quiero poder ver vehículos retirados.
    
    Prioridad: normal
    
@@ -49,20 +49,9 @@ Tuvimos problemas para hacer funcionar la Api, lo que dificulto poder llegar a l
    
    Estado: En proceso
    
-   
-   #### #13 CobrarPorElVehículoRetirado
-   
-   Como usuario, quiero poder cobrarle al dueño del vehículo al retirar el mismo.
-   
-   prioridad: normal
-   
-   Estimado: 3
-   
-   Estado: En proceso
-   
    #### #14  RegistrarLoCobrado
    
-   Como usuario, quiero registar lo cobrado.
+   Como usuario, quiero registar lo cobrado al dueño del vehiculo cuando este lo retira.
    
    Prioridad: Normal
    

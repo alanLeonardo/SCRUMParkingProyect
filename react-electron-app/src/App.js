@@ -3,6 +3,8 @@ import {Switch,BrowserRouter} from "react-router-dom";
 import Route from "react-router-dom/es/Route";
 import Home from './Home';
 import GRIDParking from "./GRIDParking";
+import 'bootstrap/dist/css/bootstrap.css';
+
 export default function App() {
     return (
         <BrowserRouter>
