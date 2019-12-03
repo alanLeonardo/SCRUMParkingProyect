@@ -5,4 +5,10 @@ addons:
     packages:
       - ant
 
-before_install: cd spring-apiRest
+before_install: 
+    - cd spring-apiRest/
+
+install:
+    - ./gradlew assemble
+script:
+    - ./gradlew check 
