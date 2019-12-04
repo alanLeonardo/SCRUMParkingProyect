@@ -62,10 +62,15 @@ public class VehiculoRestController {
     @DeleteMapping("/vehiculo/{posicion}")
     public void retirarVehiculo(@PathVariable int posicion) {
             Vehiculo vehiculo = this.vehiculo(posicion);
+
             int documeto = vehiculo.getPropietario().getDocumento();
+
             Calendar c = getHoraYFechaActual();
+
             Ganancia ganancia = TransactionRunner.run(() -> this.gananciaService.recupera(1));
+
             ganancia.setPagos(cantidadDeHoras(vehiculo, c,ganancia.getValorActual()));
+            ganancia.setPrecioCobrado(cantidadDeHoras(vehiculo, c,ganancia.getValorActual()));
 
             TransactionRunner.run(() -> this.gananciaService.actualizar(ganancia));
 
@@ -90,10 +95,15 @@ public class VehiculoRestController {
         return ganancia.getValorActual();
     }
 
+    @GetMapping("/valorCobrado")
+    public Double getValorCobrado(){
+        Ganancia ganancia = TransactionRunner.run(() -> this.gananciaService.recupera(1));
+        return ganancia.getPrecioCobrado();
+    }
+
     @PostMapping("/ganancia")
     public void ganancia(@Valid @RequestBody Ganancia ganancia){
          TransactionRunner.run(() -> this.gananciaService.guardar(ganancia));
-
     }
 
     @GetMapping("/error")
