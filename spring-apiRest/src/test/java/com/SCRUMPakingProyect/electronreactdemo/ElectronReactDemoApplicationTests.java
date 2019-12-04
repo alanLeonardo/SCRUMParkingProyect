@@ -62,5 +62,4 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
         c.setTime(d);
         return c;
     }
-
 }

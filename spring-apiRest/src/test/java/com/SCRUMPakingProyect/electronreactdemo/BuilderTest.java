@@ -95,7 +95,4 @@ public class BuilderTest {
         return TransactionRunner.run(() ->
                 this.vehiculoService.recuperarVehiculo(posicion));
     }
-
-
-
 }

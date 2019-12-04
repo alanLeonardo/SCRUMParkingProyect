@@ -10,6 +10,14 @@
 .item-grid {
     width: 100%;
     height: 100%;
+    font-size: large;
+    font-family: Impact, fantasy;
+    border: solid coral;
+    animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+    50% {border-color: darkred;}
 }
 
 .clearArray {
