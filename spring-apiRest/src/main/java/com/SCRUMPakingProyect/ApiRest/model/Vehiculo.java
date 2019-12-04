@@ -43,12 +43,12 @@ public class Vehiculo {
         this.marca = marca;
     }
 
-    public Vehiculo(String patente,String tipoVehiculo, String marca) {
-        this.patente = patente;
-        this.tipoVehiculo = tipoVehiculo;
-        this.marca = marca;
-    }
-
+//    public Vehiculo(String patente,String tipoVehiculo, String marca) {
+//        this.patente = patente;
+//        this.tipoVehiculo = tipoVehiculo;
+//        this.marca = marca;
+//    }
+//
     public Vehiculo(@NotBlank(message = "El nombre de pantente no puede ser vacio") String patente, @NotBlank(message = "El tipo de vehiculo no puede ser vacio") String tipoVehiculo, @NotBlank(message = "La marca del vehiculo no puede ser vacio") String marca, @NotBlank(message = "El modelo del vehiculo no puede ser vacio") String modelo, Propietario propietario, @Min(0) int posicion) {
         this.patente = patente;
         this.tipoVehiculo = tipoVehiculo;
@@ -57,18 +57,18 @@ public class Vehiculo {
         this.propietario = propietario;
         this.posicion = posicion;
     }
-
-    public Vehiculo(@NotBlank(message = "El nombre de pantente no puede ser vacio") String patente, @NotBlank(message = "La marca del vehiculo no puede ser vacio") String marca, @NotBlank(message = "El modelo del vehiculo no puede ser vacio") String modelo, String diaDeIngreso, String horaDeIngreso, @NotBlank(message = "El tipo de vehiculo no puede ser vacio") String tipoVehiculo, @NotNull(message = "El propietario no puede ser vacio") Propietario propietario, @Min(0) int posicion, @Min(0) int valor) {
-        this.patente = patente;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.diaDeIngreso = diaDeIngreso;
-        this.horaDeIngreso = horaDeIngreso;
-        this.tipoVehiculo = tipoVehiculo;
-        this.propietario = propietario;
-        this.posicion = posicion;
-        this.valor = valor;
-    }
+//
+//    public Vehiculo(@NotBlank(message = "El nombre de pantente no puede ser vacio") String patente, @NotBlank(message = "La marca del vehiculo no puede ser vacio") String marca, @NotBlank(message = "El modelo del vehiculo no puede ser vacio") String modelo, String diaDeIngreso, String horaDeIngreso, @NotBlank(message = "El tipo de vehiculo no puede ser vacio") String tipoVehiculo, @NotNull(message = "El propietario no puede ser vacio") Propietario propietario, @Min(0) int posicion, @Min(0) int valor) {
+//        this.patente = patente;
+//        this.marca = marca;
+//        this.modelo = modelo;
+//        this.diaDeIngreso = diaDeIngreso;
+//        this.horaDeIngreso = horaDeIngreso;
+//        this.tipoVehiculo = tipoVehiculo;
+//        this.propietario = propietario;
+//        this.posicion = posicion;
+//        this.valor = valor;
+//    }
 
     public Vehiculo(@NotBlank(message = "El nombre de pantente no puede ser vacio") String patente, @NotBlank(message = "La marca del vehiculo no puede ser vacio") String marca, @NotBlank(message = "El modelo del vehiculo no puede ser vacio") String modelo,  String diaDeIngreso, String horaDeIngreso, @NotNull(message = "El tipo de vehiculo no puede ser vacio") String tipoVehiculo, @NotNull(message = "El propietario no puede ser vacio") Propietario propietario, @Min(0) int posicion) {
         this.patente = patente;
@@ -80,8 +80,6 @@ public class Vehiculo {
         this.propietario = propietario;
         this.posicion = posicion;
     }
-
-
 
     public String getPatente() {
         return patente;
