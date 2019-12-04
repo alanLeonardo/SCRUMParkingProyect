@@ -3,7 +3,8 @@ import './CSS/GRIDParking.css';
 import Swal from 'sweetalert2';
 import swal from 'sweetalert';
 import GRIDMaterial from './GRIDMaterial';
-import {retirarVehiculo,getVehiculos,crearVehiculo,getVehiculo} from './Components/API'
+import {retirarVehiculo,getVehiculos,crearVehiculo,getVehiculo} from './Components/API';
+import jsPDF from 'jspdf';
 
 // var a1,a2,a3,a4,a5,a6,a7,a8,b1,b2,b3,b4,b5,b6,b7,b8,c1,c2,c3,c4,c5,c6,c7,c8,d1,d2,d3,d4,d5,d6,d7,d8,e1,e2,e3,e4,e5,e6,e7,e8,f1,f2,f3,f4,f5,f6,f7,f8,g1,g2,g3,g4,g5,g6,g7,g8,h1,h2,h3,h4,h5,h6,h7,h8 = ''
 
@@ -647,8 +648,7 @@ class GRIDParking extends React.Component {
                 titulo: 'GRIDParking',
                 lugares: posiciones,
                 i: 0,
-                lugarActual: '',
-                lista: []
+                lugarActual: ''
             }
         }
 
@@ -672,7 +672,6 @@ class GRIDParking extends React.Component {
                 return {lugares};
             });
         };
-
 
      modify = (event) => {
        event.preventDefault();
@@ -742,6 +741,7 @@ class GRIDParking extends React.Component {
                         retirarVehiculo(posicion)
                         .then(res => {
                             this.swalForVehiculoRetirado(data);
+                            this.jsPdfGenerator(data);
                             this.actualizarLugarSiFueRetirado();
                             })
                         .catch(error => {
@@ -777,29 +777,23 @@ class GRIDParking extends React.Component {
 
         swalForVehiculoRetirado = (data) => {
             this.actualizarLugarActual();
-            Swal.fire({
-                title: 'Vehiculo retirado!',
-                html:
-                    '<strong><u> Ticket - SCRUMParking! </u></strong><br/>' +
-                    '<strong> Patente: $</strong>' +   data.patente  + '<br/>' +
-                    '<strong> Valor: $</strong>' +   data.valor  + '<br/>' +
-                    '<strong> Fecha Ingreso: </strong>' +  data.diaDeIngreso  + '<br/>' +
-                    '<strong> Hora Ingreso: </strong>' + data.horaDeIngreso,
-                confirmButtonText: 'Aceptar',
-                icon: 'success'
-            });
+            Swal.fire({title: 'Vehiculo retirado!', icon: 'success'});
         }
 
         cargarDatos = () => {
             Swal.mixin({
                 input: 'text',
+                inputAutoTrim: true,
+                inputAttributes: {
+                    max: 20
+                },
                 confirmButtonText: 'Next &rarr;',
                 showCancelButton: true,
                 width: 550,
                 progressSteps: ['1','2','3','4','5','6','7'],
                 inputValidator: (value) => {
                     return new Promise((resolve) => {
-                        if(value == ''){
+                        if(value == '' || value == undefined){
                             resolve('Debe ingresar un valor')
                         }else{
                             resolve()
@@ -894,7 +888,7 @@ class GRIDParking extends React.Component {
                     .then(res => {
                         this.actualizarLugarActual();
                         Swal.fire({
-                            title: 'Datos:',
+                            title: '<strong><u>Datos</u></strong>',
                             html:
                                 '<strong> Patente: </strong>' +   res.data.patente  + '<br/>' +
                                 '<strong> TipoVehiculo: </strong>' +  res.data.tipoVehiculo  + '<br/>' +
@@ -951,6 +945,35 @@ class GRIDParking extends React.Component {
 
     handleLugar(event) {
         this.setState({i: event.target.value});
+    }
+
+    // jsPDF para generar el ticket pdf
+    jsPdfGenerator = (vehiculo) => {
+        const {patente, valor, horaDeIngreso, diaDeIngreso} = vehiculo;
+
+        var doc = new jsPDF('p','pt','c6');
+
+        doc.setFontSize(22);
+        doc.text(75,50, `Ticket - SCRUMParking`);
+        doc.setFontSize(16);
+        doc.setFont('courier');
+        doc.setFontType('bold');
+        doc.text(20,80, `Patente:`);
+        doc.setFontType('normal');
+        doc.text(100,80, `${patente}`);
+        doc.setFontType('bold');
+        doc.text(20,100, `Hora de ingreso:`);
+        doc.setFontType('normal');
+        doc.text(180,100, `${horaDeIngreso}`);
+        doc.setFontType('bold');
+        doc.text(20,120, `Día de ingreso:`);
+        doc.setFontType('normal');
+        doc.text(170,120, `${diaDeIngreso}`);
+        doc.setFontType('bold');
+        doc.text(20,140, `Precio:`);
+        doc.setFontType('normal');
+        doc.text(90,140, `${valor}`);
+        doc.save("ticket-parking.pdf");
     }
 
      render() {
