@@ -695,6 +695,7 @@ class GRIDParking extends React.Component {
                             this.swalForVehiculoRetirado(data);
                             this.getValorCobrado(data);
                             this.actualizarLugarSiFueRetirado();
+                            this.getValorGanancia();
                         })
                         .catch(error => {
                             this.swalForError(error)
@@ -875,7 +876,8 @@ class GRIDParking extends React.Component {
                                 '<strong> DocumentoPropietario: </strong>' +  res.data.propietario.documento  + '<br/>' +
                                 '<strong> NombrePropietario: </strong>' +  res.data.propietario.nombre + '<br/>' +
                                 '<strong> ApellidoApellido: </strong>' +  res.data.propietario.apellido  + '<br/>' +
-                                '<strong> Fecha ingreso: </strong>' + res.data.horaYdiaDeIngreso ,
+                                '<strong> Fecha ingreso: </strong>' + res.data.horaYdiaDeIngreso.substring(0,10)   + '<br/>' +
+                                '<strong> Hora ingreso: </strong>' + res.data.horaYdiaDeIngreso.substring(11,16) ,
                             confirmButtonText: 'Aceptar',
                             icon: 'success'
                         });
@@ -937,13 +939,13 @@ class GRIDParking extends React.Component {
         doc.setFontType('normal');
         doc.text(100,80, `${patente}`);
         doc.setFontType('bold');
-        doc.text(20,100, `Hora de ingreso:`);
+        doc.text(20,100, `Fecha de ingreso:`);
         doc.setFontType('normal');
-        doc.text(180,100, `${horaYdiaDeIngreso}`);
-        // doc.setFontType('bold');
-        // doc.text(20,120, `Día de ingreso:`);
-        // doc.setFontType('normal');
-        // doc.text(170,120, `${diaDeIngreso}`);
+        doc.text(180,100, `${horaYdiaDeIngreso.substring(0,10)}`);
+        doc.setFontType('bold');
+        doc.text(20,120, `Hora de ingreso:`);
+        doc.setFontType('normal');
+        doc.text(170,120, `${horaYdiaDeIngreso.substring(11,16)}`);
         doc.setFontType('bold');
         doc.text(20,140, `Precio:`);
         doc.setFontType('normal');
