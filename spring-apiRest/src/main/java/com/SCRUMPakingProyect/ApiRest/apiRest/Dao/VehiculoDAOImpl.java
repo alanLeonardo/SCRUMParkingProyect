@@ -32,7 +32,7 @@ public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoD
     }
 
     @Override
-    public Vehiculo recuperarVehiculo(Integer posicion){
+    public Vehiculo recuperarVehiculo(int posicion){
         Session session = TransactionRunner.getCurrentSession();
         String hql =  "from Vehiculo v " +
                      "WHERE posicion = :laPosicion";
@@ -42,7 +42,7 @@ public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoD
     }
 
     @Override
-    public void retirarVehiculo(Integer posicion){
+    public void retirarVehiculo(int posicion){
 
         Session session = TransactionRunner.getCurrentSession();
         String hql = "DELETE FROM Vehiculo WHERE posicion = :laPosicion";

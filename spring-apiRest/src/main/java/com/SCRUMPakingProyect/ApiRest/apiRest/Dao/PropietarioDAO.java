@@ -11,4 +11,6 @@ public interface PropietarioDAO {
     public List<Propietario> listarTodos();
 
     public Propietario recuperarPropietario(int documento);
+
+    public void eliminar(int documento);
 }

@@ -10,8 +10,8 @@ public interface VehiculoDAO {
 
     public List<Vehiculo> listarTodos();
 
-    public Vehiculo recuperarVehiculo(Integer posicion);
+    public Vehiculo recuperarVehiculo(int posicion);
 
-    public void retirarVehiculo(Integer posicion);
+    public void retirarVehiculo(int posicion);
 
 }
