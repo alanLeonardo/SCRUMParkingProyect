@@ -13,7 +13,6 @@ public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoD
 
     public VehiculoDAOImpl() {
         super(Vehiculo.class);
-
     }
 
     @Override

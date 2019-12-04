@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Propietario {
 
-
         @Id
         @Column(unique = true)
         //@Max(9)

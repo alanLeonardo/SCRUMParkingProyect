@@ -1,5 +1,6 @@
 package com.SCRUMPakingProyect.electronreactdemo;
 
+import com.SCRUMPakingProyect.ApiRest.model.Ganancia;
 import com.SCRUMPakingProyect.ApiRest.model.Propietario;
 import com.SCRUMPakingProyect.ApiRest.model.Vehiculo;
 import com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner;
@@ -8,45 +9,26 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 public class ElectronReactDemoApplicationTests extends BuilderTest {
 
     @Before
     public void setUp(){
         super.setUp();
     }
-/*
+
     @After
     public void cleanup(){
         super.cleanup();
     }
 
-	@Test
-    public void DadoUnAutoSeVerificaQueSeaUnFIATUNO() {
-        Vehiculo vehiculo = TransactionRunner.run(super::fiatUno);
-
-        Assert.assertEquals("FIAT" ,vehiculo.getMarca());
-        Assert.assertEquals("UNO" ,vehiculo.getModelo());
-        Assert.assertEquals("FIA123",vehiculo.getPatente());
-        System.out.println(vehiculo.getPatente());
-        System.out.println(vehiculo.getMarca());
-	}*/
-
-	@Test
-	public void GuardamosDosVehiculosYLosRecuperamos(){
-        Propietario cacho = TransactionRunner.run(this::propietarioDelFiatUno);
-        Vehiculo fiat = TransactionRunner.run(this::fiatUno);
-        Vehiculo renault = TransactionRunner.run(this::renaultDoce);
-
-        Vehiculo renaultRecuperado = super.renaultDoceRecuperado(renault.getPosicion());
-        Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPosicion());
-
-        Assert.assertEquals(fiat.getPatente(), fiatRecuperado.getPatente());
-        Assert.assertEquals(renault.getPatente(), renaultRecuperado.getPatente());
-    }
-
     @Test
-    public void GuardamosUnFiatUnoYQueremosSaberLosDatosDelPropietario(){
-	   // Propietario cacho = TransactionRunner.run(this::propietarioDelFiatUno);
+    public void testParaGenerarLaEstructuraDeLaBaseDeDatos(){
+        Ganancia ganancia = TransactionRunner.run(this::ganaciaActual);
+	    Propietario cacho = TransactionRunner.run(this::propietarioDelFiatUno);
         Vehiculo fiat = TransactionRunner.run(this::fiatUno);
 
         Vehiculo fiatRecuperado = super.fiatUnoRecuperado(fiat.getPosicion());
@@ -57,12 +39,28 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
 
         Assert.assertEquals(fiatRecuperado.getPropietario().getDocumento(),cachoRecuperado.getDocumento());
         Assert.assertEquals(fiatRecuperado.getPropietario().getNombre(),cachoRecuperado.getNombre());
+
+        Calendar c = getHoraYFechaActual();
+        ganancia.setPagos(cantidadDeHoras(fiatRecuperado, c,ganancia.getValorActual()));
+
+        TransactionRunner.run(() -> this.gananciaService.actualizar(ganancia));
+
+        Assert.assertEquals(new Double(100), ganancia.getValorActual());
     }
-/*
-    @Test
-    public void GuardamosUnFiatUnoYLoRetiramos(){
-        Vehiculo fiatUno = new Vehiculo("FIA123", "Auto", "FIAT");
-        TransactionRunner.run(() ->
-                this.vehiculoService.retirarVehiculo(fiatUno.getPatente()));
-    }*/
+
+    private Double cantidadDeHoras(Vehiculo vehiculo, Calendar c, Double valor) {
+        int cantidadDeHorasActual = c.get(Calendar.HOUR_OF_DAY) - vehiculo.getHoraYdiaDeIngreso().get(Calendar.HOUR_OF_DAY);
+        if(cantidadDeHorasActual == 0) {
+            return new Double(valor);
+        }
+        return new Double(cantidadDeHorasActual * valor);
+    }
+
+    private Calendar getHoraYFechaActual() {
+        Date d = new Date();
+        Calendar c = new GregorianCalendar();
+        c.setTime(d);
+        return c;
+    }
+
 }
