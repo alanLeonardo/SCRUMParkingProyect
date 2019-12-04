@@ -32,6 +32,8 @@
 		<mapping class="com.SCRUMPakingProyect.ApiRest.model.Propietario"/>
 		<!-- Vehiculo  -->
 		<mapping class="com.SCRUMPakingProyect.ApiRest.model.Vehiculo"/>
+		<!-- Ganancia  -->
+		<mapping class="com.SCRUMPakingProyect.ApiRest.model.Ganancia"/>
 
 	</session-factory>
     </hibernate-configuration>

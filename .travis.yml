@@ -1,12 +1,9 @@
-dist: xenial
 language: java
-addons:
-  apt:
-    packages:
-      - ant
 
 before_install: 
     - cd spring-apiRest/
-    
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+

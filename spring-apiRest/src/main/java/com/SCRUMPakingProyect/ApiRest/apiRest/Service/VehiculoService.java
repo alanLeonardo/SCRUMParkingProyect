@@ -13,7 +13,9 @@ public interface VehiculoService {
 
     public List<Vehiculo> listarTodos();
 
-    public Vehiculo recuperarVehiculo(String patente);
+    public Vehiculo recuperarVehiculo(Integer posicion);
 
-    public void retirarVehiculo(String patente);
+    public Vehiculo recuperarVehiculoPorPatente(String patente);
+
+    public void retirarVehiculo(Integer posicion);
 }

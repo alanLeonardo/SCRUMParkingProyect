@@ -6,12 +6,13 @@ import java.util.List;
 import org.hibernate.Session;
 import com.SCRUMPakingProyect.ApiRest.runner.TransactionRunner;
 
+import javax.persistence.TypedQuery;
+
 
 public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoDAO {
 
     public VehiculoDAOImpl() {
         super(Vehiculo.class);
-
     }
 
     @Override
@@ -31,19 +32,32 @@ public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoD
     }
 
     @Override
-    public Vehiculo recuperarVehiculo(String patente){
+    public Vehiculo recuperarVehiculo(Integer posicion){
         Session session = TransactionRunner.getCurrentSession();
         String hql =  "from Vehiculo v " +
-                     "WHERE patente = :laPatente";
+                     "WHERE posicion = :laPosicion";
+        Query<Vehiculo> query = session.createQuery(hql, Vehiculo.class);
+        query.setParameter("laPosicion", posicion);
+        return query.getSingleResult();
+    }
+
+    @Override
+    public Vehiculo recuperarVehiculoPorPatente(String patente){
+        Session session = TransactionRunner.getCurrentSession();
+        String hql =  "from Vehiculo v " +
+                "WHERE patente = :laPatente";
         Query<Vehiculo> query = session.createQuery(hql, Vehiculo.class);
         query.setParameter("laPatente", patente);
         return query.getSingleResult();
     }
 
     @Override
-    public void retirarVehiculo(String patente){
+    public void retirarVehiculo(Integer posicion){
+
         Session session = TransactionRunner.getCurrentSession();
-        Vehiculo vehiculo = recuperarVehiculo(patente);
-        session.delete(vehiculo);
+        String hql = "DELETE FROM Vehiculo WHERE posicion = :laPosicion";
+        TypedQuery query = session.createQuery(hql);
+        query.setParameter("laPosicion", posicion);
+        query.executeUpdate();
     }
 }

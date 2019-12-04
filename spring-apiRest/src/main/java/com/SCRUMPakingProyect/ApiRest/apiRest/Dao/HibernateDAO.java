@@ -16,19 +16,13 @@ public class HibernateDAO<T>  {
             session.save(obj);
         }
 
-        public void actualizar(T id) {
+        public void actualizar(T obj) {
             Session session = TransactionRunner.getCurrentSession();
-            session.update(id);
+            session.update(obj);
         }
 
         public T recuperar(Integer id) {
             Session session = TransactionRunner.getCurrentSession();
             return session.get(entityType, id);
         }
-
-        public void delete(T patente) {
-            Session session = TransactionRunner.getCurrentSession();
-            session.delete(patente);
-        }
-
 }
