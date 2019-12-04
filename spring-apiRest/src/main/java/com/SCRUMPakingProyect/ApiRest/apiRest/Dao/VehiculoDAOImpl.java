@@ -42,6 +42,16 @@ public class VehiculoDAOImpl extends HibernateDAO<Vehiculo> implements VehiculoD
     }
 
     @Override
+    public Vehiculo recuperarVehiculoPorPatente(String patente){
+        Session session = TransactionRunner.getCurrentSession();
+        String hql =  "from Vehiculo v " +
+                "WHERE patente = :laPatente";
+        Query<Vehiculo> query = session.createQuery(hql, Vehiculo.class);
+        query.setParameter("laPatente", patente);
+        return query.getSingleResult();
+    }
+
+    @Override
     public void retirarVehiculo(Integer posicion){
 
         Session session = TransactionRunner.getCurrentSession();

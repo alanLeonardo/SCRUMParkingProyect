@@ -62,7 +62,7 @@ public class BuilderTest {
         return fiatUno;
     }
 
-    public Ganancia ganaciaActual() {
+    public Ganancia gananciaActual() {
         Ganancia ganancia = new Ganancia(new Double(100));
         this.gananciaService.guardar(ganancia);
         return ganancia;
