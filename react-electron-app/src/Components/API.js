@@ -59,4 +59,24 @@ const retirarVehiculo = (posicion) => {
     })
 }
 
-export {crearVehiculo,getVehiculos,retirarVehiculo,getVehiculo}
+const getValorCobrado = () => {
+  return axios.get(`/valorCobrado`)
+  .then(response => {
+    return Promise.resolve(response);
+  })
+  .catch(error => {
+    return Promise.reject(error.response.data);
+  })
+}
+
+const getValorGanancia = () => {
+  return axios.get(`/valorGanancia`)
+  .then(response => {
+    return Promise.resolve(response);
+  })
+  .catch(error => {
+    return Promise.reject(error.response.data);
+  })  
+}
+
+export {crearVehiculo,getVehiculos,retirarVehiculo,getVehiculo,getValorCobrado,getValorGanancia}
