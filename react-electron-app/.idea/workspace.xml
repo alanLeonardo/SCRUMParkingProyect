@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4d79195-ac66-438f-877d-bb556e041597" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GRIDParking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/GRIDParking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/Controller/VehiculoRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/Controller/VehiculoRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/HibernateDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/HibernateDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Dao/VehiculoDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/java/com/SCRUMPakingProyect/ApiRest/apiRest/Service/VehiculoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-apiRest/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GRIDParking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="764" lean-forward="true" selection-start-line="764" selection-end-line="764" />
+            <state relative-caret-position="169">
+              <caret line="945" lean-forward="true" selection-start-line="945" selection-end-line="945" />
             </state>
           </provider>
         </entry>
@@ -67,15 +56,15 @@
       <list>
         <option value="$PROJECT_DIR$/src/CSS/principal.css" />
         <option value="$PROJECT_DIR$/src/Home.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Components/API.js" />
         <option value="$PROJECT_DIR$/src/GRIDParking.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="157" />
+    <option name="x" value="151" />
+    <option name="y" value="160" />
     <option name="width" value="1201" />
     <option name="height" value="573" />
   </component>
@@ -169,7 +158,7 @@
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11075697" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12828685" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="DB Browser" order="3" />
@@ -190,7 +179,7 @@
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
       <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2372093" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32780084" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32713178" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="right" id="Maven" order="2" />
@@ -252,11 +241,6 @@
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Vehiculo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -271,13 +255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/API.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -285,10 +262,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="56" column="22" lean-forward="true" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GRIDParking.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="764" lean-forward="true" selection-start-line="764" selection-end-line="764" />
+        <state relative-caret-position="169">
+          <caret line="945" lean-forward="true" selection-start-line="945" selection-end-line="945" />
         </state>
       </provider>
     </entry>

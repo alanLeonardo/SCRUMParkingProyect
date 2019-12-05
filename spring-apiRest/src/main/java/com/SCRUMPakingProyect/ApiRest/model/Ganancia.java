@@ -2,6 +2,7 @@ package com.SCRUMPakingProyect.ApiRest.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +18,10 @@ public class Ganancia {
     private Set<Double> pagos = new HashSet<Double>();
 
     @Min(1)
-    private Double valorActual = 0.0;
+    private Double valorActual = 1.0;
+
+    @Min(1)
+    private Double precioCobrado = 1.0;
 
     public Ganancia() {
 
@@ -49,6 +53,14 @@ public class Ganancia {
 
     public void setValorActual(Double valorActual) {
         this.valorActual = valorActual;
+    }
+
+    public Double getPrecioCobrado() {
+        return precioCobrado;
+    }
+
+    public void setPrecioCobrado(Double precioCobrado) {
+        this.precioCobrado = precioCobrado;
     }
 
     public void ganaciaActual() {

@@ -10,10 +10,9 @@ public interface VehiculoDAO {
 
     public List<Vehiculo> listarTodos();
 
-    public Vehiculo recuperarVehiculo(Integer posicion);
+    public Vehiculo recuperarVehiculo(int posicion);
 
     public Vehiculo recuperarVehiculoPorPatente(String patente);
 
     public void retirarVehiculo(Integer posicion);
-
 }

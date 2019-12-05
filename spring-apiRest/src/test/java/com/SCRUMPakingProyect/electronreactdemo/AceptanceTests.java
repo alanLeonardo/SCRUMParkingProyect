@@ -24,14 +24,18 @@ public class AceptanceTests {
     protected VehiculoService vehiculoService;
     protected PropietarioDAO propietarioDAO;
     protected PropietarioService propietarioService;
+    protected GananciaDAO gananciaDAO;
+    protected GananciaService gananciaService;
 
     @Before
     public void setUp() {
         this.dataDAO = new HibernateDataDAOImpl();
-        vehiculoDAO = new VehiculoDAOImpl();
-        propietarioDAO = new PropietarioDAOImpl();
-        vehiculoService = new VehiculoServiceImpl(vehiculoDAO, propietarioDAO);
-        propietarioService = new PropietarioServiceImpl(propietarioDAO);
+        this.vehiculoDAO = new VehiculoDAOImpl();
+        this.propietarioDAO = new PropietarioDAOImpl();
+        this.vehiculoService = new VehiculoServiceImpl(vehiculoDAO, propietarioDAO);
+        this.propietarioService = new PropietarioServiceImpl(propietarioDAO);
+        this.gananciaService = new GananciaServiceImpl(gananciaDAO);
+        this.vehiculoService = new VehiculoServiceImpl(vehiculoDAO, propietarioDAO);
     }
 
     @After
@@ -40,7 +44,7 @@ public class AceptanceTests {
                 dataDAO.clear()
         );
     }
-
+/*
     @Test
     public void ComoUsuarioQuieroPoderRegistrarUnVehiculoEnElSistemaYComprobarQueSeEncuentraCorrectamentePersistido(){
         Propietario cacho = new Propietario(38268688,"Cacho","Perez");
@@ -105,6 +109,42 @@ public class AceptanceTests {
         System.out.println(vehiculos.get(1).getPatente());
         System.out.println(vehiculos.get(2).getPatente());
     }
+*/
+
+//test para crear la estructura de la base de datos
+    public Propietario propietarioDelFiatUno() {
+       Propietario propietarioDelFiatUno = new Propietario(30456789,"Cacho","Try");
+        this.propietarioDAO.registrar(propietarioDelFiatUno);
+        return propietarioDelFiatUno;
+    }
+
+    public Propietario cacho = new Propietario(30456789, "Cacho", "Try");
+
+    public Vehiculo fiatUno() {
+        Date d = new Date();
+        Calendar c = new GregorianCalendar();
+        c.setTime(d);
+        Vehiculo fiatUno = new Vehiculo("FIA123","FIAT","FIAT UNO" ,c,"Auto",cacho,1);
+        this.vehiculoService.registrar(fiatUno);
+        return fiatUno;
+    }
+
+    public Ganancia ganaciaActual() {
+        Ganancia ganancia = new Ganancia(new Double(100));
+        this.gananciaService.guardar(ganancia);
+        return ganancia;
+    }
+
+    public Vehiculo fiatUnoRecuperado(Integer posicion) {
+        return TransactionRunner.run(() ->
+                this.vehiculoService.recuperarVehiculo(posicion));
+    }
+
+    public Propietario propietarioRecuperado(int documento) {
+        return TransactionRunner.run(() ->
+                this.propietarioService.recuperarPropietario(documento));
+    }
+
 
     @Test
     public void ComoUsuarioQuieroPoderBuscarUnVehiculoPorSuNumeroDePatente(){

@@ -36,7 +36,7 @@ public class VehiculoServiceImpl implements VehiculoService {
     }
 
     @Override
-    public Vehiculo recuperarVehiculo(Integer posicion){
+    public Vehiculo recuperarVehiculo(int posicion){
         return this.vehiculoDAO.recuperarVehiculo(posicion);
     }
 

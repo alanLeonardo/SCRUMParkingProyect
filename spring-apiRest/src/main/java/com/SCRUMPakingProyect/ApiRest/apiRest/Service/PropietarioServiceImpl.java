@@ -28,4 +28,9 @@ public class PropietarioServiceImpl implements PropietarioService {
     public Propietario recuperarPropietario(int documento) {
         return this.propietarioDAO.recuperarPropietario(documento);
     }
+
+    @Override
+    public void eliminar(int documento) {
+       this.propietarioDAO.eliminar(documento);
+    }
 }

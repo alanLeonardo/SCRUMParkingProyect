@@ -13,7 +13,7 @@ public interface VehiculoService {
 
     public List<Vehiculo> listarTodos();
 
-    public Vehiculo recuperarVehiculo(Integer posicion);
+    public Vehiculo recuperarVehiculo(int posicion);
 
     public Vehiculo recuperarVehiculoPorPatente(String patente);
 
