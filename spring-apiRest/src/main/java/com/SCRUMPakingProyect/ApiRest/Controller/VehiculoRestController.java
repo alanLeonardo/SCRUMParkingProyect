@@ -63,7 +63,7 @@ public class VehiculoRestController {
     public void retirarVehiculo(@PathVariable int posicion) {
             Vehiculo vehiculo = this.vehiculo(posicion);
 
-            int documeto = vehiculo.getPropietario().getDocumento();
+//            int documeto = vehiculo.getPropietario().getDocumento();
 
             Calendar c = getHoraYFechaActual();
 
@@ -76,7 +76,7 @@ public class VehiculoRestController {
 
             TransactionRunner.run(() ->  this.vehiculoService.retirarVehiculo(posicion));
 
-            TransactionRunner.run(() ->  this.propietarioService.eliminar(documeto));
+//            TransactionRunner.run(() ->  this.propietarioService.eliminar(documeto));
 
     }
 

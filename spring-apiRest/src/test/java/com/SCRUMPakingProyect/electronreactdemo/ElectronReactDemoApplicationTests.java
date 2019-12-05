@@ -20,10 +20,10 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
         super.setUp();
     }
 
-    @After
-    public void cleanup(){
-        super.cleanup();
-    }
+//    @After
+//    public void cleanup(){
+//        super.cleanup();
+//    }
 
     @Test
     public void testParaGenerarLaEstructuraDeLaBaseDeDatos(){

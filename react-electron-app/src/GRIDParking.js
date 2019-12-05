@@ -941,11 +941,11 @@ class GRIDParking extends React.Component {
         doc.setFontType('bold');
         doc.text(20,100, `Fecha de ingreso:`);
         doc.setFontType('normal');
-        doc.text(180,100, `${horaYdiaDeIngreso.substring(0,10)}`);
+        doc.text(190,100, `${horaYdiaDeIngreso.substring(0,10)}`);
         doc.setFontType('bold');
         doc.text(20,120, `Hora de ingreso:`);
         doc.setFontType('normal');
-        doc.text(170,120, `${horaYdiaDeIngreso.substring(11,16)}`);
+        doc.text(180,120, `${horaYdiaDeIngreso.substring(11,16)}`);
         doc.setFontType('bold');
         doc.text(20,140, `Precio:`);
         doc.setFontType('normal');
