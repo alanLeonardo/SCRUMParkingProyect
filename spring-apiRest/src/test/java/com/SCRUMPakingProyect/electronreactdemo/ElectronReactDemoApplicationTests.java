@@ -27,7 +27,7 @@ public class ElectronReactDemoApplicationTests extends BuilderTest {
 
     @Test
     public void testParaGenerarLaEstructuraDeLaBaseDeDatos(){
-        Ganancia ganancia = TransactionRunner.run(this::ganaciaActual);
+        Ganancia ganancia = TransactionRunner.run(this::gananciaActual);
 	    Propietario cacho = TransactionRunner.run(this::propietarioDelFiatUno);
         Vehiculo fiat = TransactionRunner.run(this::fiatUno);
 

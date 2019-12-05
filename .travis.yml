@@ -1,10 +1,9 @@
-dist: xenial
 language: java
 
 before_install: 
     - cd spring-apiRest/
-    
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  
-  
+
+

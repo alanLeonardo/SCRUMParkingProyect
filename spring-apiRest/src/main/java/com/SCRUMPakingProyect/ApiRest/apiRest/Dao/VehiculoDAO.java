@@ -12,6 +12,7 @@ public interface VehiculoDAO {
 
     public Vehiculo recuperarVehiculo(int posicion);
 
-    public void retirarVehiculo(int posicion);
+    public Vehiculo recuperarVehiculoPorPatente(String patente);
 
+    public void retirarVehiculo(Integer posicion);
 }
